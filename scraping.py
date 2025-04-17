@@ -71,62 +71,30 @@ def write_episode_transcript(season, episode_url):
     container = soup.select_one("div.mw-content-ltr.mw-parser-output")
     if not container:
         raise RuntimeError("Could not find the transcript container on page")
-    
-    # with open(output_path, "w", encoding="utf-8") as f:
-    
-    #     # get the div with class "poem"
-    #     poem_div = container.find("div", class_="poem")
-    #     if poem_div:
-    #         for node in poem_div.find_all(string=True):
-    #             if isinstance(node, NavigableString):
-    #                 node.replace_with(node.replace("\n", " ")) # replace literal '\n' in that node
-
-    #         # replace every <br> with a newline so get_text() will pick them up
-    #         for br in poem_div.find_all("br"):
-    #             br.replace_with("\n")
-
-    #         # flatten nested tags and split on the newlines
-    #         raw = poem_div.get_text()
-    #         lines = [ln.strip() for ln in raw.split("\n") if ln.strip()]
-
-    #         for line in lines:
-    #             f.write(line + "\n")
-
-    #         # d) remove poem_div from container so it won’t show up again
-    #         poem_div.decompose()
-
-    #     # get all <p> tags in the container
-    #     paras = container.find_all("p")
-
-    #     # Write each one’s text (with nested <b>,<i>, etc. flattened) as a new line
-    #     for p in paras:
-    #         raw = p.get_text()
-    #         line = " ".join(raw.split())
-    #         if line:
-    #             f.write(line + "\n")
         
     for node in container.find_all(string=True):
         if isinstance(node, NavigableString):
             node.replace_with(node.replace("\n", " ")) # replace literal '\n' in that node
 
-    # get all <p> tags in the container
-    paras = container.find_all("p")
-    print(paras)
-    
+    # pull out ONLY the tags we care about, in document order
+    elems = container.find_all(lambda tag: tag.name in ("h2","h3","p","dd"))
+
     all_lines = []
-    for p in paras:
-        # replace every <br> with a newline so get_text() will pick them up
-        for br in p.find_all("br"):
-            br.replace_with("\n")
+    for el in elems:
+        if el.name in ("h2","h3"):
+            # headings become their own line
+            text = " ".join(el.get_text().split())
+            if text:
+                all_lines.append(text)
 
-        # flatten nested tags and split on the newlines
-        raw = p.get_text()
-        chunk_lines = [ln.strip() for ln in raw.split("\n") if ln.strip()]
-        all_lines.extend(chunk_lines)
+        else:  # el.name is "p" or "dd"
+            # turn <br> → "\n"
+            for br in el.find_all("br"):
+                br.replace_with("\n")
 
-        # lines = [ln.strip() for ln in raw.split("\n") if ln.strip()]
-        # for line in lines:
-        #     f.write(line + "\n")
+            raw = el.get_text()
+            chunks = [ln.strip() for ln in raw.split("\n") if ln.strip()]
+            all_lines.extend(chunks)
 
     merged = []
     for ln in all_lines:
@@ -134,7 +102,7 @@ def write_episode_transcript(season, episode_url):
         if ln.startswith("-"):
             ln = ln[1:].lstrip()
 
-        if ":" in ln or "[" in ln or "(" in ln:
+        if any(token in ln for token in (":","[","(")):
             # new speaker/dialogue starts here
             merged.append(ln)
         else:
@@ -146,7 +114,8 @@ def write_episode_transcript(season, episode_url):
 
     with open(output_path, "w", encoding="utf-8") as f:
         for ln in merged:
-            f.write(ln + "\n")
+            if ln not in ["Transcript[]", "Site navigation[]"]:
+                f.write(ln + "\n")
 
 
 # loop through dictionary of all links and call write_episode_transcript for each episode
@@ -244,5 +213,5 @@ if __name__ == "__main__":
             'https://rickandmorty.fandom.com/wiki/Wet_Kuat_Amortican_Summer/Transcript']
     }
 
-    # loop_through_episodes(all_episode_links)
-    write_episode_transcript(3, 'https://rickandmorty.fandom.com/wiki/Morty%27s_Mind_Blowers/Transcript')
+    loop_through_episodes(all_episode_links)
+    # write_episode_transcript(3, 'https://rickandmorty.fandom.com/wiki/The_ABC%27s_of_Beth/Transcript')
