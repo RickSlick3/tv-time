@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from bs4 import NavigableString
 import requests
 import re
 import os
@@ -71,16 +72,81 @@ def write_episode_transcript(season, episode_url):
     if not container:
         raise RuntimeError("Could not find the transcript container on page")
     
+    # with open(output_path, "w", encoding="utf-8") as f:
+    
+    #     # get the div with class "poem"
+    #     poem_div = container.find("div", class_="poem")
+    #     if poem_div:
+    #         for node in poem_div.find_all(string=True):
+    #             if isinstance(node, NavigableString):
+    #                 node.replace_with(node.replace("\n", " ")) # replace literal '\n' in that node
+
+    #         # replace every <br> with a newline so get_text() will pick them up
+    #         for br in poem_div.find_all("br"):
+    #             br.replace_with("\n")
+
+    #         # flatten nested tags and split on the newlines
+    #         raw = poem_div.get_text()
+    #         lines = [ln.strip() for ln in raw.split("\n") if ln.strip()]
+
+    #         for line in lines:
+    #             f.write(line + "\n")
+
+    #         # d) remove poem_div from container so it won’t show up again
+    #         poem_div.decompose()
+
+    #     # get all <p> tags in the container
+    #     paras = container.find_all("p")
+
+    #     # Write each one’s text (with nested <b>,<i>, etc. flattened) as a new line
+    #     for p in paras:
+    #         raw = p.get_text()
+    #         line = " ".join(raw.split())
+    #         if line:
+    #             f.write(line + "\n")
+        
+    for node in container.find_all(string=True):
+        if isinstance(node, NavigableString):
+            node.replace_with(node.replace("\n", " ")) # replace literal '\n' in that node
+
     # get all <p> tags in the container
     paras = container.find_all("p")
+    print(paras)
+    
+    all_lines = []
+    for p in paras:
+        # replace every <br> with a newline so get_text() will pick them up
+        for br in p.find_all("br"):
+            br.replace_with("\n")
 
-    # Write each one’s text (with nested <b>,<i>, etc. flattened) as a new line
+        # flatten nested tags and split on the newlines
+        raw = p.get_text()
+        chunk_lines = [ln.strip() for ln in raw.split("\n") if ln.strip()]
+        all_lines.extend(chunk_lines)
+
+        # lines = [ln.strip() for ln in raw.split("\n") if ln.strip()]
+        # for line in lines:
+        #     f.write(line + "\n")
+
+    merged = []
+    for ln in all_lines:
+        # strip a leading "-" plus any following spaces
+        if ln.startswith("-"):
+            ln = ln[1:].lstrip()
+
+        if ":" in ln or "[" in ln or "(" in ln:
+            # new speaker/dialogue starts here
+            merged.append(ln)
+        else:
+            # continuation: append to previous, or start fresh if none
+            if merged:
+                merged[-1] += " " + ln
+            else:
+                merged.append(ln)
+
     with open(output_path, "w", encoding="utf-8") as f:
-        for p in paras:
-            raw = p.get_text()
-            line = " ".join(raw.split())
-            if line:
-                f.write(line + "\n")
+        for ln in merged:
+            f.write(ln + "\n")
 
 
 # loop through dictionary of all links and call write_episode_transcript for each episode
@@ -105,77 +171,78 @@ if __name__ == "__main__":
     #     'https://rickandmorty.fandom.com/wiki/Category:Season_7_transcripts'
     # ]
 
-    all_episode_links = get_episode_links(season_links)
+    # all_episode_links = get_episode_links(season_links)
     # print(all_episode_links)
 
     # here is the output of get_episode_links
-    # all_episode_links = {
-    #     1: 
-    #         ['https://rickandmorty.fandom.com/wiki/Anatomy_Park_(episode)/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Close_Rick-Counters_of_the_Rick_Kind/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Lawnmower_Dog/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/M._Night_Shaym-Aliens!/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Meeseeks_and_Destroy/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Pilot/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Raising_Gazorpazorp/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Rick_Potion_No._9/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Ricksy_Business/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Rixty_Minutes/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Something_Ricked_This_Way_Comes/Transcript'], 
-    #     2: 
-    #         ['https://rickandmorty.fandom.com/wiki/A_Rickle_in_Time/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Auto_Erotic_Assimilation/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Big_Trouble_in_Little_Sanchez/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Get_Schwifty_(episode)/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Interdimensional_Cable_2:_Tempting_Fate/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Look_Who%27s_Purging_Now/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Mortynight_Run/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/The_Ricks_Must_Be_Crazy/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/The_Wedding_Squanchers/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Total_Rickall/Transcript'], 
-    #     3: 
-    #         ['https://rickandmorty.fandom.com/wiki/Morty%27s_Mind_Blowers/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Pickle_Rick/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Rest_and_Ricklaxation/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Rickmancing_the_Stone/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/The_ABC%27s_of_Beth/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/The_Rickchurian_Mortydate/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/The_Ricklantis_Mixup/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/The_Rickshank_Rickdemption/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/The_Whirly_Dirly_Conspiracy/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Vindicators_3:_The_Return_of_Worldender/Transcript'], 
-    #     4: 
-    #         ['https://rickandmorty.fandom.com/wiki/Claw_and_Hoarder:_Special_Ricktim%27s_Morty/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Edge_of_Tomorty:_Rick_Die_Rickpeat/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Never_Ricking_Morty/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Rattlestar_Ricklactica/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Star_Mort_Rickturn_of_the_Jerri/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/The_Vat_of_Acid_Episode/Transcript'], 
-    #     5: 
-    #         ['https://rickandmorty.fandom.com/wiki/Gotron_Jerrysis_Rickvangelion/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Mort_Dinner_Rick_Andre/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Mortyplicity/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Rick_%26_Morty%27s_Thanksploitation_Spectacular/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Rickdependence_Spray/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Rickmurai_Jack/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Rickternal_Friendshine_of_the_Spotless_Mort/Transcript'], 
-    #     6: 
-    #         ['https://rickandmorty.fandom.com/wiki/A_Rick_in_King_Mortur%27s_Mort_/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Analyze_Piss_/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Full_Meta_Jackrick/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Ricktional_Mortpoon%27s_Rickmas_Mortcation/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Solaricks/Transcript'], 
-    #     7: 
-    #         ['https://rickandmorty.fandom.com/wiki/Air_Force_Wong/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Fear_No_Mort/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/How_Poopy_Got_His_Poop_Back/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Mort:_Ragnarick/Transcript',
-    #         'https://rickandmorty.fandom.com/wiki/Rickfending_Your_Mort/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Rise_of_the_Numbericons:_The_Movie/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/That%27s_Amorte/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/The_Jerrick_Trap/Transcript',
-    #         'https://rickandmorty.fandom.com/wiki/Unmortricken/Transcript', 
-    #         'https://rickandmorty.fandom.com/wiki/Wet_Kuat_Amortican_Summer/Transcript']
-    # }
+    all_episode_links = {
+        1: 
+            ['https://rickandmorty.fandom.com/wiki/Anatomy_Park_(episode)/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Close_Rick-Counters_of_the_Rick_Kind/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Lawnmower_Dog/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/M._Night_Shaym-Aliens!/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Meeseeks_and_Destroy/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Pilot/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Raising_Gazorpazorp/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Rick_Potion_No._9/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Ricksy_Business/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Rixty_Minutes/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Something_Ricked_This_Way_Comes/Transcript'], 
+        2: 
+            ['https://rickandmorty.fandom.com/wiki/A_Rickle_in_Time/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Auto_Erotic_Assimilation/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Big_Trouble_in_Little_Sanchez/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Get_Schwifty_(episode)/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Interdimensional_Cable_2:_Tempting_Fate/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Look_Who%27s_Purging_Now/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Mortynight_Run/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/The_Ricks_Must_Be_Crazy/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/The_Wedding_Squanchers/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Total_Rickall/Transcript'], 
+        3: 
+            ['https://rickandmorty.fandom.com/wiki/Morty%27s_Mind_Blowers/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Pickle_Rick/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Rest_and_Ricklaxation/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Rickmancing_the_Stone/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/The_ABC%27s_of_Beth/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/The_Rickchurian_Mortydate/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/The_Ricklantis_Mixup/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/The_Rickshank_Rickdemption/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/The_Whirly_Dirly_Conspiracy/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Vindicators_3:_The_Return_of_Worldender/Transcript'], 
+        4: 
+            ['https://rickandmorty.fandom.com/wiki/Claw_and_Hoarder:_Special_Ricktim%27s_Morty/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Edge_of_Tomorty:_Rick_Die_Rickpeat/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Never_Ricking_Morty/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Rattlestar_Ricklactica/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Star_Mort_Rickturn_of_the_Jerri/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/The_Vat_of_Acid_Episode/Transcript'], 
+        5: 
+            ['https://rickandmorty.fandom.com/wiki/Gotron_Jerrysis_Rickvangelion/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Mort_Dinner_Rick_Andre/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Mortyplicity/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Rick_%26_Morty%27s_Thanksploitation_Spectacular/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Rickdependence_Spray/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Rickmurai_Jack/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Rickternal_Friendshine_of_the_Spotless_Mort/Transcript'], 
+        6: 
+            ['https://rickandmorty.fandom.com/wiki/A_Rick_in_King_Mortur%27s_Mort_/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Analyze_Piss_/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Full_Meta_Jackrick/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Ricktional_Mortpoon%27s_Rickmas_Mortcation/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Solaricks/Transcript'], 
+        7: 
+            ['https://rickandmorty.fandom.com/wiki/Air_Force_Wong/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Fear_No_Mort/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/How_Poopy_Got_His_Poop_Back/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Mort:_Ragnarick/Transcript',
+            'https://rickandmorty.fandom.com/wiki/Rickfending_Your_Mort/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Rise_of_the_Numbericons:_The_Movie/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/That%27s_Amorte/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/The_Jerrick_Trap/Transcript',
+            'https://rickandmorty.fandom.com/wiki/Unmortricken/Transcript', 
+            'https://rickandmorty.fandom.com/wiki/Wet_Kuat_Amortican_Summer/Transcript']
+    }
 
-    loop_through_episodes(all_episode_links)
+    # loop_through_episodes(all_episode_links)
+    write_episode_transcript(3, 'https://rickandmorty.fandom.com/wiki/Morty%27s_Mind_Blowers/Transcript')

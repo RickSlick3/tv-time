@@ -1,19 +1,11 @@
 ( Barrage of gunfire ) Get us out of here. I'll hold them off.
 ( Screaming, zapping )
-Space Beth: My name is Beth Smith. Tell your top bugs the Defiance lives on.
-I will. I will. I'll make you a legend. Blade Smith.
-Space Beth: Beth Smith.
-Beth. Beth. Beth Smith. Okay, God, it's just such a plain... I'm trying to come up with a mnemonic device.
-Space Beth: You could connect it to not dying.
-I know, I know! You think that would sear it right in, but it just speaks to the sheer forgettability. Oh, God. I-I-I'm, uh, so sorry. Uh, uh, oh, God. Starts with a "B"...
-Congratulations to your government, business, or terror cell on its acquisition of the NX-5 Planet Remover by Xamaxax in partnership with Wrangler jeans. The NX-5's industry-leading tachyon beams eliminate planets twice as fast as the NX-4S with half the battery and zero built-in fatal design flaws. That's right. No more secret hole that blows the whole thing up when you shoot it. Your enemies will say it's unfair. We say it's about time.
-Space Beth: Damn it. We risked our lives for that? You did your best.
-Maybe you need a break. Don't you ever miss Earth?
-Space Beth: I don't have to miss it. I'm technically still there. My dad made a perfect clone of me to take my place.
-Boy, that Rick. So, if you do go back, what happens to the clone? Does it have, like, a proximity-triggered device in its neck?
-Space Beth: Who cares? Are we done?
-Sure. Unless you want me to remove the proximity-triggered device from your neck. Think it's a bomb? Man, what if this is how you found out he never wanted you back, that he loved the clone more than you? How crazy would that be? Crazy and of... of course soul-crushing. For you. I actually have something for that. Y-You want some? They're nonaddictive. That's not true. They're totally addictive. I'm a terrible doctor. I actually have something for that, too. You want some? Nonaddictive. Mmm. I'm a great doctor.
-♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪
+Space Beth: My name is Beth Smith. Tell your top bugs the Defiance lives on. I will. I will. I'll make you a legend. Blade Smith.
+Space Beth: Beth Smith. Beth. Beth. Beth Smith. Okay, God, it's just such a plain... I'm trying to come up with a mnemonic device.
+Space Beth: You could connect it to not dying. I know, I know! You think that would sear it right in, but it just speaks to the sheer forgettability. Oh, God. I-I-I'm, uh, so sorry. Uh, uh, oh, God. Starts with a "B"... Congratulations to your government, business, or terror cell on its acquisition of the NX-5 Planet Remover by Xamaxax in partnership with Wrangler jeans. The NX-5's industry-leading tachyon beams eliminate planets twice as fast as the NX-4S with half the battery and zero built-in fatal design flaws. That's right. No more secret hole that blows the whole thing up when you shoot it. Your enemies will say it's unfair. We say it's about time.
+Space Beth: Damn it. We risked our lives for that? You did your best. Maybe you need a break. Don't you ever miss Earth?
+Space Beth: I don't have to miss it. I'm technically still there. My dad made a perfect clone of me to take my place. Boy, that Rick. So, if you do go back, what happens to the clone? Does it have, like, a proximity-triggered device in its neck?
+Space Beth: Who cares? Are we done? Sure. Unless you want me to remove the proximity-triggered device from your neck. Think it's a bomb? Man, what if this is how you found out he never wanted you back, that he loved the clone more than you? How crazy would that be? Crazy and of... of course soul-crushing. For you. I actually have something for that. Y-You want some? They're nonaddictive. That's not true. They're totally addictive. I'm a terrible doctor. I actually have something for that, too. You want some? Nonaddictive. Mmm. I'm a great doctor. ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪
 Beth: Dr. Wong had a cancellation today. Anybody up for a family session?
 Summer: I could do that. I'm... I'm down to clown.
 Jerry: Ooh, not sure my therapy puppet will be done in time.
@@ -67,20 +59,16 @@ Space Beth: Just curious, though, if it were, would "most wanted" be first place
 Rick: You're fighting the Gromflomites?
 Space Beth: Dad, they're trying to take over the galaxy!
 Rick: Everybody in the galaxy tries to take over the galaxy. The trick is to be left alone by whoever succeeds. Eh, it's your hero phase. I had one, too. You'll outgrow it.
-Space Beth: No, you did. I'm not gonna outgrow giving a shit.
-Sources tell us these aliens, who call themselves the Neeeew Galactic Federation, will blow up the planet unless some woman with a very boring name gives herself up.
+Space Beth: No, you did. I'm not gonna outgrow giving a shit. Sources tell us these aliens, who call themselves the Neeeew Galactic Federation, will blow up the planet unless some woman with a very boring name gives herself up.
 Space Beth: Oh, come on.
 Rick: Way to give a shit. Next time, don't wipe it on your home planet. Oh, shit. They're gonna track down Beth.
 Space Beth: You mean... Beth's clone.
 Rick: Right. Beth's clone. What... What did I say? It really was nice seeing you again.
 Whoo! Yeah! Go, Honey Bees! Good practice, girls. And remember, we are in a drought, so be sure to shower as one big group at the exact same time. ( Alarm ringing ) Shower fire! The shower's on fire! Step aside, girls! I got this! ( Morty whimpering ) ( Alarm ringing within, morty whimpering ) ( Thud! )
 Morty: You're a monster!
-Summer: Still wanna share? ( Whooshing )
-Morty Smith, hands up. You are under arrest for crimes against the New Improved Galactic Federation. Wait. What? How are you doing that? You're not a psychic, are you? Do you have psychic powers?
-Morty: Uh, yes.
-Are they strong powers? We're just looking for your mother. You can't, like, stop our hearts, can you?
-Morty: Uh, I can.
-Okay, we surrender.
+Summer: Still wanna share? ( Whooshing ) Morty Smith, hands up. You are under arrest for crimes against the New Improved Galactic Federation. Wait. What? How are you doing that? You're not a psychic, are you? Do you have psychic powers?
+Morty: Uh, yes. Are they strong powers? We're just looking for your mother. You can't, like, stop our hearts, can you?
+Morty: Uh, I can. Okay, we surrender.
 Dr. Wong: Jerry, do you agree that the use of puppets makes you seem dumb and crazy?
 Jerry: I don't think "crazy" is a responsible word to use in...
 Dr Wong: It is now. This is crazy. You're being crazy.
@@ -101,12 +89,10 @@ Beth: No, my defense is eat me.
 Jerry: Hey! Ah! We've been over this. All I do is say "hey."
 Rick: Smart guns, white-list human life. And the therapist. ( Blasting ) Tammy, this is the office where my family works to better itself.
 Tammy: What, and that makes it sacred?
-Rick: No, it makes it a place I've rigged with a lot of voice-activated escape contingencies. ( Clears throat ) These are all good points. I need to take a long look at myself.
-Aah! Aah!
+Rick: No, it makes it a place I've rigged with a lot of voice-activated escape contingencies. ( Clears throat ) These are all good points. I need to take a long look at myself. Aah! Aah!
 Dr Wong: I'd like to discuss that.
 Rick: I don't discuss problems, I incinerate them. Everybody in the car. Everybody in my family, not the world. Jesus, Wong. Boundaries.
-Dr Wong: I'm better than this job.
-Jerry' Can't you just make a portal?
+Dr Wong: I'm better than this job. Jerry' Can't you just make a portal?
 Rick: Your children are down there invisible, Jerry. "Make a portal"? Father of the year back here.
 Beth: Well, you're one to talk. You told me I wasn't a clone.
 Rick: Y-You're not a clone.
@@ -131,8 +117,7 @@ Beth: Wow, jaded and hot.
 Rick: I know this is bad parenting, but if you stop fighting, you both get McDonald's.
 Space Beth: How about I just blow my brains out, starting with hers?
 Rick: Okay, Wendy's. We love Wendy's. I-I think they even gave us some money.
-Tammy: Drop it. Don't move!
-Freeze! Get down! On the ground! On the ground! Don't move!
+Tammy: Drop it. Don't move! Freeze! Get down! On the ground! On the ground! Don't move!
 Tammy: Everybody, shut up! You're all saying different shit. Wait, so there are two of them?
 Jerry: More importantly, which one is mine?
 Rick: Uh, neither, chauvinist.
@@ -154,8 +139,7 @@ Morty: It's not "Citizen Kane," but why compete with whatever's going on here, y
 Unh! ( Cracks ) Aah!
 Rick: You made me go to a wedding. And you killed my best friend. I shoulda said that one first.
 Congratulations, Earth, on being destroyed by the NX-5, brought to you by Wrangler. ( Zapping )
-Rick: Ugh, guess the galaxy's most-wanted mammal needs her daddy to come change her diapie. Come on, kids, we have to go do a fucking piece of shit "Star Wars."
-Attention, Zeta 99-2. We know you have a stolen ship. Stand down.
+Rick: Ugh, guess the galaxy's most-wanted mammal needs her daddy to come change her diapie. Come on, kids, we have to go do a fucking piece of shit "Star Wars." Attention, Zeta 99-2. We know you have a stolen ship. Stand down.
 Rick: Oh, am I not a non-threat now?
 ( Splatting, grunting )
 Hey, you are not cleared to land. We will open fire. Hold your ground, men. You'll be heroes. ( Splat! )
@@ -184,15 +168,13 @@ Beth: You're his daughter. Just something about the eyes, the shameless abandonm
 Space Beth: One theory... I was designed by your father to live with myself, which would mean you made a conscious choice to swallow your dreams with cheap wine and dinosaur pasta.
 Beth: You know that's the kind Jerry likes, same way I know the only goddamn dream you'll ever follow is your shitty father's approval.
 Space Beth: You fetch your shitty father's lemonade.
-Beth: You cosplay as your shitty father in his 30s.
-Red alert. Red alert. Rick Sanchez...
+Beth: You cosplay as your shitty father in his 30s. Red alert. Red alert. Rick Sanchez...
 ( Choking )
 Rick: More like dead alert. What else? What else? I wrote some stuff down in my Notes app. Let me just find it. Screw it. Beth, if... if one of you is still alive, you're my real daughter. If you're both alive, don't hurt the other one. She's just a clone. She's not worth it. I'm coming, baby.
 Space Beth: That piece of shit.
 Bath: That piece of shit.
 Space Beth: I came back kill him, you know.
-Beth: I'd like to help.
-Kick me between my eyes.
+Beth: I'd like to help. Kick me between my eyes.
 From here? Oh, you dropped yoga so you could buy Jerry more Flintstones Vitam... ♪ Oh, I do not like the looks of this giant fight chamber. ( Gas hissing ) ( Footsteps thudding ) Bird Person?
 Phoenix Person: It is now Phoenix Person.
 Rick: You're working for them? What did they do to you, BP?
@@ -202,11 +184,9 @@ Phoenix Person: I loved her.
 Rick: Really? Huh. Then can I suggest, as an alternate name, Crazy Pussy Whipped Person?
 Aah! ( Blasting ) Unh! ( Groans ) ( Blast, blow lands ) Aah! ( Ping! ) ( Coughs )
 Rick: It's funny. I always wondered who would win if we ever fought.
-Phoenix Person: Then you were always a bad friend. ( Powering up, blasting )
-Aah!
+Phoenix Person: Then you were always a bad friend. ( Powering up, blasting ) Aah!
 ( Cocks weapon )
-Summer: Morty, we had one grenade. He had a gun. Whatever. Come on.
-Did you hear something? Doesn't matter. If anyone's around, they're here to stop the laser, and they can't do it without us seeing them. "Working together is our belt"?
+Summer: Morty, we had one grenade. He had a gun. Whatever. Come on. Did you hear something? Doesn't matter. If anyone's around, they're here to stop the laser, and they can't do it without us seeing them. "Working together is our belt"?
 Morty: You gave it away!
 Summer: You said we didn't need it. I wish you were never born.
 Morty: You were an accident.
@@ -214,25 +194,19 @@ Morty: You were an accident.
 How come some of the pants are... The NX-5 can't destroy Wrangler jeans. Like, it literally can't destroy them or it's programmed not to? Gee, what do you think? ( Whooshing ) ( Grunting, firing, blows landing ) ♪ ♪ ♪ ♪
 Space Beth: You kill a good bug, for a horse doctor.
 Beth: Thanks, me. Maybe we could do, like, a "Parent Trap" thing together sometime.
-Space Beth: As long as you mean the Lindsay Lohan version. (British accent) Naturally.
-What do you think they do with all those jeans? Make them into jackets? It's not about conserving denim. It's marketing. Like, uh, "The NX-5 destroys the whole planet except for the Wrangler jeans." Because they're so tough. Tougher than the laser? Stupid.
-You're talking about it. Mm, you're right. They... they got me.
-Morty: Hey, over here. Look at me.
-Did you just see a pantsless little boy run by? I'm not falling for that again.
-Morty: I used to be invisible, but now I'm the opposite.
-Get him. But not in a weird way. You made it weird. ♪ ♪ NX-5 corporate sponsor detected. Cannot penetrate Wranglers. Built too tough. Built... too... tough.
+Space Beth: As long as you mean the Lindsay Lohan version. (British accent) Naturally. What do you think they do with all those jeans? Make them into jackets? It's not about conserving denim. It's marketing. Like, uh, "The NX-5 destroys the whole planet except for the Wrangler jeans." Because they're so tough. Tougher than the laser? Stupid. You're talking about it. Mm, you're right. They... they got me.
+Morty: Hey, over here. Look at me. Did you just see a pantsless little boy run by? I'm not falling for that again.
+Morty: I used to be invisible, but now I'm the opposite. Get him. But not in a weird way. You made it weird. ♪ ♪ NX-5 corporate sponsor detected. Cannot penetrate Wranglers. Built too tough. Built... too... tough.
 Morty: I killed them! I-I did... I did it offscreen.
 Summer: God damn it. Morty, fix your underwear. I saw your balls for a second.
 Morty: That's on you.
 Why can't I meet your parents? Are you embarrassed of me? No, of them. Aww. ( Explosion, splatting ) ♪ ♪
 ( Groaning, banging ) ( Electricity crackling ) Unh... ahh! ( Blasting ) ( Groans, entrails splat )
 Rick: Never thought this was how I'd die. ( Slurps ) We're nowhere near Venice, and you're not a dwarf in a raincoat. ( Powering up )
-Space Beth: Step back. You're not killing him till we kick his ass, Bird Person.
-My name is Phoenix Person.
+Space Beth: Step back. You're not killing him till we kick his ass, Bird Person. My name is Phoenix Person.
 No one's calling you that. Dumb. It fascinates me that an entire family can be this critical and suck this much. ( Blasting ) ♪ ♪ Aah! ♪ ♪ Aah!
 "Tammy": Bird Person, stop. It's me, that Tammy girl.
-Phoenix Person: Tammy, this is unexpected. I was told you were dead. That is ab-so-lute-ly not true. I'm more alive than I've ever been.
-You are behaving rather strangely.
+Phoenix Person: Tammy, this is unexpected. I was told you were dead. That is ab-so-lute-ly not true. I'm more alive than I've ever been. You are behaving rather strangely.
 Me? Strange? Oh, my. Well, who's normal, really? Now, come here, you big hollow-boned featherhead. Let me give you some of this sweet ass. ( Jerry yelps ) ( Roaring ) ( Powers down )
 Beth: Saved the day with puppeting. Only one with a decent arc. He does have his moments.
 Summer: Mom, Dad! Mom. Uh, we did it! Morty became super visible!
