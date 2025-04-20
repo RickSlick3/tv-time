@@ -116,6 +116,9 @@ def write_episode_transcript(season, episode_url):
         for ln in merged:
             if ln in ("Transcript[]", "Site navigation[]") or ln.startswith("This article is"):
                 continue
+            elif ln.startswith("Transcript[]"):
+                ln = ln.replace("Transcript[]", "").strip()
+                ln = f'[{ln}]'
             f.write(ln + "\n")
 
 
