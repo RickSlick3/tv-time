@@ -114,8 +114,9 @@ def write_episode_transcript(season, episode_url):
 
     with open(output_path, "w", encoding="utf-8") as f:
         for ln in merged:
-            if ln not in ["Transcript[]", "Site navigation[]"]:
-                f.write(ln + "\n")
+            if ln in ("Transcript[]", "Site navigation[]") or ln.startswith("This article is"):
+                continue
+            f.write(ln + "\n")
 
 
 # loop through dictionary of all links and call write_episode_transcript for each episode
@@ -214,4 +215,4 @@ if __name__ == "__main__":
     }
 
     loop_through_episodes(all_episode_links)
-    # write_episode_transcript(3, 'https://rickandmorty.fandom.com/wiki/The_ABC%27s_of_Beth/Transcript')
+    # write_episode_transcript(1, 'https://rickandmorty.fandom.com/wiki/Rixty_Minutes/Transcript')
