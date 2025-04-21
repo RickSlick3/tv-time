@@ -26,7 +26,7 @@ Morty: Man. Glad I’m not one of them!
 (Morty fixes his scuba gear and runs through the portal after Rick.)
 [Trans. Ext. Citadel of Ricks]
 (“In the City” by Joe Walsh plays)
-[Title: Rick and Morty/Tales from the Citadel]
+[Title - Rick and Morty/Tales from the Citadel]
 [Trans. Int. Citadel]
 (We’re shown a montage. The Citadel, still undergoing construction after the damages from the events of “The Rickshank Rickdemption”, is full of damaged buildings and roadways. Cars, both flying and standard, are traveling.)
 (A large crowd of Ricks with Mortys interspersed throughout walks down a street.)
@@ -40,7 +40,7 @@ Morty: Man. Glad I’m not one of them!
 (Many Ricks are commuting to work. They all pull out flasks and take a drink at the same time. Rick J-22 looks out the window and sees a wealthy Rick in a flying car, enjoying sardines and champaign. He sighs.)
 (Music fades out)
 [Trans. Citadel Morning News]
-Rick (voiceover): Citadel Morning News: News about the Citadel in the morning. Pretty self explanatory.
+Rick (voiceover): Citadel Morning News - News about the Citadel in the morning. Pretty self explanatory.
 [Int. News room]
 (Rick 0716 and Rick 0716-B anchor at the desk.)
 Rick D716-B: Good morning. I’m Rick D716-B.
@@ -84,7 +84,7 @@ Campaign Manager Morty: You don’t pay me to have faith! And we’re the same a
 [Trans. Morty Pride Parade]
 (A parade of Mortys marches down the street. Many Mortys hold signs. There are a few Ricks among the spectators. Cop Rick watches from outside Cafe Sanchez, drinking a coffee. A police cruiser pulls up, nearly hitting two Mortys who run out of the way just in time. It stops in front of Cop Rick and the passenger window rolls down, revealing Cop Morty behind the wheel.)
 Cop Rick: Oh! S-sorry, I was expecting--
-Cop Morty: A Rick partner? Lesson one, rookie: expect the unexpected. Now get in.
+Cop Morty: A Rick partner? Lesson one, rookie - expect the unexpected. Now get in.
 (Cop Rick climbs into the passenger seat. Cop Morty starts the cruiser and drives slowly as they approach a cluster of Mortys. One Morty jumps against the hood of the car.)
 Morty: Mortys are human!
 Cop Morty: Get the fuck off the car, you Rickless fuckin’ animal! (He pulls a lever and the car sends a taser shock through Morty, who falls aside.)
@@ -197,7 +197,7 @@ Candidate Morty: The Citadel’s problem is the Ricks and Mortys feeding on the 
 Rick J-22: Holy shit. (As the alarm rings, he runs out of the office and enters the Flavor Core chamber.)
 Rick Worker: He's headed for the Flavor Core!
 (Rick J-22 puts the chamber on lockdown and activates a red force field-like barrier around the chamber. He then encounters Simple Rick in front of him, slumping down on the floor.)
-Candidate Morty: But I’ve got a message for them, from the Ricks and Mortys keeping it alive. A message… from the Ricks and Mortys that believe in this Citadel to the Ricks and Mortys that don’t: you are outnumbered!
+Candidate Morty: But I’ve got a message for them, from the Ricks and Mortys keeping it alive. A message… from the Ricks and Mortys that believe in this Citadel to the Ricks and Mortys that don’t - you are outnumbered!
 (Debate audience bursts into applause.)
 [Int. Backstage]
 Campaign Manager Morty: Holy shit. (Candidate Morty walks backstage.) I don’t believe it! I-I can’t believe it!
@@ -336,7 +336,7 @@ Big Morty: I never was! It was figurative! *Cop Rick aims at Cop Morty*
 Cop Rick: That's enough!
 Cop Morty: If we don't kill him, he'll talk!
 Cop Rick: If you do, I'll talk. *Cowboy Morty talks out to the group by the strip pole*
-Cowboy Morty: One thing's for sure: y-y'all don't have to worry about Cowboy Morty talkin'! This little cowpoke's gonna mosey up on outta here! *walks away, Cop Rick turns to Cop Morty*
+Cowboy Morty: One thing's for sure - y-y'all don't have to worry about Cowboy Morty talkin'! This little cowpoke's gonna mosey up on outta here! *walks away, Cop Rick turns to Cop Morty*
 Cop Rick: You told me to put my faith in the right Morty. I got faith in you, partner. Do the right thing. *Cop Morty pauses for a beat, starts crying tears down his face*
 Cop Morty: Oh, Grandpa Rick! I don't wanna be on the Citadel anymore! I want to be a regular kid! I want to go to school and throw balls around and masturbate!
 (Cop Rick lowers his laser gun down for a beat. Cop Morty shoots Big Morty's head and Cop Rick shoots Cop Morty's head immediately before he had a chance to shoot.)

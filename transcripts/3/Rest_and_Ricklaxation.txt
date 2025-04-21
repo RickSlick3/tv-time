@@ -12,7 +12,7 @@ Morty: You said I could go to school today.
 Rick: That was before I needed something, Morty. There’s a plasma shard in the Abadango Cluster. A princess has it. If I get it, I’ll be awesome.
 Morty: We’ve been going non-stop, Rick. It’s not healthy. You know, these are my teenage years. I-I just found out Jessica’s single.
 Rick: Oh, that’s Wow, Morty. Wow. What an exciting life you lead. (shoots portal) Let’s go. In and out, 20 minutes adventure.
-[Timecard: six days later. Cut to Rick and Morty inside a space cruiser in unkempt and fatigued condition with Morty in the wheel and Rick holding wires]
+[Timecard - six days later. Cut to Rick and Morty inside a space cruiser in unkempt and fatigued condition with Morty in the wheel and Rick holding wires]
 Morty: They’re on our tail!
 Rick: Steady, Morty. Five cetons.
 [The two enters a mothership, while Rick pulls a wire and the ship slows down] Steady, God damn it! Two cetons.
@@ -49,7 +49,7 @@ Rick: Oof, this guy on commission or something?
 Morty: I don’t think. Are you on commission?
 Alien: We’re not on (gurgle) commission. We get (gurgle) paid by the hour. There’s no incentive really-
 Rick: (Annoyed) Oh, my god. Okay, listen. W-W-W-We’ll try the machine, but but I’d like you to try something. Try swallowing the giant ball of snot that’s dangling around in the back of your throat. (Throws drink on the ground while getting in the aliens face) It’s disgusting. Nobody wants to hear that. Ahem. Ahem! That’s what you do.
-Morty: (Grabs Rick by the arm and drags him into the room): Okay, Rick, come on. Enough.
+Morty: (Grabs Rick by the arm and drags him into the room) - Okay, Rick, come on. Enough.
 (Rick and Morty both sit on the seats as the doors close)
 Rick: Wow, did you hear me bite that guy's head off? Geez, I really need to chill.
 Morty: Maybe you should go through twice.
@@ -130,7 +130,7 @@ Bully: You might have all these idiots fooled, but I know you’re still the sam
 (Students celebrate and walk away.)
 Jessica: Hey, Morty. Word around school is you’ve become super healthy.
 Morty: I don’t know about all that. I do, however, know that I have a pretty bad case of haven’t taken you to dinner-itis. Might be fatal. Hahaha!
-Rick: (Walks up to Morty and Jessica): Hey, kids. Uh, hope I’m not interrupting. Morty, a moment of your time?
+Rick: (Walks up to Morty and Jessica) - Hey, kids. Uh, hope I’m not interrupting. Morty, a moment of your time?
 Morty: Happy to help, Rick.
 (Scene cuts to the car park outside the school.)
 Rick: I hate to bug you with this, but after our morning hike I started receiving very faint, highly unusual transmissions on my sub ether phone. Listen.

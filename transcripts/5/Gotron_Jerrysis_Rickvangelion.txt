@@ -127,7 +127,7 @@ Morty 1: Did you walk on the beach?
 Morty 2: The beach that's all boobs?
 Morty 1: No, the beach that's all sand. Yes, the boob one!
 Morty voiceover: Rick was in the garage with the heads of the five families. ...Ugh, and Summer.
-Summer voiceover: In that first sit-down, it was Big Fat Rick; Ricardo Montoya; Hothead Rick, he got that name because he was prone to dramatic outbursts; and Little Ricky Wrap-it-up, who was always great at the end of a meeting. At the head of it all: me, and Grandpa Rick.
+Summer voiceover: In that first sit-down, it was Big Fat Rick; Ricardo Montoya; Hothead Rick, he got that name because he was prone to dramatic outbursts; and Little Ricky Wrap-it-up, who was always great at the end of a meeting. At the head of it all - me, and Grandpa Rick.
 Big Fat Rick: Eh, don't get me wrong, C-137. We're happy for your good fortune, but we did not travel to your universe just to have it rubbed in our faces.
 Rick: C'mon, Big Fat Rick, you know your face is too small to rub anything on.
 Big Fat Rick: My face is the same size as yours.
@@ -403,7 +403,7 @@ Morty voiceover: And just like that, I knew our goose was as cooked as —
 (Rick shoots the Voiceovarians)
 Rick: Voiceovarians. Eugh.
 (Credits)
-(Post-credit scene: Somatski (???) enters the bug meeting room)
+(Post-credit scene - Somatski (???) enters the bug meeting room)
 Sergeant: Somatski, you're late!
 Somatski: Won't happen again! Sir!
 (Other bugs laugh)

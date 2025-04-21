@@ -1,4 +1,4 @@
-[Open: Smith kitchen, int. Rick, Jerry, Beth are eating breakfast. Rick is building a robot at the table. Jerry is playing Jerry’s Game]
+[Open - Smith kitchen, int. Rick, Jerry, Beth are eating breakfast. Rick is building a robot at the table. Jerry is playing Jerry’s Game]
 (Rick starts welding. The bulk of the sparks fly towards Jerry, who turns away to dodge the bulk of them. Morty enters the room)
 Morty: Hey Rick, I have to make a project for the science fair this weekend. You think you could help me out?
 Rick: Whatever.
@@ -37,7 +37,7 @@ Needful: I’ve just recently opened for business, Mr, um, Goldenfold.
 Goldenfold: You know my name? That’s disarming.
 Needful: I also know you long for female company.
 Goldenfold: You know, it has been lonely since the divorce. Some voids can’t be filled with jamba juice.
-Needful: This aftershave makes a man quite irresistible to women. Free of charge: one never pays here. Not with money.
+Needful: This aftershave makes a man quite irresistible to women. Free of charge - one never pays here. Not with money.
 Goldenfold: Nothing to read into there! Thanks!
 (Goldenfold takes the aftershave and leaves. Rick and Summer enter)
 Summer: Sorry I’m late, Mr. Needful. This is my grandpa Rick, he was just leaving.
@@ -375,5 +375,5 @@ Summer: Yeah bro!
 Rick: Hahaha!
 Summer: Yeah.
 [Credits]
-[Post credits scene: X Gon’ Give It To Ya starts playing. Rick and Summer beat up a nazi wearing suspenders, a schoolyard bully, a man holding a “God hates fags!” sign and a man walking his dog who yanks its collar hard when it tries to stop]
+[Post credits scene - X Gon’ Give It To Ya starts playing. Rick and Summer beat up a nazi wearing suspenders, a schoolyard bully, a man holding a “God hates fags!” sign and a man walking his dog who yanks its collar hard when it tries to stop]
 [End]

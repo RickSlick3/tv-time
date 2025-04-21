@@ -1,4 +1,3 @@
-[‎Open Ext. Rick's Ship in flying through a planet's rings]
 (Morty is in the backseat, Summer is in the starboard seat, Rick is driving)
 All: (singing) Love. Connection. Experience.
 (Morty claps)
@@ -70,7 +69,7 @@ Jerry: That is a hatch! Your father put a hatch in my garage!
 Beth: You don't know it was him! [pauses] Anyway, we’re not supposed to be in here!
 Jerry: Obviously, neither is whatever's gurgling down there.
 (Gurgling)
-[Trans. to Unity’s planet: Rick is approaching a news stand]
+[Trans. to Unity’s planet - Rick is approaching a news stand]
 Rick: World peace achieved. Nice! A little weird to publish a paper about it for yourself, but hey. So what's next?
 Unity (Newsagent): After I become a type-one civilisation, this world will be invited into the Galactic Federation.
 Rick: Oh, goody.
@@ -102,7 +101,7 @@ Unity (Clown): Now's... not a good time.
 [Trans. to Rick in a hang glider and Uncle Sam costume, flying towards a stadium]
 Rick: Oh yeah! I want youuuuuu!
 Unity (Stadium): Go son go! Go son go! Go son go!
-[Trans. to Earth: Jerry and Beth are looking down the hatch, which is open]
+[Trans. to Earth - Jerry and Beth are looking down the hatch, which is open]
 Jerry: Oh! Real nice! Real nice! How does a man do this without me noticing?
 Beth: Oh, you know my dad. Once he puts his mind to something...
 Jerry: You're spinning this to his credit?
@@ -260,7 +259,7 @@ Rick: Oh, gee, boy Summer, well put. Uh, why don't we see what Unity thinks. Uni
 Unity (Shades guy): I'm just taking a little break from stuff. You know? I need to relax.
 Rick: Oh, hey, wh-what's this on the news, guys? L-l-let me turn it up.
 Unity (Todd): In the news today, this looks a lot worse than it is. We’re... really just having a good time. Karen?
-Unity (Karen): Thanks, Todd. Up next: Are you a concerned grandchild or just a buzzkill? We'll tell you how you can really know for sure!
+Unity (Karen): Thanks, Todd. Up next - Are you a concerned grandchild or just a buzzkill? We'll tell you how you can really know for sure!
 Rick: I think you two are a little outnumbered.
 Summer: Okay! Well, what if you did it for me? What if you came with us as a favour to us... because you love us?
 Rick: What? Dumb. Bye.
@@ -288,7 +287,7 @@ Beth: Oh my god!
 (Both back away. Jerry puts his arm protectively in front of Beth. Blim Blam moves past them and breaks into a cabinet, before pulling out an object and pointing it at the two like a gun)
 Beth and Jerry: Aah!
 (Blim Blam pushes the object into his neck)
-Blim Blam: Um, first of all, hello. Uh, my name is Blim Blam the korblok. Second of all, cards on the table: I am a murderer that eats babies and I came to this planet to eat babies. However, I am also carrying a highly infectious disease, that I suppose you could call ‘space aids’ as you put it, and Rick did chain me up so that he could attempt to cure it. At the same time, Rick's motivation to cure my disease was not to save my life or anyone else's, but to patent and sell the cure for billions of blemflarks. But you know the reason why I ripped my chains out of the wall? And do you know why I'm never coming back to this planet? Because the two of you are the fucking worst! You both hate yourselves and each other! And the idea that it has anything to do with Rick is laughable! I'd laugh but I'm biologically incapable, that's how alien I am! And even I'm sitting here listening to the two of you, and being like, what the fuck?!? So! Good luck with your shitty marriage, and I'm sorry that Rick has to deal with either of you. Blim Blam, out!
+Blim Blam: Um, first of all, hello. Uh, my name is Blim Blam the korblok. Second of all, cards on the table - I am a murderer that eats babies and I came to this planet to eat babies. However, I am also carrying a highly infectious disease, that I suppose you could call ‘space aids’ as you put it, and Rick did chain me up so that he could attempt to cure it. At the same time, Rick's motivation to cure my disease was not to save my life or anyone else's, but to patent and sell the cure for billions of blemflarks. But you know the reason why I ripped my chains out of the wall? And do you know why I'm never coming back to this planet? Because the two of you are the fucking worst! You both hate yourselves and each other! And the idea that it has anything to do with Rick is laughable! I'd laugh but I'm biologically incapable, that's how alien I am! And even I'm sitting here listening to the two of you, and being like, what the fuck?!? So! Good luck with your shitty marriage, and I'm sorry that Rick has to deal with either of you. Blim Blam, out!
 (He drops the translator and leaves, but quickly rushes back to pick it up again)
 Blim Blam: You know what? I'm taking this.
 (Trans. to garage. Summer and Morty have returned. Blim Blam pushes at the garage door but can’t open it)
@@ -322,7 +321,7 @@ Summer: Grandpa Rick! What happened... with Unity?
 Rick: Who? Oh. Unity. Yeah, well, I mean honestly we’re talking about an entity that thrives on enslavement, you know. It's not cool. Fun's fun but who needs it? I'll be in the garage.
 (“Do you feel it?” by Chaos Chaos starts playing in the background. Rick enters the garage, looking depressed, and drains his flask before throwing it away. Then he pulls out two bulbs and puts together a metal contraption on the desk. He pulls a frozen alien creature out of the drawers and brings it to life with a flask of chemicals, strokes it while it shrieks helplessly, and drinks the rest of the chemicals. He puts one of the bulbs into the contraption and sticks the alien under it, disintegrating it with a blast of energy, then replaces the bulb and repeats the process with his own head. At the last second, he falls unconscious, dodging the killing blast. The screen zooms out through the open garage door, showing Rick slumped still on the desk through the night and into the morning, even as Jerry shows up, happily weeding the garden and the driveway without noticing Rick.)
 [Credits]
-[After Credits scene: Rick’s spaceship is outside Beta-7’s main ship. Rick is driving, with Morty in the passenger seat]
+[After Credits scene - Rick’s spaceship is outside Beta-7’s main ship. Rick is driving, with Morty in the passenger seat]
 Rick: Unity! Unity! Unity!
 (A transmission comes in from Beta-7)
 Beta-7: How can I assist you?
@@ -335,8 +334,6 @@ Beta-7: Weapons systems engaged.
 Rick: Oh, in your dreams you have weapons systems.
 Morty: Ugh, Rick, you said we were going to a movie.
 Rick: We are, Morty. Alright, Beta-shit-7, you just got saved by the bell, bitch!
-[Episode end]
-Quote[]
+[Episode end] Quote[]
 Rick: "They're no different from any of the aimless chumps that you occupy, they just put you at the center of their lives because you're powerful, then because they put you there they want you to be less powerful. Never gonna happen though, right?"
-Unity: "Never."
-Unity's Note[] "Rick, forgive me for doing this in notes, I'm not strong enough to do it in persons, I realize now that I am attracted to you for the same reason I cant be with you. You can't change and I have no problem with that but it clearly means, I have a problem with myself. I'm sure there's no perfect version of me Im sure I'll just unify species after species and never be complete. But I know how it goes with us, I lose who I am and become part of you. As in a strange way your better at what I do without even trying, yours and nobody else's. Unity PS. I don't know what those coal miners was before I assimilated, you might want to get checked."
+Unity: "Never." Unity's Note[] "Rick, forgive me for doing this in notes, I'm not strong enough to do it in persons, I realize now that I am attracted to you for the same reason I cant be with you. You can't change and I have no problem with that but it clearly means, I have a problem with myself. I'm sure there's no perfect version of me Im sure I'll just unify species after species and never be complete. But I know how it goes with us, I lose who I am and become part of you. As in a strange way your better at what I do without even trying, yours and nobody else's. Unity PS. I don't know what those coal miners was before I assimilated, you might want to get checked."

@@ -37,7 +37,7 @@ Rick: Can't afford to chance it.
 Beth: Dad, why does our house have blast shields?
 Rick: Trust me, Beth, you don't wanna know how many answers that question has.
 Mr Poopybutthole: Ooh, gosh, it feels claustrophobic! Reminds me of that time we all got stuck in the elevator together. Y-- remember that? After the Hulk musical?
-(Flashback: The family is stuck in an elevator. Jerry is wearing Hulk gloves and punching the elevator buttons. Morty is holding his crotch trying not to pee himself.)
+(Flashback - The family is stuck in an elevator. Jerry is wearing Hulk gloves and punching the elevator buttons. Morty is holding his crotch trying not to pee himself.)
 Beth: Jerry, buttons don't work better if you hit them harder, and foam fists don't make you strong.
 Jerry: I know. Friends make you strong. I watched the same musical you did.
 Rick: Why couldn't I bring my portal gun?
@@ -59,7 +59,7 @@ Beth: But how did you know it was Nicky?
 Rick: I guessed. That's why I aimed for his shoulder.
 Beth: So we can't trust any of our memories now? Nicky was the reason we found that old nazi submarine. Did that not even happen?
 Jerry: Well, of course it happened.
-(Flashback: Morty, Rick, Jerry, Beth and Nicky are tied up, a Nazi stands before them)
+(Flashback - Morty, Rick, Jerry, Beth and Nicky are tied up, a Nazi stands before them)
 Nazi: Now that I possess the mighty staff of Rah-gubaba, the world will tremble before the Fourth Reich!
 Morty: This is the last time I ask you for help on my history final, Rick.
 Nicky: Hey, we got a word for Nazis back in Brooklyn, pal.
@@ -73,17 +73,17 @@ Mr. Beauregard: Perhaps I'm biased, but if that story never happened, then I wou
 Rick: Wait.
 Summer: And if Mr. Beauregard wasn't our butler, it's safe to say the family'd be in a hell of a lot of trouble. ( laughter )
 Rick: No! Don't flashback!
-(Flashback: Jerry has his head stuck in the staircase railing)
+(Flashback - Jerry has his head stuck in the staircase railing)
 Summer: You're just gonna make more swelling.
 Beth: Don't worry, Jerry. Just relax. We called the fire department.
 Jerry: You know they won't come here anymore. ( grunting )
 (Mr. Beauregard pours marmalade on Jerry and his head slips out, all gasp )
 Mr. Beauregard: Marmalade is served. (everybody cheers)
 Frankenstein: I guess I take back what I said about British cuisine. ( laughter )
-(Flashback: Rick, Summer, and Mr. Beauregard are having a pillow fight)
+(Flashback - Rick, Summer, and Mr. Beauregard are having a pillow fight)
 Rick: Take that!
 Sleepy Gary: We're trying to sleep.
-(Flashback: Morty is in the living room with Beth, Jerry, and Sleepy Gary)
+(Flashback - Morty is in the living room with Beth, Jerry, and Sleepy Gary)
 Morty: I don't want to go to the dance alone.
 Mr. Beauregard (Off-screen): Then perhaps, you shouldn't.
 (Mr. Beauregard appears, in a dress)
@@ -107,12 +107,11 @@ Beth: That's it. Photos. Hard evidence. (Beth scrolls through photos, becomes su
 Mr. Poopybutthole: Well, what do you know about this? You're not in any of mine.
 Summer: All I have are pictures of me and my friends from school. (everybody else stares at Summer) What? What teenage girl has pictures of her family? It's not like we're Mormon or dying.
 Frankenstein: I will admit it's suspicious that Summer's only friend is a magic ballerina lamb that we've never seen.
-(Summer flashes back: Summer is asleep in her room and Tinkles flies in.)
+(Summer flashes back - Summer is asleep in her room and Tinkles flies in.)
 Tinkles: Summer!
 Summer: Tinkles! It's past my bedtime.
 Tinkles: ( giggles ) Not in never past bedtime land! Here we go!
-(Tinkles grabs Summer's hand and they fly out the window. A musical montage begins.)
-♪ Summer and Tinkles ♪ ♪ friends with each other ♪ ♪ living in never past bedtime land ♪ ♪ no kitchen sinkles ♪ ♪ no little brother ♪ ♪ going to raves and waving our hands ♪ (Rapper rapping ) ♪ Summer and Tinkles, friends to the end ♪ ♪ group text the whole crew, my motherfuckin' friends! ♪ ♪ ketchup to the salt, salt to the fry ♪ ♪ "t" to the "inkle" with a capital "I" ♪
+(Tinkles grabs Summer's hand and they fly out the window. A musical montage begins.) ♪ Summer and Tinkles ♪ ♪ friends with each other ♪ ♪ living in never past bedtime land ♪ ♪ no kitchen sinkles ♪ ♪ no little brother ♪ ♪ going to raves and waving our hands ♪ (Rapper rapping ) ♪ Summer and Tinkles, friends to the end ♪ ♪ group text the whole crew, my motherfuckin' friends! ♪ ♪ ketchup to the salt, salt to the fry ♪ ♪ "t" to the "inkle" with a capital "I" ♪
 (Scene cut's back to Summer's bedroom, revealing that she was only dreaming)
 Summer: Ooh! Ooh! Ooh! Ooh! Ooh! Ooh! Ooh!
 Gary: Summer, we're trying to sleep.
@@ -158,7 +157,7 @@ Jerry: Sleepy Gary, m-my head is filled with memories of our friendship. I'm con
 Sleepy Gary: Jerry, just say it.
 Jerry: Sleepy Gary, how do we know I'm real?
 Sleepy Gary: Jesus, Jerry. No, you're real. Hey, look at me. Now, I don't know which way is up out there, but I know us, and you're real, Jerry. Remember our vacation?
-(Jerry flashes back: Jerry and Gary are relaxing on a boat on the coast during a sunset.)
+(Jerry flashes back - Jerry and Gary are relaxing on a boat on the coast during a sunset.)
 Gary: They're filming that new Star Wars movie down the coast. Should we check it out?
 Jerry: Sure. Why not?
 (Gary drinks, Jerry drops his bottle. Both he and Gary reach for it and their hands meet. They look into each other's eyes.)
@@ -173,7 +172,7 @@ Jerry: Okay. Hey, we agreed. Never in the house.
 Frankenstein: That's a cool watch there, Rick. Can I check it out?
 Rick: Uh, no thank -- ( grunts ) Okay. Trying to figure out how to lower the blast shields, huh? Anybody here think it's suspicious that a lot of people in here can't wait to get out of here?
 Frankenstein: Ah, you're paranoid, Rick. You've been paranoid since 'nam.
-(Rick flashes back: Rick and Frankenstein are in Vietnam)
+(Rick flashes back - Rick and Frankenstein are in Vietnam)
 Rick: So, what are you gonna do when you rotate back to the world, Frankenstein?
 Frankenstein: Shi-i-i-i-t. I'mma bust a -- ( cut back to the present, Rick grunts )
 Rick: No! Get out of my head, parasite! No! Drop it. Give me the gun, Frankenstein! ( indistinct shouting ) Give it back!
@@ -187,13 +186,13 @@ Reverse Giraffe: And Beth, how many times have I been a shoulder for you to cry 
 Beth: ( sighs ) Too many.
 Reverse Giraffe: Okay, so maybe we're just all fake.
 Mrs. Refrigerator: That don't make no sense!
-Reverse: Giraffe: Or maybe, there's only one deceiver here -- The person that keeps telling us the path to salvation is being held prisoner and mistrusting each other.
+Reverse: Giraffe - Or maybe, there's only one deceiver here -- The person that keeps telling us the path to salvation is being held prisoner and mistrusting each other.
 Rick: Hey, don't blame me! I tried to shoot Summer 10 minutes ago!
 Reverse Giraffe: I know we all have beloved memories of Rick, but are we really supposed to believe that a mad scientist inventor with a flying car just showed up on our doorstep after being gone for years?
 Morty: Yeah, you know, he does have a lot of really weird, made-up sounding catchphrases.
 (Flashback)
 Rick: Wubba lubba dub dub! Ricky ticky tavi, beyotch! And that's the wa-a-a-a-y the news goes. Hit the sack, jack. Uh-oh! Somersault jump. Aids! And that's why I always say shum shum shlippedy dop! Grassss tastes bad-ah. No jumpin' in the sewer. Burger time! Rubber baby baby bunkers! Lick, lick, lick my balls! ( laughs ) yeah! Say that all the time.
-(cut back to the present) All: ( muttering ) That's a fake-ass catchphrase right there.
+(cut back to the present) All - ( muttering ) That's a fake-ass catchphrase right there.
 Beth: And don't forget his incredibly vague back story.
 Rick: Beth, I'm your father!
 Beth: Oh, are you, dad? Are you?
@@ -225,13 +224,13 @@ Beth: Uh, roller coasters aren't bad, Mrs. Refrigerator. They're thrilling. And 
 Mrs Refrigerator: The jig is up! ( whimpering ) get me out of here. Get me out of here! Aah! ( screeching ) ( all gasping ) Oh, shit!
 Rick: Everybody back! If you're not a parasite, you have nothing to fear. What about Summer?
 Summer: Why am I always your go-to?
-(Morty flashes back: Morty is hosing the backyard. Summer comes outside behind Morty and kicks him between the legs. Morty grabs his crotch and falls over in pain.)
+(Morty flashes back - Morty is hosing the backyard. Summer comes outside behind Morty and kicks him between the legs. Morty grabs his crotch and falls over in pain.)
 Summer: Never go in my room again.
 Morty: I didn't!
 (Cut back to the present)
 Morty: She's real. She's my bitch of a sister.
 Summer: Nice.
-(Summer flashes back: Summer walks into her parents' room wearing a dress and earrings with her hair done.)
+(Summer flashes back - Summer walks into her parents' room wearing a dress and earrings with her hair done.)
 Summer: Mom, are you driving me to --
 (Summer sees that Beth is lying on the bed, drunk and holding a bottle of wine.)
 Beth: Hmm? Yeah, yeah, yes. What time?
@@ -255,7 +254,7 @@ Rick: You're right. (To Morty) Kill Pencilvester.
 (Morty shoots Pencilvester, parasite screeches ) (Summer shoots Frankenstein, parasite screeches ) (Summer shooting, parasites screeching )
 Tinkles: Summer, I've always loved you!
 Summer: Yep. (Shoots Tinkles, parasite screeches ) ( all gasp, Summer shoots ) ( more screeching ) (Morty shouts)
-(Summer flashes back: Summer walks into the kitchen and turns on the light, and sees Morty masturbating.)
+(Summer flashes back - Summer walks into the kitchen and turns on the light, and sees Morty masturbating.)
 Summer: Oh, my god!
 Morty: I-I-I thought you went to a concert!
 Summer: We forgot the tickets! Why in the kitchen?!
@@ -271,7 +270,7 @@ Rick: Thanks, ghost in a jar. You always were good at pointing out potentially o
 Jerry: You got to hide me, Sleepy Gary.
 Sleepy Gary: Don't worry. I have a plan. If we can get to my boat, there's a -- (Beth shoots Sleepy Gary, Gary slowly turns back into a parasite, screeches )
 Jerry: No. No! Send me to Gary. I want to be with Gary.
-(Beth flashes back: Jerry and Beth are running from a homeless man toward their car. Jerry makes it to the car first, gets in and locks the doors. Beth is holding groceries and tries to open the locked car door.)
+(Beth flashes back - Jerry and Beth are running from a homeless man toward their car. Jerry makes it to the car first, gets in and locks the doors. Beth is holding groceries and tries to open the locked car door.)
 Beth: Whoa. What the hell?
 Jerry: Look out for that homeless guy!
 Beth: Open the door! Open the door! Open the door!
