@@ -12,7 +12,7 @@ def run_all_text_to_csv_files():
         season: {
             "lines": Counter(),
             "words": Counter(),
-            "episodes": Counter(),
+            "eps": Counter(),
         }
         for season in seasons_to_process
     }
@@ -51,7 +51,7 @@ def run_all_text_to_csv_files():
                                 # update the counts for characters episode appearances
                                 if clean_name not in seen_in_this_file:
                                     seen_in_this_file.add(clean_name)
-                                    season_counts[season]["episodes"][clean_name] += 1
+                                    season_counts[season]["eps"][clean_name] += 1
     
     # Build a sorted list of every character ever seen
     all_characters = set()
@@ -61,26 +61,26 @@ def run_all_text_to_csv_files():
     # Build CSV header (per-season + totals)
     fieldnames = (["name"]
         + [f"s{st}_{m}" for st in sorted(seasons_to_process, key=int)
-                    for m in ("lines","words","episodes")]
-        + ["all_lines", "all_words", "all_episodes"]
+                    for m in ("lines","words","eps")]
+        + ["all_lines", "all_words", "all_eps"]
     )
 
     # Write one row per character, filling 0 if missing
-    with open("data.csv", "w", newline="", encoding="utf-8") as csvfile:
+    with open("./docs/data/data.csv", "w", newline="", encoding="utf-8") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
         for character in sorted(all_characters):
             row = {"name": character}
             for season in sorted(seasons_to_process, key=int):
-                for metric in ("lines", "words", "episodes"):
+                for metric in ("lines", "words", "eps"):
                     col = f"s{season}_{metric}"
                     row[col] = season_counts[season][metric].get(character, 0)
 
                 # totals across all seasons
                 row["all_lines"] = sum(season_counts[s]["lines"].get(character,0) for s in seasons_to_process)
                 row["all_words"] = sum(season_counts[s]["words"].get(character,0) for s in seasons_to_process)
-                row["all_episodes"] = sum(season_counts[s]["episodes"].get(character,0) for s in seasons_to_process)
+                row["all_eps"] = sum(season_counts[s]["eps"].get(character,0) for s in seasons_to_process)
             writer.writerow(row)
 
 
