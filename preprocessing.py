@@ -2,6 +2,7 @@ import os
 import re
 import csv
 from collections import Counter
+from itertools import islice
 
 TRANSCRIPTS_DIR = "./transcripts"
 SEASONS_TO_PROCESS = {"1", "2", "3"}
@@ -148,7 +149,72 @@ def main_character_stats_per_episode():
             writer.writerow(row)
 
 
+def get_character_stats(character, n_phrase=2, top_n=10, output_csv="frequent_words.csv"):
+    """
+    Loops through all transcript files in `transcripts_dir`/season for each season in `seasons`,
+    aggregates word- and n_phrase-gram counts for `character`, then writes out the top_n
+    words and top_n phrases to output_csv with columns [type, text, count].
+    """
+
+    # 1) Prepare your counters
+    word_counts   = Counter()
+    phrase_counts = Counter()
+
+    # 2) Walk every file in each season
+    for season in SEASONS_TO_PROCESS:
+        season_dir = os.path.join(TRANSCRIPTS_DIR, season)
+        if not os.path.isdir(season_dir):
+            continue
+
+        for fname in os.listdir(season_dir):
+            fpath = os.path.join(season_dir, fname)
+            if not os.path.isfile(fpath):
+                continue
+
+            with open(fpath, "r", encoding="utf-8") as f:
+                for line in f:
+                    if ":" not in line:
+                        continue
+                    name, utterance = line.split(":", 1)
+                    if name.strip().lower() != character:
+                        continue
+
+                    # 3) Clean the text: drop (…), […], quotes, punctuation, lowercase
+                    txt = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\']+', "", utterance)
+                    txt = re.sub(r'[^\w\s]', "", txt).lower().strip()
+
+                    # 4) Tokenize & update counters
+                    tokens = txt.split()
+                    word_counts.update(tokens)
+
+                    for i in range(len(tokens) - n_phrase + 1):
+                        gram = " ".join(tokens[i : i + n_phrase])
+                        phrase_counts[gram] += 1
+
+    # 5) Grab the most common
+    top_words   = word_counts.most_common(top_n)
+    top_phrases = phrase_counts.most_common(top_n)
+
+    # 6) Write out a single CSV:
+    #    Columns are: type (word|phrase), text, count
+    with open(output_csv, "w", newline="", encoding="utf-8") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["type", "text", "count"])
+
+        for w, cnt in top_words:
+            writer.writerow(["word", w, cnt])
+        for p, cnt in top_phrases:
+            writer.writerow(["phrase", p, cnt])
+
+
 if __name__ == "__main__":
     # create csv files with specific data 
     character_stats_per_season()
     main_character_stats_per_episode()
+
+    get_character_stats(
+        character="morty",
+        n_phrase=4,
+        top_n=10,
+        output_csv="./docs/data/morty_top_words_and_phrases.csv"
+    )
