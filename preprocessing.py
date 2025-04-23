@@ -102,12 +102,11 @@ def main_character_stats_per_episode():
                 continue
 
             # create a simple key (e.g. "S1_Ep1.txt") or just the filename
-            file_key = f"{season}_{fn}"
+            file_key = f"{season}_{fn}".replace(".txt", "")
             file_order.append(file_key)
             file_counts[file_key] = {
                 "lines":    Counter(),
                 "words":    Counter(),
-                "episodes": Counter(),
             }
 
             seen_in_file = set()
@@ -129,16 +128,11 @@ def main_character_stats_per_episode():
                     words = line.split(":",1)[1].split()
                     file_counts[file_key]["words"][name] += len(words)
 
-                    # count one episode appearance
-                    if name not in seen_in_file:
-                        seen_in_file.add(name)
-                        file_counts[file_key]["episodes"][name] += 1
-
     # 3) Write out the per-file CSV
     fieldnames = ["name"] + [
         f"{fk}_{metric}"
         for fk in file_order
-        for metric in ("lines","words","episodes")
+        for metric in ("lines","words")
     ]
 
     with open("./docs/data/main_characters_per_episode.csv", "w", newline="", encoding="utf-8") as csvfile:
@@ -148,7 +142,7 @@ def main_character_stats_per_episode():
         for char in sorted(main_characters):
             row = {"name": char}
             for fk in file_order:
-                for metric in ("lines","words","episodes"):
+                for metric in ("lines","words"):
                     col = f"{fk}_{metric}"
                     row[col] = file_counts[fk][metric].get(char, 0)
             writer.writerow(row)
