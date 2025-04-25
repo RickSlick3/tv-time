@@ -149,72 +149,99 @@ def main_character_stats_per_episode():
             writer.writerow(row)
 
 
-def get_character_stats(character, n_phrase=2, top_n=10, output_csv="frequent_words.csv"):
-    """
-    Loops through all transcript files in `transcripts_dir`/season for each season in `seasons`,
-    aggregates word- and n_phrase-gram counts for `character`, then writes out the top_n
-    words and top_n phrases to output_csv with columns [type, text, count].
-    """
+def get_all_characters_stats(
+    characters_csv='./docs/data/all_characters_per_season.csv',
+    transcripts_dir=TRANSCRIPTS_DIR,
+    seasons=SEASONS_TO_PROCESS,
+    phrase_lengths=(1, 3, 4, 5),
+    top_n=3,
+    output_csv="./docs/data/characters_top_phrases.csv"
+):
+    STOPWORDS = {
+        "a", "i", "the", "and", "or", "but", "if", "in", "on",
+        "to", "of", "for", "is", "it", "with", "that",
+        "you", "he", "she", "they", "we", "me", "my", "your",
+        "as", "an", "at", "by", "this", "that", "there", "where",
+        "so", "up", "down", "out", "all", "just", "like", "no", "its",
+    }    
+    # 1) Load the character list
+    with open(characters_csv, newline="", encoding="utf-8") as cf:
+        reader     = csv.DictReader(cf)
+        characters = [row["name"].strip().lower() for row in reader]
 
-    # 1) Prepare your counters
-    word_counts   = Counter()
-    phrase_counts = Counter()
+    # 2) Build wide CSV header
+    fieldnames = ["name"]
+    for n in phrase_lengths:
+        prefix = "word" if n == 1 else f"{n}gram"
+        for i in range(1, top_n + 1):
+            fieldnames += [f"{prefix}_{i}_text", f"{prefix}_{i}_count"]
 
-    # 2) Walk every file in each season
-    for season in SEASONS_TO_PROCESS:
-        season_dir = os.path.join(TRANSCRIPTS_DIR, season)
-        if not os.path.isdir(season_dir):
-            continue
+    # 3) Open CSV for writing
+    with open(output_csv, "w", newline="", encoding="utf-8") as outf:
+        writer = csv.DictWriter(outf, fieldnames=fieldnames)
+        writer.writeheader()
 
-        for fname in os.listdir(season_dir):
-            fpath = os.path.join(season_dir, fname)
-            if not os.path.isfile(fpath):
-                continue
+        # 4) Process each character
+        for character in characters:
+            row = {"name": character}
 
-            with open(fpath, "r", encoding="utf-8") as f:
-                for line in f:
-                    if ":" not in line:
+            # init a Counter for each n
+            counters = {n: Counter() for n in phrase_lengths}
+
+            # 5) Aggregate across seasons/files
+            for season in seasons:
+                season_dir = os.path.join(transcripts_dir, season)
+                if not os.path.isdir(season_dir):
+                    continue
+                for fn in os.listdir(season_dir):
+                    fpath = os.path.join(season_dir, fn)
+                    if not os.path.isfile(fpath):
                         continue
-                    name, utterance = line.split(":", 1)
-                    if name.strip().lower() != character:
-                        continue
 
-                    # 3) Clean the text: drop (…), […], quotes, punctuation, lowercase
-                    txt = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\']+', "", utterance)
-                    txt = re.sub(r'[^\w\s]', "", txt).lower().strip()
+                    with open(fpath, "r", encoding="utf-8") as f:
+                        for line in f:
+                            if ":" not in line:
+                                continue
+                            name, utterance = line.split(":", 1)
+                            if name.strip().lower() != character:
+                                continue
 
-                    # 4) Tokenize & update counters
-                    tokens = txt.split()
-                    word_counts.update(tokens)
+                            # clean & tokenize
+                            txt = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\']+', "", utterance)
+                            txt = re.sub(r'[^\w\s]', "", txt).lower().strip()
+                            tokens = txt.split()
+                            if not tokens:
+                                continue
 
-                    for i in range(len(tokens) - n_phrase + 1):
-                        gram = " ".join(tokens[i : i + n_phrase])
-                        phrase_counts[gram] += 1
+                            # update each Counter
+                            for n in phrase_lengths:
+                                if n == 1:
+                                    filtered = [t for t in tokens if len(t) > 1 and t not in STOPWORDS]
+                                    counters[1].update(filtered)
+                                else:
+                                    for i in range(len(tokens) - n + 1):
+                                        gram = " ".join(tokens[i : i + n])
+                                        counters[n][gram] += 1
 
-    # 5) Grab the most common
-    top_words   = word_counts.most_common(top_n)
-    top_phrases = phrase_counts.most_common(top_n)
+            # 6) Fill row with top_n for each n
+            for n in phrase_lengths:
+                prefix = "word" if n == 1 else f"{n}gram"
+                common = counters[n].most_common(top_n)
+                for idx in range(1, top_n + 1):
+                    if idx <= len(common):
+                        text, cnt = common[idx - 1]
+                    else:
+                        text, cnt = "", 0
+                    row[f"{prefix}_{idx}_text"]  = text
+                    row[f"{prefix}_{idx}_count"] = cnt
 
-    # 6) Write out a single CSV:
-    #    Columns are: type (word|phrase), text, count
-    with open(output_csv, "w", newline="", encoding="utf-8") as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(["type", "text", "count"])
-
-        for w, cnt in top_words:
-            writer.writerow(["word", w, cnt])
-        for p, cnt in top_phrases:
-            writer.writerow(["phrase", p, cnt])
+            writer.writerow(row)
 
 
 if __name__ == "__main__":
     # create csv files with specific data 
     character_stats_per_season()
+
     main_character_stats_per_episode()
 
-    get_character_stats(
-        character="morty",
-        n_phrase=4,
-        top_n=10,
-        output_csv="./docs/data/morty_top_words_and_phrases.csv"
-    )
+    get_all_characters_stats()
