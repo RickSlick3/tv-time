@@ -2,7 +2,7 @@ import os
 import re
 import csv
 from collections import Counter
-from itertools import islice
+from itertools import combinations
 
 TRANSCRIPTS_DIR = "./transcripts"
 SEASONS_TO_PROCESS = {"1", "2", "3"}
@@ -238,10 +238,134 @@ def get_all_characters_stats(
             writer.writerow(row)
 
 
+def count_character_cooccurrences(transcripts_dir=TRANSCRIPTS_DIR,
+                                  seasons=SEASONS_TO_PROCESS,
+                                  proximity=25,
+                                  output_csv="./docs/data/cooccurrences_by_lines.csv"):
+    """
+    For each episode, chunk its dialogue into blocks of `proximity` lines,
+    then count how many blocks each unordered pair of characters shares.
+    Writes a CSV: episode, char1, char2, count.
+    """
+    episode_counters = {}
+
+    for season in sorted(seasons, key=int):
+        season_dir = os.path.join(transcripts_dir, season)
+        if not os.path.isdir(season_dir):
+            continue
+
+        for fname in sorted(os.listdir(season_dir)):
+            fpath = os.path.join(season_dir, fname)
+            if not os.path.isfile(fpath):
+                continue
+
+            # 1) Read and clean speaker names in order
+            speakers = []
+            with open(fpath, encoding="utf-8") as f:
+                for line in f:
+                    if ":" not in line:
+                        continue
+                    raw = line.split(":", 1)[0].strip().lower()
+                    # strip (…), […], quotes, commas, etc.
+                    name = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\',]', "", raw).strip()
+                    if name:
+                        speakers.append(name)
+
+            # 2) Chunk into non-overlapping “scenes”
+            cooccur = Counter()
+            for i in range(0, len(speakers), proximity):
+                block = speakers[i : i + proximity]
+                # only unique speakers count per block
+                present = set(block)
+                # count each unordered pair once
+                for a, b in combinations(sorted(present), 2):
+                    cooccur[(a, b)] += 1
+
+            episode_counters[fname] = cooccur
+
+    # 3) Write out one CSV listing all (episode, char1, char2, count)
+    with open(output_csv, "w", newline="", encoding="utf-8") as out:
+        writer = csv.writer(out)
+        writer.writerow(["episode", "char1", "char2", "count"])
+        for episode, counter in episode_counters.items():
+            for (a, b), cnt in counter.items():
+                writer.writerow([episode, a, b, cnt])
+
+
+def count_interactions_by_markers(transcripts_dir=TRANSCRIPTS_DIR,
+                                  seasons=SEASONS_TO_PROCESS,
+                                  output_csv="./docs/data/cooccurrences_by_markers.csv"):
+    """
+    For each episode, split lines into 'scenes' whenever a line starts with '['
+    (or if none, whenever a line starts with '('), then in each scene count
+    every unordered pair of characters who speak at least once.
+    """
+    episode_counters = {}
+
+    for season in sorted(seasons, key=int):
+        season_dir = os.path.join(transcripts_dir, season)
+        if not os.path.isdir(season_dir):
+            continue
+
+        for fname in sorted(os.listdir(season_dir)):
+            fpath = os.path.join(season_dir, fname)
+            if not os.path.isfile(fpath):
+                continue
+
+            # 1) Read all lines and decide your marker
+            with open(fpath, encoding="utf-8") as f:
+                lines = f.readlines()
+
+            marker = "["
+            if not any(line.lstrip().startswith("[") for line in lines):
+                marker = "("
+
+            # 2) Chunk into scenes
+            scenes = []
+            current = []
+            for line in lines:
+                if line.lstrip().startswith(marker):
+                    if current:
+                        scenes.append(current)
+                    current = []
+                current.append(line)
+            if current:
+                scenes.append(current)
+
+            # 3) In each scene, tally co-occurrences
+            cooccur = Counter()
+            for scene in scenes:
+                # collect unique speakers in this scene
+                speakers = set()
+                for line in scene:
+                    if ":" not in line:
+                        continue
+                    raw = line.split(":", 1)[0].strip().lower()
+                    # clean out parens/brackets/quotes
+                    name = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\']+', "", raw).strip()
+                    if name:
+                        speakers.add(name)
+
+                # count each unordered pair once
+                for a, b in combinations(sorted(speakers), 2):
+                    cooccur[(a, b)] += 1
+
+            episode_counters[fname] = cooccur
+
+    # 4) Write CSV
+    with open(output_csv, "w", newline="", encoding="utf-8") as out:
+        writer = csv.writer(out)
+        writer.writerow(["episode", "char1", "char2", "count"])
+        for episode, counter in episode_counters.items():
+            for (a, b), cnt in counter.items():
+                writer.writerow([episode, a, b, cnt])
+
+
 if __name__ == "__main__":
     # create csv files with specific data 
     character_stats_per_season()
-
     main_character_stats_per_episode()
-
     get_all_characters_stats()
+
+    count_character_cooccurrences()
+    count_interactions_by_markers()
