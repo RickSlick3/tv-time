@@ -56,7 +56,7 @@ def get_episode_links(season_links):
 
 # using a list of episode links, get the transcript of each episode
 def write_episode_transcript(season, episode_url):
-    episode_name = episode_url.split("/")[-2].replace("%27", "'").replace("%26", "and")
+    episode_name = episode_url.split("/")[-2].replace("%27", "'").replace("%26", "and").replace(":", "")
     if "(episode)" in episode_name:
         episode_name = re.sub(r'\([^)]*\)', '', episode_name)
         episode_name = episode_name[:-1]
