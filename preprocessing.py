@@ -255,41 +255,58 @@ def count_character_cooccurrences(transcripts_dir=TRANSCRIPTS_DIR,
             continue
 
         for fname in sorted(os.listdir(season_dir)):
+            if not fname.endswith(".txt"):
+                continue
+
+            # strip ".txt" and prefix with season
+            ep_name    = os.path.splitext(fname)[0]      # e.g. "Pilot"
+            episode_id = f"{season}_{ep_name}"           # e.g. "1_Pilot"
+
             fpath = os.path.join(season_dir, fname)
             if not os.path.isfile(fpath):
                 continue
 
-            # 1) Read and clean speaker names in order
-            speakers = []
+            # read all lines once
             with open(fpath, encoding="utf-8") as f:
-                for line in f:
+                lines = f.readlines()
+
+            # choose marker
+            marker = "[" if any(l.lstrip().startswith("[") for l in lines) else "("
+
+            # split into scenes
+            scenes = []
+            buf = []
+            for line in lines:
+                if line.lstrip().startswith(marker) and buf:
+                    scenes.append(buf)
+                    buf = []
+                buf.append(line)
+            if buf:
+                scenes.append(buf)
+
+            # count co-occurrences in each scene
+            cooccur = Counter()
+            for scene in scenes:
+                speakers = set()
+                for line in scene:
                     if ":" not in line:
                         continue
                     raw = line.split(":", 1)[0].strip().lower()
-                    # strip (…), […], quotes, commas, etc.
-                    name = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\',]', "", raw).strip()
+                    name = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\']+', "", raw).strip()
                     if name:
-                        speakers.append(name)
-
-            # 2) Chunk into non-overlapping “scenes”
-            cooccur = Counter()
-            for i in range(0, len(speakers), proximity):
-                block = speakers[i : i + proximity]
-                # only unique speakers count per block
-                present = set(block)
-                # count each unordered pair once
-                for a, b in combinations(sorted(present), 2):
+                        speakers.add(name)
+                for a, b in combinations(sorted(speakers), 2):
                     cooccur[(a, b)] += 1
 
-            episode_counters[fname] = cooccur
+            episode_counters[episode_id] = cooccur
 
-    # 3) Write out one CSV listing all (episode, char1, char2, count)
+    # write CSV using episode_id
     with open(output_csv, "w", newline="", encoding="utf-8") as out:
         writer = csv.writer(out)
         writer.writerow(["episode", "char1", "char2", "count"])
-        for episode, counter in episode_counters.items():
+        for episode_id, counter in episode_counters.items():
             for (a, b), cnt in counter.items():
-                writer.writerow([episode, a, b, cnt])
+                writer.writerow([episode_id, a, b, cnt])
 
 
 def count_interactions_by_markers(transcripts_dir=TRANSCRIPTS_DIR,
@@ -308,57 +325,56 @@ def count_interactions_by_markers(transcripts_dir=TRANSCRIPTS_DIR,
             continue
 
         for fname in sorted(os.listdir(season_dir)):
+            if not fname.endswith(".txt"):
+                continue
+
+            # strip ".txt" and prefix the season
+            ep_name    = os.path.splitext(fname)[0]          # e.g. "Pilot"
+            episode_id = f"{season}_{ep_name}"               # e.g. "1_Pilot"
+
             fpath = os.path.join(season_dir, fname)
             if not os.path.isfile(fpath):
                 continue
 
-            # 1) Read all lines and decide your marker
+            # — read lines & decide marker as before —
             with open(fpath, encoding="utf-8") as f:
                 lines = f.readlines()
 
-            marker = "["
-            if not any(line.lstrip().startswith("[") for line in lines):
-                marker = "("
+            marker = "[" if any(l.lstrip().startswith("[") for l in lines) else "("
 
-            # 2) Chunk into scenes
             scenes = []
-            current = []
+            buf = []
             for line in lines:
-                if line.lstrip().startswith(marker):
-                    if current:
-                        scenes.append(current)
-                    current = []
-                current.append(line)
-            if current:
-                scenes.append(current)
+                if line.lstrip().startswith(marker) and buf:
+                    scenes.append(buf)
+                    buf = []
+                buf.append(line)
+            if buf:
+                scenes.append(buf)
 
-            # 3) In each scene, tally co-occurrences
+            # — count co-occurrences per scene —
             cooccur = Counter()
             for scene in scenes:
-                # collect unique speakers in this scene
                 speakers = set()
                 for line in scene:
                     if ":" not in line:
                         continue
                     raw = line.split(":", 1)[0].strip().lower()
-                    # clean out parens/brackets/quotes
                     name = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\']+', "", raw).strip()
                     if name:
                         speakers.add(name)
-
-                # count each unordered pair once
                 for a, b in combinations(sorted(speakers), 2):
                     cooccur[(a, b)] += 1
 
-            episode_counters[fname] = cooccur
+            episode_counters[episode_id] = cooccur
 
-    # 4) Write CSV
+    # — write CSV using episode_id instead of fname —
     with open(output_csv, "w", newline="", encoding="utf-8") as out:
         writer = csv.writer(out)
         writer.writerow(["episode", "char1", "char2", "count"])
-        for episode, counter in episode_counters.items():
+        for episode_id, counter in episode_counters.items():
             for (a, b), cnt in counter.items():
-                writer.writerow([episode, a, b, cnt])
+                writer.writerow([episode_id, a, b, cnt])
 
 
 if __name__ == "__main__":
