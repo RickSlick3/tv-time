@@ -3,9 +3,11 @@ import re
 import csv
 from collections import Counter, defaultdict
 from itertools import combinations
+import pandas as pd
 
 TRANSCRIPTS_DIR = "./transcripts"
 SEASONS_TO_PROCESS = {"1", "2", "3"}
+MAIN_CHARS = {"rick","morty","beth","jerry","summer"}
 
 
 def character_stats_per_season():
@@ -86,7 +88,7 @@ def character_stats_per_season():
 
 
 def main_character_stats_per_episode():
-    main_characters = {"rick", "morty", "beth", "jerry", "summer"}
+    MAIN_CHARS = {"rick", "morty", "beth", "jerry", "summer"}
 
     # 2) Discover all files and initialize per-file counters
     file_order = []   # to preserve column order
@@ -119,7 +121,7 @@ def main_character_stats_per_episode():
                     # extract and clean the speaker name
                     name = line.split(":", 1)[0].strip().lower()
                     name = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\']+', '', name).strip()
-                    if name not in main_characters:
+                    if name not in MAIN_CHARS:
                         continue
 
                     # count every line
@@ -140,7 +142,7 @@ def main_character_stats_per_episode():
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
-        for char in sorted(main_characters):
+        for char in sorted(MAIN_CHARS):
             row = {"name": char}
             for fk in file_order:
                 for metric in ("lines","words"):
@@ -159,7 +161,7 @@ def get_all_characters_stats(
 ):
     STOPWORDS = {
         "a", "i", "the", "and", "or", "but", "if", "in", "on",
-        "to", "of", "for", "is", "it", "with", "that",
+        "to", "of", "for", "is", "it", "with", "that", "were",
         "you", "he", "she", "they", "we", "me", "my", "your",
         "as", "an", "at", "by", "this", "that", "there", "where",
         "so", "up", "down", "out", "all", "just", "like", "no", "its",
@@ -475,15 +477,125 @@ def count_pair_phrases(transcripts_dir=TRANSCRIPTS_DIR,
             writer.writerow(row)
 
 
+def lexical_richness_analysis():
+    # 1) Profanity set
+    PROFANITIES = {
+        "shit", "fuck", "fucking", "fucked", "motherfucker", "ass", "asshole",
+        "bitch", "bastard", "dick", "dickhead", "piss", "pissed", "crap",
+        "damn", "goddamn", "hell", "cunt", "prick", "cock", "balls", "bollocks",
+        "twat", "whore", "slut", "friggin", "frick", "frickin", "heck", "screw",
+        "screwed", "dammit", "shithead", "butthead", "dipshit", "dumbass", "jackass",
+        "smartass", "fatass", "badass", "hardass", "lameass", "kickass", "crybaby",
+        "cry-ass", "bitch-ass",
+    }
+
+    # data structures
+    char_tokens           = defaultdict(list)
+    char_sentence_words   = defaultdict(int)
+    char_sentence_count   = defaultdict(int)
+    char_profanity_counters = defaultdict(Counter)
+
+    # 2) Gather data
+    for season in sorted(SEASONS_TO_PROCESS, key=int):
+        season_dir = os.path.join(TRANSCRIPTS_DIR, season)
+        if not os.path.isdir(season_dir):
+            continue
+
+        for fname in os.listdir(season_dir):
+            if not fname.endswith(".txt"):
+                continue
+            path = os.path.join(season_dir, fname)
+
+            with open(path, encoding="utf-8") as f:
+                for line in f:
+                    if ":" not in line:
+                        continue
+                    speaker, utter = line.split(":",1)
+                    speaker = speaker.strip().lower()
+                    if speaker not in MAIN_CHARS:
+                        continue
+
+                    # clean utterance
+                    clean = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\']+', "", utter)
+                    clean = re.sub(r'[^\w\s\.!?]', "", clean).lower().strip()
+
+                    # 2a) Sentence splitting
+                    sentences = [s.strip() for s in re.split(r'[\.!?]+', clean) if s.strip()]
+                    for sent in sentences:
+                        words = [w for w in sent.split() if len(w)>1]
+                        char_sentence_words[speaker] += len(words)
+                        char_sentence_count[speaker] += 1
+
+                    # 2b) Token list for lexicon & profanity
+                    tokens = [t for t in re.findall(r'\w+', clean) if len(t)>1]
+                    char_tokens[speaker].extend(tokens)
+
+                    # 2c) Profanity counting (and per-word tally)
+                    for t in tokens:
+                        if t in PROFANITIES:
+                            char_profanity_counters[speaker][t] += 1
+
+    # 3) Compute metrics
+    rows = []
+    for ch in sorted(MAIN_CHARS):
+        toks   = char_tokens[ch]
+        total  = len(toks)
+        vocab  = len(set(toks))
+        ttr    = vocab/total if total else 0
+        avg_tl = sum(len(t) for t in toks)/total if total else 0
+
+        sw     = char_sentence_words[ch]
+        sc     = char_sentence_count[ch]
+        avg_sl = sw/sc if sc else 0
+
+        prof_ctr = char_profanity_counters[ch]
+        prof_cnt = sum(prof_ctr.values())
+        prof_freq = prof_cnt/total if total else 0
+
+        # top 2 profanities
+        top_two = prof_ctr.most_common(2)
+        (p1, c1), (p2, c2) = (("", 0), ("", 0))
+        if len(top_two) >= 1:
+            p1, c1 = top_two[0]
+        if len(top_two) == 2:
+            p2, c2 = top_two[1]
+
+        rows.append({
+            "character":             ch,
+            "total_tokens":          total,
+            "vocab_size":            vocab,
+            "type_token_ratio":      round(ttr,3),
+            "avg_token_length":      round(avg_tl,3),
+            "avg_sentence_length":   round(avg_sl,3),
+            "profanity_count":       prof_cnt,
+            "profanity_freq":        round(prof_freq,4),
+            "top_profanity_1":       p1,
+            "top_profanity_1_count": c1,
+            "top_profanity_2":       p2,
+            "top_profanity_2_count": c2,
+        })
+
+    # 4) Build DataFrame & write to CSV
+    df = pd.DataFrame(rows).set_index("character")
+    output_path = "./docs/data/main_characters_lexical_metrics.csv"
+    df.to_csv(output_path)
+
+
 if __name__ == "__main__":
     # Level 1 goals 
-    character_stats_per_season()
-    main_character_stats_per_episode()
-    get_all_characters_stats()
+    # character_stats_per_season()
+    # main_character_stats_per_episode()
+    # get_all_characters_stats()
 
     # Level 2/3 goals
-    count_character_cooccurrences()
-    count_interactions_by_markers()
+    # count_character_cooccurrences()
+    # count_interactions_by_markers()
     
     # Level 4 goals
-    count_pair_phrases()
+    # count_pair_phrases()
+
+    # Total tokens – the total number of words they speak
+    # Vocabulary size – how many unique word types
+    # Type–token ratio – vocab size ÷ total tokens
+    # Average token length – sum of token lengths ÷ total tokens
+    lexical_richness_analysis()
