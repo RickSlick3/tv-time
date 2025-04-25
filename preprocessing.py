@@ -1,7 +1,7 @@
 import os
 import re
 import csv
-from collections import Counter
+from collections import Counter, defaultdict
 from itertools import combinations
 
 TRANSCRIPTS_DIR = "./transcripts"
@@ -377,11 +377,113 @@ def count_interactions_by_markers(transcripts_dir=TRANSCRIPTS_DIR,
                 writer.writerow([episode_id, a, b, cnt])
 
 
+def count_pair_phrases(transcripts_dir=TRANSCRIPTS_DIR,
+                       seasons=SEASONS_TO_PROCESS,
+                       phrase_lengths=(3, 4, 5),
+                       output_csv='./docs/data/pair_top_phrases.csv.csv'):
+    """
+    For each episode:
+      - split into scenes on '[' (or '(' if no '[' present)
+      - in each scene, collect each speaker’s utterances
+      - for every ordered pair (A → B) where both A and B appear in the scene,
+        count all 3/4/5-word n-grams *from A’s lines*
+    Finally, write one CSV row per directed pair with their single top
+    3-, 4-, and 5-gram plus counts.
+    """
+    # directed counters: (speaker, listener) -> { n -> Counter() }
+    directed = defaultdict(lambda: {n: Counter() for n in phrase_lengths})
+
+    for season in sorted(seasons, key=int):
+        season_dir = os.path.join(transcripts_dir, season)
+        if not os.path.isdir(season_dir):
+            continue
+
+        for fname in sorted(os.listdir(season_dir)):
+            if not fname.endswith(".txt"):
+                continue
+            fpath = os.path.join(season_dir, fname)
+
+            # read & choose marker
+            with open(fpath, encoding="utf-8") as f:
+                lines = f.readlines()
+            marker = "[" if any(l.lstrip().startswith("[") for l in lines) else "("
+
+            # split into scenes
+            scenes, buf = [], []
+            for line in lines:
+                if line.lstrip().startswith(marker) and buf:
+                    scenes.append(buf)
+                    buf = []
+                buf.append(line)
+            if buf:
+                scenes.append(buf)
+
+            # process each scene
+            for scene in scenes:
+                # collect cleaned utterances per speaker
+                utterances = defaultdict(list)
+                for line in scene:
+                    if ":" not in line:
+                        continue
+                    raw, text = line.split(":", 1)
+                    name = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\']+', "",
+                                  raw.strip().lower()).strip()
+                    if not name:
+                        continue
+                    # clean text
+                    txt = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\']+', "", text)
+                    txt = re.sub(r'[^\w\s]', "", txt).lower().strip()
+                    if txt:
+                        utterances[name].append(txt)
+
+                present = sorted(utterances.keys())
+                # for every ordered pair A → B
+                for A in present:
+                    for B in present:
+                        if A == B:
+                            continue
+                        ctr_map = directed[(A, B)]
+                        # count n-grams in A’s lines
+                        for utt in utterances[A]:
+                            tokens = utt.split()
+                            for n in phrase_lengths:
+                                if len(tokens) < n:
+                                    continue
+                                for i in range(len(tokens) - n + 1):
+                                    gram = " ".join(tokens[i : i + n])
+                                    ctr_map[n][gram] += 1
+
+    # write out wide CSV: one row per directed pair
+    fieldnames = ["speaker", "listener"]
+    for n in phrase_lengths:
+        fieldnames += [f"{n}gram_phrase", f"{n}gram_count"]
+
+    with open(output_csv, "w", newline="", encoding="utf-8") as out:
+        writer = csv.DictWriter(out, fieldnames=fieldnames)
+        writer.writeheader()
+
+        for (A, B), counters in sorted(directed.items()):
+            row = {"speaker": A, "listener": B}
+            for n in phrase_lengths:
+                top = counters[n].most_common(1)
+                if top:
+                    phrase, cnt = top[0]
+                else:
+                    phrase, cnt = "", 0
+                row[f"{n}gram_phrase"] = phrase
+                row[f"{n}gram_count"]  = cnt
+            writer.writerow(row)
+
+
 if __name__ == "__main__":
-    # create csv files with specific data 
+    # Level 1 goals 
     character_stats_per_season()
     main_character_stats_per_episode()
     get_all_characters_stats()
 
+    # Level 2/3 goals
     count_character_cooccurrences()
     count_interactions_by_markers()
+    
+    # Level 4 goals
+    count_pair_phrases()
