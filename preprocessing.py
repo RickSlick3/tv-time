@@ -15,7 +15,7 @@ def character_stats_per_season():
         season: {
             "lines": Counter(),
             "words": Counter(),
-            "eps": Counter(),
+            "eps":   Counter(),
         }
         for season in SEASONS_TO_PROCESS
     }
@@ -26,64 +26,78 @@ def character_stats_per_season():
             continue
 
         season_dir = os.path.join(TRANSCRIPTS_DIR, season)
-        if os.path.isdir(season_dir):
-            for file_name in os.listdir(season_dir):
-                file_path = os.path.join(season_dir, file_name)                    
+        if not os.path.isdir(season_dir):
+            continue
+
+        for file_name in os.listdir(season_dir):
+            file_path = os.path.join(season_dir, file_name)
+            if not os.path.isfile(file_path):
+                continue
                     
-                # in the current file, process different counts
-                seen_in_this_file = set()
-                with open(file_path, "r", encoding="utf-8") as f:
-                    for line in f:
-                        
-                        # only process speaking lines, ex: "name: this is their line"
-                        if ":" in line:
-                            # extract the character's name and normalize it
-                            name = line.split(":", 1)[0].strip().lower()
-                            clean_name = re.sub(r'\([^)]*\)', '', name)
-                            clean_name = re.sub(r'\[[^\]]*\]',  '', clean_name).strip()
-                            clean_name = clean_name.replace('"', '').replace(',', '').strip()
-                            
-                            if clean_name:
-                                # update the counts for characters lines
-                                season_counts[season]["lines"][clean_name] += 1
+            seen_in_this_file = set()
+            with open(file_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    if ":" not in line:
+                        continue
 
-                                # update the counts for characters words
-                                words = line.split(":")[1].strip().split()
-                                season_counts[season]["words"][clean_name] += len(words)
+                    # extract & clean name
+                    name = line.split(":", 1)[0].strip().lower()
+                    clean = re.sub(r'\([^)]*\)', '', name)
+                    clean = re.sub(r'\[[^\]]*\]',  '', clean).strip()
+                    clean = clean.replace('"', '').replace(',', '').strip()
+                    
+                    if not clean:
+                        continue
 
-                                # update the counts for characters episode appearances
-                                if clean_name not in seen_in_this_file:
-                                    seen_in_this_file.add(clean_name)
-                                    season_counts[season]["eps"][clean_name] += 1
+                    # update lines & words
+                    season_counts[season]["lines"][clean] += 1
+                    words = line.split(":", 1)[1].strip().split()
+                    season_counts[season]["words"][clean] += len(words)
+
+                    # update episode appearances
+                    if clean not in seen_in_this_file:
+                        seen_in_this_file.add(clean)
+                        season_counts[season]["eps"][clean] += 1
     
     # Build a sorted list of every character ever seen
     all_characters = set()
     for cnts in season_counts.values():
         all_characters |= set(cnts["lines"].keys())
 
+    # Compute total lines across all seasons for each character
+    total_lines = {
+        ch: sum(season_counts[s]["lines"].get(ch, 0) for s in SEASONS_TO_PROCESS)
+        for ch in all_characters
+    }
+
     # Build CSV header (per-season + totals)
-    fieldnames = (["name"]
-        + [f"s{st}_{m}" for st in sorted(SEASONS_TO_PROCESS, key=int)
-                    for m in ("lines","words","eps")]
+    fieldnames = (
+        ["name"]
+        + [f"s{st}_{m}" for st in sorted(SEASONS_TO_PROCESS, key=int) for m in ("lines","words","eps")]
         + ["all_lines", "all_words", "all_eps"]
     )
 
-    # Write one row per character, filling 0 if missing
+    # Write one row per character, filtering out those with <10 total lines
     with open("./docs/data/all_characters_per_season.csv", "w", newline="", encoding="utf-8") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
         for character in sorted(all_characters):
+            if total_lines.get(character, 0) < 5:
+                continue
+
             row = {"name": character}
+            # per-season metrics
             for season in sorted(SEASONS_TO_PROCESS, key=int):
                 for metric in ("lines", "words", "eps"):
                     col = f"s{season}_{metric}"
                     row[col] = season_counts[season][metric].get(character, 0)
 
-                # totals across all seasons
-                row["all_lines"] = sum(season_counts[s]["lines"].get(character,0) for s in SEASONS_TO_PROCESS)
-                row["all_words"] = sum(season_counts[s]["words"].get(character,0) for s in SEASONS_TO_PROCESS)
-                row["all_eps"] = sum(season_counts[s]["eps"].get(character,0) for s in SEASONS_TO_PROCESS)
+            # totals across all seasons
+            row["all_lines"] = sum(season_counts[s]["lines"].get(character, 0) for s in SEASONS_TO_PROCESS)
+            row["all_words"] = sum(season_counts[s]["words"].get(character, 0) for s in SEASONS_TO_PROCESS)
+            row["all_eps"]   = sum(season_counts[s]["eps"].get(character, 0)   for s in SEASONS_TO_PROCESS)
+
             writer.writerow(row)
 
 
@@ -131,13 +145,22 @@ def character_stats_per_episode():
     for ep in sorted_episodes:
         fieldnames += [f"{ep}_lines", f"{ep}_words"]
 
-    # Write CSV
+    # Precompute total lines per character
+    total_lines = {
+        ch: sum(char_episode_data[ch][ep]["lines"] for ep in sorted_episodes)
+        for ch in sorted_characters
+    }
+
+    # Write CSV, but only for characters with ≥10 total lines
     output_file = "./docs/data/all_characters_per_episode.csv"
     with open(output_file, "w", newline="", encoding="utf-8") as out:
         writer = csv.DictWriter(out, fieldnames=fieldnames)
         writer.writeheader()
 
         for character in sorted_characters:
+            if total_lines[character] < 5:
+                continue   # skip anyone with fewer than 10 lines total
+
             row = {"character": character}
             for ep in sorted_episodes:
                 row[f"{ep}_lines"] = char_episode_data[character][ep]['lines']
@@ -641,7 +664,7 @@ def lexical_richness_analysis():
 
 if __name__ == "__main__":
     # Level 1 goals 
-    # character_stats_per_season()
+    character_stats_per_season()
     character_stats_per_episode()
     # main_character_stats_per_episode()
     # get_all_characters_stats()
