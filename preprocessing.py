@@ -87,6 +87,64 @@ def character_stats_per_season():
             writer.writerow(row)
 
 
+def character_stats_per_episode():
+    # Data: character → episode → {lines, words}
+    char_episode_data = defaultdict(lambda: defaultdict(lambda: {'lines': 0, 'words': 0}))
+    all_episodes = set()
+    all_characters = set()
+
+    for season in sorted(SEASONS_TO_PROCESS, key=int):
+        season_dir = os.path.join(TRANSCRIPTS_DIR, season)
+        if not os.path.isdir(season_dir):
+            continue
+
+        for fname in os.listdir(season_dir):
+            if not fname.endswith(".txt"):
+                continue
+
+            episode_name = f"{season}_{os.path.splitext(fname)[0]}"
+            all_episodes.add(episode_name)
+            fpath = os.path.join(season_dir, fname)
+
+            with open(fpath, encoding="utf-8") as f:
+                for line in f:
+                    if ":" not in line:
+                        continue
+                    speaker, utterance = line.split(":", 1)
+                    speaker = speaker.strip().lower()
+                    all_characters.add(speaker)
+
+                    # clean & tokenize
+                    text = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\']+', "", utterance)
+                    text = re.sub(r'[^\w\s]', "", text).lower().strip()
+                    words = text.split()
+
+                    char_episode_data[speaker][episode_name]['lines'] += 1
+                    char_episode_data[speaker][episode_name]['words'] += len(words)
+
+    # Sort episodes and characters
+    sorted_episodes = sorted(all_episodes)
+    sorted_characters = sorted(all_characters)
+
+    # Build header: one pair of columns per episode
+    fieldnames = ["character"]
+    for ep in sorted_episodes:
+        fieldnames += [f"{ep}_lines", f"{ep}_words"]
+
+    # Write CSV
+    output_file = "./docs/data/all_characters_per_episode.csv"
+    with open(output_file, "w", newline="", encoding="utf-8") as out:
+        writer = csv.DictWriter(out, fieldnames=fieldnames)
+        writer.writeheader()
+
+        for character in sorted_characters:
+            row = {"character": character}
+            for ep in sorted_episodes:
+                row[f"{ep}_lines"] = char_episode_data[character][ep]['lines']
+                row[f"{ep}_words"] = char_episode_data[character][ep]['words']
+            writer.writerow(row)
+
+
 def main_character_stats_per_episode():
     MAIN_CHARS = {"rick", "morty", "beth", "jerry", "summer"}
 
@@ -584,6 +642,7 @@ def lexical_richness_analysis():
 if __name__ == "__main__":
     # Level 1 goals 
     # character_stats_per_season()
+    character_stats_per_episode()
     # main_character_stats_per_episode()
     # get_all_characters_stats()
 
@@ -598,4 +657,4 @@ if __name__ == "__main__":
     # Vocabulary size – how many unique word types
     # Type–token ratio – vocab size ÷ total tokens
     # Average token length – sum of token lengths ÷ total tokens
-    lexical_richness_analysis()
+    # lexical_richness_analysis()
