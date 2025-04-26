@@ -340,7 +340,8 @@ def count_character_cooccurrences(transcripts_dir=TRANSCRIPTS_DIR,
         writer.writerow(["episode", "char1", "char2", "count"])
         for episode_id, counter in episode_counters.items():
             for (a, b), cnt in counter.items():
-                writer.writerow([episode_id, a, b, cnt])
+                if cnt > 1:  # only write pairs with more than 1 co-occurrence
+                    writer.writerow([episode_id, a, b, cnt])
 
 
 def count_interactions_by_markers(transcripts_dir=TRANSCRIPTS_DIR,
@@ -408,7 +409,8 @@ def count_interactions_by_markers(transcripts_dir=TRANSCRIPTS_DIR,
         writer.writerow(["episode", "char1", "char2", "count"])
         for episode_id, counter in episode_counters.items():
             for (a, b), cnt in counter.items():
-                writer.writerow([episode_id, a, b, cnt])
+                if cnt > 1:  # only write pairs with more than 1 co-occurrence
+                    writer.writerow([episode_id, a, b, cnt])
 
 
 def count_pair_phrases(transcripts_dir=TRANSCRIPTS_DIR,
@@ -497,15 +499,27 @@ def count_pair_phrases(transcripts_dir=TRANSCRIPTS_DIR,
         writer.writeheader()
 
         for (A, B), counters in sorted(directed.items()):
+            # find the single top count for each n
+            top_counts = []
+            for n in phrase_lengths:
+                most = counters[n].most_common(1)
+                top_counts.append(most[0][1] if most else 0)
+
+            # skip if NONE of the 3‐,4‐,5‐gram counts is > 1
+            if all(c <= 1 for c in top_counts):
+                continue
+
+            # otherwise build and write the row
             row = {"speaker": A, "listener": B}
             for n in phrase_lengths:
-                top = counters[n].most_common(1)
-                if top:
-                    phrase, cnt = top[0]
+                most = counters[n].most_common(1)
+                if most:
+                    phrase, cnt = most[0]
                 else:
                     phrase, cnt = "", 0
                 row[f"{n}gram_phrase"] = phrase
                 row[f"{n}gram_count"]  = cnt
+
             writer.writerow(row)
 
 
@@ -616,18 +630,18 @@ def lexical_richness_analysis():
 if __name__ == "__main__":
     # Level 1 goals 
     all_character_stats_combined()
-    # main_character_stats_per_episode()
-    # get_all_characters_stats()
+    get_all_characters_stats()
+    main_character_stats_per_episode()
 
     # Level 2/3 goals
-    # count_character_cooccurrences()
-    # count_interactions_by_markers()
+    count_character_cooccurrences()
+    count_interactions_by_markers()
     
     # Level 4 goals
-    # count_pair_phrases()
+    count_pair_phrases()
 
+    lexical_richness_analysis()
     # Total tokens – the total number of words they speak
     # Vocabulary size – how many unique word types
     # Type–token ratio – vocab size ÷ total tokens
     # Average token length – sum of token lengths ÷ total tokens
-    # lexical_richness_analysis()
