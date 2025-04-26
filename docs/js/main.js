@@ -1,5 +1,5 @@
 Promise.all([
-  d3.csv('data/all_characters_per_season.csv'),
+  d3.csv('data/all_characters_stats_combined.csv'),
   d3.csv('data/characters_top_phrases.csv'),
   d3.csv('data/cooccurrences_by_lines.csv'),
   d3.csv('data/cooccurrences_by_markers.csv'),

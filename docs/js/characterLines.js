@@ -7,7 +7,7 @@ class CharacterLines {
       // contextHeight: 30,
       margin: {top: 25, right: 20, bottom: 50, left: 50},
       // contextMargin: {top: 300, right: 20, bottom: 20, left: 50},
-      // tooltipPadding: 15
+      tooltipPadding: 15
     }
     this.data = _data;
     this.episodes =  ["All Episodes", ..._episodes];
@@ -36,14 +36,29 @@ class CharacterLines {
         .ticks(6)
         .tickSizeOuter(0);
 
-    vis.seasonSelect = document.getElementById('season-select');
+    vis.filteredData = vis.data;
+
+    vis.seasonSelect = d3.select('#season-select');
     vis.selectedSeason = "0";
-    vis.seasonSelect.addEventListener('change', (event) => {
-      vis.selectedSeason = event.target.value;
+    vis.selectedEpisode = "All Episodes";
+    vis.seasonSelect.on('change', (event) => {
+      vis.selectedSeason = d3.select(event.target).property("value");
+      vis.selectedEpisode = "All Episodes";
       vis.updateVis();
     });
 
     vis.episodeSelect = d3.select("#episode-select");
+    vis.episodeSelect.on('change', (event) => {
+      vis.selectedEpisode = d3.select(event.target).property("value");
+      vis.updateVis();
+    });
+
+    vis.lineSelect = d3.select('#line-select');
+    vis.selectedDenomination = "lines";
+    vis.lineSelect.on('change', (event) => {
+      vis.selectedDenomination = d3.select(event.target).property("value");
+      vis.updateVis();
+    });
 
 
     vis.svg = d3.select("#bar-chart svg")
@@ -66,6 +81,8 @@ class CharacterLines {
 
   updateVis() {
     let vis = this;
+    console.log(vis.selectedSeason);
+    console.log(vis.selectedEpisode);
 
 
     vis.filteredEpisodes = vis.episodes.filter(x => x[0] == vis.selectedSeason || x == "All Episodes" || vis.selectedSeason == "0");
@@ -74,16 +91,36 @@ class CharacterLines {
       .join(
         enter => enter.append("option").text(d => d),
         update => update.text(d => d),
-        exit => exit.remove());
+        exit => exit.remove())
+      .attr("value", d => d);
+
+    if (vis.selectedEpisode == "All Episodes") {
+      if (vis.selectedSeason == "0") {
+        vis.filteredData = vis.data.filter(x => vis.selectedDenomination == "lines" ? +x.all_lines > 50 : +x.all_words > 1000)
+        .sort((a, b) => +b["all_" + vis.selectedDenomination] - +a["all_" + vis.selectedDenomination]);
+        vis.yValue = d => +d["all_" + vis.selectedDenomination];
+      }
+      else {
+        vis.filteredData = vis.data.filter(x => vis.selectedDenomination == "lines" ? 
+          x["s" + vis.selectedSeason + "_" + vis.selectedDenomination] > 20 : x["s" + vis.selectedSeason + "_" + vis.selectedDenomination] > 400)
+        .sort((a, b) => +b["s" + vis.selectedSeason + "_" + vis.selectedDenomination] - +a["s" + vis.selectedSeason + "_" + vis.selectedDenomination]);
+        vis.yValue = d => +d["s" + vis.selectedSeason + "_" + vis.selectedDenomination];
+      }
+    }
+    else {
+      vis.filteredData = vis.data.filter(x => x[vis.selectedEpisode + "_" + vis.selectedDenomination] > 0)
+      .sort((a, b) => +b[vis.selectedEpisode + "_" + vis.selectedDenomination] - +a[vis.selectedEpisode + "_" + vis.selectedDenomination]);
+      vis.yValue = d => +d[vis.selectedEpisode + "_" + vis.selectedDenomination];
+    }
 
     // Specificy x- and y-accessor functions
     //console.log(d => d.name);
     vis.xValue = d => d.name;
-    vis.yValue = d => +d.all_lines;
+    //vis.yValue = d => +d.all_lines;
 
     // Set the scale input domains
-    vis.xScale.domain(vis.data.map(vis.xValue));
-    vis.yScale.domain([0, d3.max(vis.data, vis.yValue)]);
+    vis.xScale.domain(vis.filteredData.map(vis.xValue));
+    vis.yScale.domain([0, d3.max(vis.filteredData, vis.yValue)]);
 
     vis.renderVis();
   }
@@ -93,7 +130,7 @@ class CharacterLines {
 
     // Add rectangles
     let bars = vis.chart.selectAll('.bar')
-        .data(vis.data, vis.xValue)
+        .data(vis.filteredData, vis.xValue)
       .join('rect');
     
     bars.style('opacity', 0.5)
@@ -111,7 +148,13 @@ class CharacterLines {
           d3.select('#tooltip')
             .style('opacity', 1)
             // Format number with million and thousand separator
-            .html(`<div class="tooltip-label">Number of Lines</div>${d3.format(',')(d.all_lines)}`);
+            .html(`<div class="tooltip-label">Season: </div>${vis.selectedSeason == "0" ? "All" : vis.selectedSeason}
+            <div class="tooltip-label">Episode: </div>${vis.selectedEpisode}
+            <div class="tooltip-label">Character: </div>${d.name}
+            <div class="tooltip-label">Number of Lines</div>${d3.format(',')(vis.selectedEpisode == "All Episodes" ? 
+              (vis.selectedSeason == "0" ? d.all_lines : d["s" + vis.selectedSeason + "_lines"]) : d[vis.selectedEpisode + "_lines"])}
+            <div class="tooltip-label">Number of Words</div>${d3.format(',')(vis.selectedEpisode == "All Episodes" ? 
+              (vis.selectedSeason == "0" ? d.all_words : d["s" + vis.selectedSeason + "_words"]) : d[vis.selectedEpisode + "_words"])}`);
         })
         .on('mousemove', (event) => {
           d3.select('#tooltip')
