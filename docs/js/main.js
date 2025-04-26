@@ -1,0 +1,31 @@
+Promise.all([
+  d3.csv('data/all_characters_per_season.csv'),
+  d3.csv('data/characters_top_phrases.csv'),
+  d3.csv('data/cooccurrences_by_lines.csv'),
+  d3.csv('data/cooccurrences_by_markers.csv'),
+  d3.csv('data/main_characters_per_episode.csv')
+]).then(data => {
+  const lineData = data[0].filter(x => +x.all_lines > 9)
+  .sort((a, b) => +b.all_lines - +a.all_lines);
+  console.log(data[1]);
+
+  const prominentCharacters = data[0].filter(x => +x.all_lines > 9)
+  .sort((a, b) => +b.all_lines - +a.all_lines).map(x => x.name);
+  console.log(prominentCharacters);
+
+  let episodeSet = new Set(data[3].map(x => x.episode));
+  const episodes = [...episodeSet];
+  console.log(episodes);
+
+  let characterLinesChart = new CharacterLines({parentElement: "#bar-chart"}, lineData, episodes);
+  characterLinesChart.updateVis();
+
+  let mainCharactersChart = new MainCharacters({parentElement: "#presence-chart"}, data[4]);
+  mainCharactersChart.updateVis();
+
+  let characterInfo = new CharacterInfo({parentElement: "#character-focus"}, data[1], prominentCharacters);
+  characterInfo.updateVis();
+
+  let characterInteractions = new CharacterInteractions({parentElement: "#interaction-arc"}, data[2]);
+  characterInteractions.updateVis();
+}).catch(error => console.error(error));

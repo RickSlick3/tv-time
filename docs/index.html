@@ -1,19 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Earth Beneath Us</title>
+    <title>TV Time</title>
     <link rel="icon" href="data:;base64,iVBORwOKGO=" />
     <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="container"></div>
+    <div id="container">
+      <h1>Rick and Morty Character Analytics</h1>
+      <div id="info-screen" class="chart-container">
+        <h2>Show Overview</h2>
+        <p>The series revolves around Rick Sanchez, a cynical and alcoholic mad scientist, and his easily distressed grandson 
+          Morty Smith, who frequently travel to different dimensions and planets with Rick. These adventures often lead to 
+          chaos and trouble for Morty's family, who are also often dragged along. The show explores themes of family dynamics, 
+          existentialism, and the nature of reality through its chaotic and comedic premise. </p>
+        <p>The show started in 2013, and currently has seven seasons, with an eighth season getting ready to start. 
+          Each season has approximately ten episodes.
+        </p>
+      </div>
+  
+      <div id="bar-chart" class="chart-container">
+        <h2>Lines Per Episode/Season</h2>
+        <select id="season-select">
+          <option value="0">All</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <!-- <option value="4">4</option> -->
+        </select>
+        <select id="episode-select"></select>
+        <svg></svg>
+      </div>
+
+      <div id="presence-chart" class="chart-container">
+        <h2>Character Presence in Episodes</h2>
+        <svg></svg>
+      </div>
+
+      <div id="character-focus" class="chart-container">
+        <h2>Character Spotlight</h2>
+        <select id="character-select"></select>
+        <div class="focus-content">
+          <div id="word-cloud"></div>
+          <div id="word-trend">
+            <svg></svg>
+          </div>
+        </div>
+      </div>
+
+      <div id="interaction-arc" class="chart-container">
+        <h2>Character Interactions</h2>
+        <svg></svg>
+      </div>
+    </div>
     
     <script src="js/d3.v6.min.js"></script>
 
     <script src="js/main.js"></script>
+    <script src="js/characterLines.js"></script>
+    <script src="js/mainCharacters.js"></script>
+    <script src="js/characterInfo.js"></script>
+    <script src="js/characterInteractions.js"></script>
 
-    <!-- <div id="tooltip"></div> -->
+    <div id="tooltip"></div>
 
 </body>
 </html>
