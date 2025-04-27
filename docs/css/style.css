@@ -17,6 +17,9 @@ svg {
   width: 100%;
   height: 400px;
 }
+#interaction-arc svg {
+  height: 600px;
+}
 
 #word-cloud {
   width: 100%;
