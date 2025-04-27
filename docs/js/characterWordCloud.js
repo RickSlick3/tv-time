@@ -61,7 +61,7 @@ class CharacterWordCloud {
     }
 
     // Clear previous visualization
-    d3.select('#my_dataviz').select('svg').remove();
+    d3.select('#cloud').select('svg').remove();
 
     // Set dimensions and margins
     const margin = { top: 10, right: 20, bottom: 10, left: 20 };
@@ -69,7 +69,7 @@ class CharacterWordCloud {
     const height = 450 - margin.top - margin.bottom;
 
     // Append SVG
-    const svg = d3.select('#my_dataviz').append('svg')
+    const svg = d3.select('#cloud').append('svg')
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom)
       .append('g')
@@ -79,7 +79,8 @@ class CharacterWordCloud {
     const layout = d3.layout.cloud()
       .size([width, height])
       .words(words.map(d => ({ text: d.text, size: d.size })))
-      .padding(5)
+      .padding(10)
+			.spiral('rectangular')     // use rectangular spiral packing
       .rotate(() => ~~(Math.random() * 2) * 90)
       .fontSize(d => d.size)
       .on('end', draw);

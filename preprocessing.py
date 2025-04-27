@@ -197,6 +197,14 @@ def get_all_characters_stats(
         "you", "he", "she", "they", "we", "me", "my", "your",
         "as", "an", "at", "by", "this", "that", "there", "where",
         "so", "up", "down", "out", "all", "just", "like", "no", "its",
+        "are", "was", "be", "been", "being", "has", "have", "had",
+        "do", "does", "did", "doing", "will", "would", "can", "could",
+        "should", "may", "might", "must", "shall", "than", "then",
+        "more", "most", "some", "such", "any", "every", "each",
+        "few", "less", "least", "much", "many", "now", "here", "there",
+        "when", "where", "why", "how", "what", "who", "which",
+        "whoever", "whomever", "whichever", "whatever", "whose",
+        "from", "im", "into", "onto", "over", "under", "between",
     }    
     # 1) Load the character list
     with open(characters_csv, newline="", encoding="utf-8") as cf:
