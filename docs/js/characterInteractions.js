@@ -33,17 +33,29 @@ class CharacterInteractions {
     vis.g = vis.svg.append("g")
       .attr("transform", `translate(${vis.config.margin.left},${vis.config.margin.top})`);
 
-    // Set up episode dropdown
+    // Set up selection dropdown
+    vis.seasons  = Array.from(new Set(vis.data.map(d => d.episode.split("_")[0])))
+      .sort((a,b) => +a - +b);
+    vis.episodes = Array.from(new Set(vis.data.map(d => d.episode)))
+      .sort();
+
+    // 2) build dropdown options: All, Seasons…, then Episodes…
+    const opts = [
+      "All",
+      ...vis.seasons.map(s => `Season ${s}`),
+      ...vis.episodes
+    ];
+
     vis.dropdown = vis.container.select("#arc-episode-select");
-    vis.episodes = Array.from(new Set(vis.data.map(d => d.episode))).sort();
     vis.dropdown
       .selectAll("option")
-      .data(["All", ...vis.episodes])
+      .data(opts)
       .join("option")
-        .attr("value", d => d)
-        .text(d => d);
+      .attr("value", d => d)
+      .text(d => d);
     vis.dropdown.on("change", () => vis.updateVis());
 
+    // Values for color scale
     const counts = vis.data.map(d => d.count);
     vis.minCount = d3.min(counts);
     vis.maxCount = d3.max(counts);
@@ -58,25 +70,32 @@ class CharacterInteractions {
   updateVis() {
     let vis = this;
 
-    // Filter based on selection
-    vis.selected = vis.dropdown.property("value");
-    vis.filteredData = vis.data.filter(d => 
-      vis.selected === "All" || d.episode === vis.selected
-    );
+    const sel = vis.dropdown.property("value");
 
-    // if All is selected, filter for counts >= 5
-    vis.filteredData = vis.data.filter(d =>
-      vis.selected === "All"
-        ? d.count >= 5
-        : d.episode === vis.selected
-    );
+    // Decide filter mode
+    if (sel === "All") {
+      // all seasons & episodes, but still only strong links
+      vis.filteredData = vis.data.filter(d => d.count >= 5);
+    }
+    else if (sel.startsWith("Season ")) {
+      // strip off the “Season ” prefix
+      const season = sel.split(" ")[1];
+      vis.filteredData = vis.data.filter(d =>
+        d.episode.startsWith(season + "_") && d.count >= 5
+      );
+    }
+    else {
+      // a single episode
+      vis.filteredData = vis.data.filter(d =>
+        d.episode === sel
+      );
+    }
 
     // Determine unique character nodes
     vis.nodes = Array.from(new Set(
       vis.filteredData.flatMap(d => [d.char1, d.char2])
     )).sort();
-
-    // X scale
+  
     vis.xScale = d3.scalePoint()
       .domain(vis.nodes)
       .range([0, vis.width])
@@ -121,7 +140,7 @@ class CharacterInteractions {
         .attr("transform", d => `translate(${vis.xScale(d)},${vis.baseY})`);
 
     nodesEnter.append("circle")
-      .attr("r", 4)
+      .attr("r", 5)
       .attr("fill", "#333");
 
     nodesEnter.append("text")
@@ -133,7 +152,8 @@ class CharacterInteractions {
 
     nodes
       .merge(nodesEnter)
-      .attr("transform", d => `translate(${vis.xScale(d)},${vis.baseY})`);
+      .attr("transform", d => `translate(${vis.xScale(d)},${vis.baseY})`)
+      .raise();
 
     nodes.exit().remove();
   }
