@@ -11,6 +11,7 @@ class CharacterLines {
     }
     this.data = _data;
     this.episodes =  ["All Episodes", ..._episodes];
+    this.selectedSeason = "0"; // Default to all seasons
     this.initVis();
   }
 
@@ -151,10 +152,14 @@ class CharacterLines {
             .html(`<div class="tooltip-label">Season: </div>${vis.selectedSeason == "0" ? "All" : vis.selectedSeason}
             <div class="tooltip-label">Episode: </div>${vis.selectedEpisode}
             <div class="tooltip-label">Character: </div>${d.name}
-            <div class="tooltip-label">Number of Lines</div>${d3.format(',')(vis.selectedEpisode == "All Episodes" ? 
+            <div class="tooltip-label">Number of Lines: </div>${d3.format(',')(vis.selectedEpisode == "All Episodes" ? 
               (vis.selectedSeason == "0" ? d.all_lines : d["s" + vis.selectedSeason + "_lines"]) : d[vis.selectedEpisode + "_lines"])}
-            <div class="tooltip-label">Number of Words</div>${d3.format(',')(vis.selectedEpisode == "All Episodes" ? 
-              (vis.selectedSeason == "0" ? d.all_words : d["s" + vis.selectedSeason + "_words"]) : d[vis.selectedEpisode + "_words"])}`);
+            <div class="tooltip-label">Number of Words: </div>${d3.format(',')(vis.selectedEpisode == "All Episodes" ? 
+              (vis.selectedSeason == "0" ? d.all_words : d["s" + vis.selectedSeason + "_words"]) : d[vis.selectedEpisode + "_words"])}
+            <div class="tooltip-label">Episode Appearances in ${vis.selectedSeason == "0" ? "All Seasons" : "Season " + vis.selectedSeason}: </div> ${ 
+              vis.selectedEpisode == "All Episodes" ? (vis.selectedSeason == "0" ? d.all_eps : d["s" + vis.selectedSeason + "_eps"]) : (d[vis.selectedEpisode + "_lines"] > 0 ? 1 : 0)
+            }
+          `)
         })
         .on('mousemove', (event) => {
           d3.select('#tooltip')
