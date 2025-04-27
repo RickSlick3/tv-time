@@ -184,11 +184,11 @@ def main_character_stats_per_episode():
 
 
 def get_all_characters_stats(
-    characters_csv='./docs/data/all_characters_per_season.csv',
+    characters_csv='./docs/data/all_characters_stats_combined.csv',
     transcripts_dir=TRANSCRIPTS_DIR,
     seasons=SEASONS_TO_PROCESS,
     phrase_lengths=(1, 3, 4, 5),
-    top_n=3,
+    top_n=10,
     output_csv="./docs/data/characters_top_phrases.csv"
 ):
     STOPWORDS = {
@@ -416,7 +416,7 @@ def count_interactions_by_markers(transcripts_dir=TRANSCRIPTS_DIR,
 def count_pair_phrases(transcripts_dir=TRANSCRIPTS_DIR,
                        seasons=SEASONS_TO_PROCESS,
                        phrase_lengths=(3, 4, 5),
-                       output_csv='./docs/data/pair_top_phrases.csv.csv'):
+                       output_csv='./docs/data/pair_top_phrases.csv'):
     """
     For each episode:
       - split into scenes on '[' (or '(' if no '[' present)
@@ -629,18 +629,18 @@ def lexical_richness_analysis():
 
 if __name__ == "__main__":
     # Level 1 goals 
-    all_character_stats_combined()
+    # all_character_stats_combined()
     get_all_characters_stats()
-    main_character_stats_per_episode()
+    # main_character_stats_per_episode()
 
     # Level 2/3 goals
-    count_character_cooccurrences()
-    count_interactions_by_markers()
+    # count_character_cooccurrences()
+    # count_interactions_by_markers()
     
     # Level 4 goals
-    count_pair_phrases()
+    # count_pair_phrases()
 
-    lexical_richness_analysis()
+    # lexical_richness_analysis()
     # Total tokens – the total number of words they speak
     # Vocabulary size – how many unique word types
     # Type–token ratio – vocab size ÷ total tokens

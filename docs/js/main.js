@@ -13,6 +13,9 @@ Promise.all([
   .sort((a, b) => +b.all_lines - +a.all_lines).map(x => x.name);
   console.log(prominentCharacters);
 
+  const wordCloudCharacters = data[1].map(x => x.name);
+  console.log("CLOUD NAMES: " + wordCloudCharacters);
+
   let episodeSet = new Set(data[3].map(x => x.episode));
   const episodes = [...episodeSet];
   console.log(episodes);
@@ -28,4 +31,6 @@ Promise.all([
 
   let characterInteractions = new CharacterInteractions({parentElement: "#interaction-arc"}, data[2]);
   characterInteractions.updateVis();
+
+  let characterWordCloud = new CharacterWordCloud({parentElement: "#cloud-character-focus"}, data[1], wordCloudCharacters);
 }).catch(error => console.error(error));

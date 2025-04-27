@@ -20,7 +20,15 @@
           <li>Jerry Smith</li>
         </ul>
         <li><strong>Genre:</strong> Science Fiction, Dark Comedy, Satire</li>
-  </ul></div>
+      </div>
+
+      <div id="cloud-character-focus" class="chart-container">
+        <h2>Character Word Clouds</h2>
+        <select id="cloud-character-select"></select>
+        <div class="focus-content">
+          <div id="my_dataviz"></div>
+        </div>
+      </div>
   
       <div id="bar-chart" class="chart-container">
         <h2>Lines Per Episode/Season</h2>
@@ -64,12 +72,14 @@
     </div>
     
     <script src="js/d3.v6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
 
     <script src="js/main.js"></script>
     <script src="js/characterLines.js"></script>
     <script src="js/mainCharacters.js"></script>
     <script src="js/characterInfo.js"></script>
     <script src="js/characterInteractions.js"></script>
+    <script src="js/characterWordCloud.js"></script>
 
     <div id="tooltip"></div>
 
