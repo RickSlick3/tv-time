@@ -57,3 +57,53 @@ svg {
   fill: #c15f45;
   transition: fill ease-in-out 200ms;
 }
+
+rect {
+  shape-rendering: crispEdges;
+}
+
+#presence-chart {
+  position: relative;
+}
+
+.legend {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid black;
+}
+
+.legend-symbol {
+  width: 12px;
+  height: 12px;
+  margin-right: 3px;
+  display: inline-block;
+}
+
+.legend ul {
+  margin: 0;
+  padding: 10px 30px;
+}
+
+.legend li {
+  padding: 5px;
+  list-style-type: none;
+  text-align: left;
+}
+
+.cat-rick_lines rect, .cat-rick_words rect {
+  fill: #135ed7;
+}
+.cat-morty_lines rect, .cat-morty_words rect {
+  fill: #d72713;
+}
+
+.cat-jerry_lines, .cat-jerry_words rect {
+  fill: #0d8411;
+}
+.cat-beth_lines rect, .cat-beth_words rect {
+  fill: #d4c32d;
+}
+.cat-summer_lines rect, .cat-summer_words rect {
+  fill: #b319dd;
+}

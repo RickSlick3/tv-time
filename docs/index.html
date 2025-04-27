@@ -41,6 +41,25 @@
 
       <div id="presence-chart" class="chart-container">
         <h2>Character Presence in Episodes</h2>
+        <div class="legend">
+          <ul>
+            <li><span class="legend-symbol" style="background-color: #135ed7"></span>Rick</li>
+            <li><span class="legend-symbol" style="background-color: #d72713"></span>Morty</li>
+            <li><span class="legend-symbol" style="background-color: #0d8411"></span>Jerry</li>
+            <li><span class="legend-symbol" style="background-color: #d4c32d"></span>Beth</li>
+            <li><span class="legend-symbol" style="background-color: #b319dd"></span>Summer</li>
+          </ul>
+        </div>
+        <select id="season-selector">
+          <option value="0">All</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <select id="line-selector">
+          <option value="lines">Lines</option>
+          <option value="words">Words</option>
+        </select>
         <svg></svg>
       </div>
 
