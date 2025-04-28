@@ -20,6 +20,10 @@ svg {
 #interaction-arc svg {
   height: 600px;
 }
+#cloud-character-focus svg {
+  width: 600px;
+  height: 600px;
+}
 
 #word-cloud {
   width: 100%;

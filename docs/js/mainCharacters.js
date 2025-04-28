@@ -58,7 +58,7 @@ class MainCharacters {
       });
       return obj;
     });
-    //console.log(vis.filteredData);
+    //console.log(vis.newData);
 
     vis.seasonSelect = d3.select('#season-selector');
     vis.selectedSeason = "0";
