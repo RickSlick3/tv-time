@@ -192,7 +192,7 @@ def get_all_characters_stats(
     output_csv="./docs/data/characters_top_phrases.csv"
 ):
     STOPWORDS = {
-        "a", "i", "the", "and", "or", "but", "if", "in", "on",
+        "the", "and", "or", "but", "if", "in", "on",
         "to", "of", "for", "is", "it", "with", "that", "were",
         "you", "he", "she", "they", "we", "me", "my", "your",
         "as", "an", "at", "by", "this", "that", "there", "where",
@@ -205,6 +205,9 @@ def get_all_characters_stats(
         "when", "where", "why", "how", "what", "who", "which",
         "whoever", "whomever", "whichever", "whatever", "whose",
         "from", "im", "into", "onto", "over", "under", "between",
+        "dont", "not", "doesnt", "didnt", "cant", "couldnt", "hes",
+        "oh", "thats", "youre", "get", "about", "well", "hey", "got",
+        "go", "gonna", "yeah", "because",
     }    
     # 1) Load the character list
     with open(characters_csv, newline="", encoding="utf-8") as cf:
