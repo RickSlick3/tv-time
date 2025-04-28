@@ -10,18 +10,40 @@ class CharacterWordCloud {
 
   initVis() {
     let vis = this;
+    // Character dropdown
     vis.selectedCharacter = vis.characters[0];
     vis.container = d3.select(vis.config.parentElement);
-    vis.select = d3.select('#cloud-character-select');
+    vis.charSelect = vis.container.select('#cloud-character-select');
 
-    vis.select.selectAll('option')
+    vis.charSelect.selectAll('option')
       .data(vis.characters)
       .enter().append('option')
       .text(d => d);
-    vis.select.property('value', vis.selectedCharacter);
-
-    vis.select.on('change', event => {
+    vis.charSelect.property('value', vis.selectedCharacter);
+    vis.charSelect.on('change', event => {
       vis.selectedCharacter = d3.select(event.target).property('value');
+      vis.updateVis();
+    });
+
+    // Type dropdown: words or n-grams
+    vis.typeOptions = [
+      { key: 'word', label: 'Single Words', max: 10 },
+      { key: '3gram', label: '3-grams', max: 10 },
+      { key: '4gram', label: '4-grams', max: 10 },
+      { key: '5gram', label: '5-grams', max: 10 }
+    ];
+    vis.selectedType = vis.typeOptions[0].key;
+    vis.typeSelect = vis.container.insert('select', '.focus-content')
+      .attr('id', 'cloud-type-select');
+
+    vis.typeSelect.selectAll('option')
+      .data(vis.typeOptions)
+      .enter().append('option')
+      .attr('value', d => d.key)
+      .text(d => d.label);
+    vis.typeSelect.property('value', vis.selectedType);
+    vis.typeSelect.on('change', event => {
+      vis.selectedType = d3.select(event.target).property('value');
       vis.updateVis();
     });
 
@@ -31,63 +53,68 @@ class CharacterWordCloud {
 
   updateVis() {
     let vis = this;
-    // Filter data for selected character
+    // Filter row
     const row = vis.data.find(d => d.name === vis.selectedCharacter);
     if (!row) return;
 
+    // Determine selected n-gram type
+    const opt = vis.typeOptions.find(o => o.key === vis.selectedType);
+    const maxItems = opt.max;
+
     // Gather counts for scale domain
     const counts = [];
-    for (let i = 1; i <= 10; i++) {
-      const count = +row[`word_${i}_count`];
-      if (count > 0) counts.push(count);
+    for (let i = 1; i <= maxItems; i++) {
+      const c = +row[`${opt.key}_${i}_count`];
+      if (c > 0) counts.push(c);
     }
     const [minCount, maxCount] = d3.extent(counts);
 
-    // Define font size scale
+    // Scales
     const fontScale = d3.scaleLinear()
-      .domain([minCount, maxCount])
-      .range([25, 100]);  // adjust min/max font size as needed
+      .domain([1, maxCount])
+      .range([15, 50]);
+    const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
-		const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
-
-    // Construct word list from CSV columns
+    // Build words/phrases
     const words = [];
-    for (let i = 1; i <= 10; i++) {
-      const text = row[`word_${i}_text`];
-      const count = +row[`word_${i}_count`];
+    for (let i = 1; i <= maxItems; i++) {
+      const text = row[`${opt.key}_${i}_text`];
+      const count = +row[`${opt.key}_${i}_count`];
       if (text && count > 0) {
         words.push({ text: text, value: count, size: fontScale(count) });
       }
     }
 
-    // Clear previous visualization
+		console.log("words: ", words);
+
+    // Clear previous cloud
     d3.select('#cloud').select('svg').remove();
 
-    // Set dimensions and margins
-    const margin = { top: 10, right: 20, bottom: 10, left: 20 };
-    const width = 700 - margin.left - margin.right;
-    const height = 450 - margin.top - margin.bottom;
+    // Dimensions
+    const margin = { top: 10, right: 10, bottom: 10, left: 10 };
+    const width = 600 - margin.left - margin.right;
+    const height = 600 - margin.top - margin.bottom;
 
-    // Append SVG
+    // Create SVG
     const svg = d3.select('#cloud').append('svg')
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom)
       .append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
-    // Create the word cloud layout
+    // Word cloud layout
     const layout = d3.layout.cloud()
       .size([width, height])
       .words(words.map(d => ({ text: d.text, size: d.size })))
       .padding(10)
-			.spiral('rectangular')     // use rectangular spiral packing
+      .spiral('rectangular')
       .rotate(() => ~~(Math.random() * 2) * 90)
       .fontSize(d => d.size)
       .on('end', draw);
 
     layout.start();
 
-    // Draw function
+    // Render
     function draw(wordsData) {
       svg.append('g')
         .attr('transform', `translate(${width / 2},${height / 2})`)
