@@ -184,19 +184,30 @@ def main_character_stats_per_episode():
 
 
 def get_all_characters_stats(
-    characters_csv='./docs/data/all_characters_per_season.csv',
+    characters_csv='./docs/data/all_characters_stats_combined.csv',
     transcripts_dir=TRANSCRIPTS_DIR,
     seasons=SEASONS_TO_PROCESS,
     phrase_lengths=(1, 3, 4, 5),
-    top_n=3,
+    top_n=10,
     output_csv="./docs/data/characters_top_phrases.csv"
 ):
     STOPWORDS = {
-        "a", "i", "the", "and", "or", "but", "if", "in", "on",
+        "the", "and", "or", "but", "if", "in", "on",
         "to", "of", "for", "is", "it", "with", "that", "were",
         "you", "he", "she", "they", "we", "me", "my", "your",
         "as", "an", "at", "by", "this", "that", "there", "where",
         "so", "up", "down", "out", "all", "just", "like", "no", "its",
+        "are", "was", "be", "been", "being", "has", "have", "had",
+        "do", "does", "did", "doing", "will", "would", "can", "could",
+        "should", "may", "might", "must", "shall", "than", "then",
+        "more", "most", "some", "such", "any", "every", "each",
+        "few", "less", "least", "much", "many", "now", "here", "there",
+        "when", "where", "why", "how", "what", "who", "which",
+        "whoever", "whomever", "whichever", "whatever", "whose",
+        "from", "im", "into", "onto", "over", "under", "between",
+        "dont", "not", "doesnt", "didnt", "cant", "couldnt", "hes",
+        "oh", "thats", "youre", "get", "about", "well", "hey", "got",
+        "go", "gonna", "yeah", "because",
     }    
     # 1) Load the character list
     with open(characters_csv, newline="", encoding="utf-8") as cf:
@@ -416,7 +427,7 @@ def count_interactions_by_markers(transcripts_dir=TRANSCRIPTS_DIR,
 def count_pair_phrases(transcripts_dir=TRANSCRIPTS_DIR,
                        seasons=SEASONS_TO_PROCESS,
                        phrase_lengths=(3, 4, 5),
-                       output_csv='./docs/data/pair_top_phrases.csv.csv'):
+                       output_csv='./docs/data/pair_top_phrases.csv'):
     """
     For each episode:
       - split into scenes on '[' (or '(' if no '[' present)
@@ -629,18 +640,18 @@ def lexical_richness_analysis():
 
 if __name__ == "__main__":
     # Level 1 goals 
-    all_character_stats_combined()
+    # all_character_stats_combined()
     get_all_characters_stats()
-    main_character_stats_per_episode()
+    # main_character_stats_per_episode()
 
     # Level 2/3 goals
-    count_character_cooccurrences()
-    count_interactions_by_markers()
+    # count_character_cooccurrences()
+    # count_interactions_by_markers()
     
     # Level 4 goals
-    count_pair_phrases()
+    # count_pair_phrases()
 
-    lexical_richness_analysis()
+    # lexical_richness_analysis()
     # Total tokens – the total number of words they speak
     # Vocabulary size – how many unique word types
     # Type–token ratio – vocab size ÷ total tokens
