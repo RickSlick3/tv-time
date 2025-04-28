@@ -14,7 +14,6 @@ Promise.all([
   console.log(prominentCharacters);
 
   const wordCloudCharacters = data[1].map(x => x.name);
-  console.log("CLOUD NAMES: " + wordCloudCharacters);
 
   let episodeSet = new Set(data[3].map(x => x.episode));
   const episodes = [...episodeSet];

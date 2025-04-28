@@ -85,8 +85,6 @@ class CharacterWordCloud {
       }
     }
 
-		console.log("words: ", words);
-
     // Clear previous cloud
     d3.select('#cloud').select('svg').remove();
 
