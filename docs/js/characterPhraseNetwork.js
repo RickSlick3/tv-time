@@ -2,7 +2,10 @@
 
 class CharacterPhraseNetwork {
   constructor(_config, _data, _characters) {
-    this.config = { parentElement: _config.parentElement };
+    this.config = { 
+			parentElement: _config.parentElement,
+			tooltipPadding: 15
+		};
     this.data = _data;
     this.characters = _characters;
     this.initVis();
@@ -12,17 +15,6 @@ class CharacterPhraseNetwork {
     let vis = this;
     // Set up container
     vis.container = d3.select(vis.config.parentElement);
-		vis.tooltip = d3.select('body').append('div')
-      .attr('class', 'tooltip')
-      .style('position', 'absolute')
-      .style('padding', '6px')
-      .style('background', 'rgba(0,0,0,1)')
-      .style('color', '#fff')
-      .style('border-radius', '4px')
-      .style('font-size', '12px')
-      .style('pointer-events', 'none')
-      .style('visibility', 'hidden');
-
     // Initial draw
     vis.updateVis();
   }
@@ -52,10 +44,11 @@ class CharacterPhraseNetwork {
       .map(d => ({
         source: nodeByName[d.speaker],
         target: nodeByName[d.listener],
-        value: +d['3gram_count'] || 1
       }));
 
     vis.graph = { nodes, links };
+
+		console.log("Graph nodes:", vis.graph);
 
     // 3) Render with force layout
     vis.renderVis();
@@ -92,18 +85,26 @@ class CharacterPhraseNetwork {
       .style('fill', 'black')
 			// Tooltip events
       .on('mouseover', (event, d) => {
-        vis.tooltip
-          .text(d.name)
-          .style('visibility', 'visible');
-      })
-      .on('mousemove', event => {
-        vis.tooltip
+        d3.select('#tooltip')
+          // .html(
+          //   `<div class="tooltip-label">Source:</div>${d.source.name}` +
+          //   `<div class="tooltip-label">Target:</div>${d.target.name}` +
+          //   `<div class="tooltip-label">3-gram (${d.gram3_count}):</div>${d.gram3}` +
+          //   `<div class="tooltip-label">4-gram (${d.gram4_count}):</div>${d.gram4}` +
+          //   `<div class="tooltip-label">5-gram (${d.gram5_count}):</div>${d.gram5}`
+          // )
+          .style('left', (event.pageX + 10) + 'px')
           .style('top', (event.pageY - 10) + 'px')
-          .style('left', (event.pageX + 10) + 'px');
+          .style('opacity', 1);
       })
-      .on('mouseout', () => {
-        vis.tooltip.style('visibility', 'hidden');
-      });
+      .on('mousemove', (event) => {
+				d3.select('#tooltip')
+					.style('left', (event.pageX + vis.config.tooltipPadding) + 'px')   
+					.style('top', (event.pageY + vis.config.tooltipPadding) + 'px')
+			})
+			.on('mouseleave', () => {
+				d3.select('#tooltip').style('opacity', 0);
+			});
 
     // Force simulation
     const simulation = d3.forceSimulation(vis.graph.nodes)
