@@ -13,6 +13,8 @@ Promise.all([
   .sort((a, b) => +b.all_lines - +a.all_lines).map(x => x.name);
   console.log(prominentCharacters);
 
+  const wordCloudCharacters = data[1].map(x => x.name);
+
   let episodeSet = new Set(data[3].map(x => x.episode));
   const episodes = [...episodeSet];
   console.log(episodes);
