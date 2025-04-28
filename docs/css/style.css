@@ -21,9 +21,14 @@ svg {
   height: 600px;
 }
 #cloud-character-focus svg {
+    width: 1000px;
+    height: 600px;
+  }
+#pair-phrase-character-focus svg {
   width: 1000px;
-  height: 600px;
+  height: 700px;
 }
+
 
 #word-cloud {
   width: 100%;

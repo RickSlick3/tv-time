@@ -3,7 +3,8 @@ Promise.all([
   d3.csv('data/characters_top_phrases.csv'),
   d3.csv('data/cooccurrences_by_lines.csv'),
   d3.csv('data/cooccurrences_by_markers.csv'),
-  d3.csv('data/main_characters_per_episode.csv')
+  d3.csv('data/main_characters_per_episode.csv'),
+  d3.csv('data/pair_top_phrases.csv')
 ]).then(data => {
   const lineData = data[0].filter(x => +x.all_lines > 9)
   .sort((a, b) => +b.all_lines - +a.all_lines);
@@ -33,4 +34,6 @@ Promise.all([
   characterInteractions.updateVis();
 
   let characterWordCloud = new CharacterWordCloud({parentElement: "#cloud-character-focus"}, data[1], wordCloudCharacters);
+
+  let characterPhraseNetwork = new CharacterPhraseNetwork({parentElement: "#pair-phrase-character-focus"}, data[5], prominentCharacters);
 }).catch(error => console.error(error));
