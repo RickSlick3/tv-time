@@ -2,6 +2,7 @@ class EpisodeChart {
   constructor(_config, _data, _characters) {
     this.config = {
       parentElement: _config.parentElement,
+      //onCharacterChange: _config.onCharacterChange,
       containerWidth: 600,
       containerHeight: 400,
       // contextHeight: 30,
@@ -28,11 +29,12 @@ class EpisodeChart {
 
     vis.selectedCharacter = vis.characters[0];
     vis.container = d3.select(vis.config.parentElement);
-    vis.charSelect = vis.container.select('#cloud-character-select');
-    vis.charSelect.on('change', event => {
-      vis.selectedCharacter = d3.select(event.target).property('value');
-      vis.updateVis();
-    });
+    // vis.charSelect = vis.container.select('#cloud-character-select');
+    // vis.charSelect.on('change', event => {
+    //   vis.selectedCharacter = d3.select(event.target).property('value');
+    //   vis.config.onCharacterChange(vis.selectedCharacter);
+    //   //vis.updateVis();
+    // });
 
     vis.svg = d3.select('#episode-chart')
       .append('svg')
@@ -50,10 +52,13 @@ class EpisodeChart {
       .domain(d3.range(1, 3 + 1)) // Max Season + 1
       .range([0, vis.height])
       .padding(0.05);
+
+    vis.updateVis(vis.selectedCharacter);
   }
 
-  updateVis() {
+  updateVis(selectedCharacter) {
     let vis = this;
+    vis.selectedCharacter = selectedCharacter;
     let episodeNames = Object.keys(vis.data[0]).filter(d => d !== "name" && !d.startsWith("s") && 
     !d.startsWith("all") && !d.endsWith("words"));
     episodeNames = episodeNames.map(x => x.slice(0, -6));

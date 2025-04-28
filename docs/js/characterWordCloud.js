@@ -1,7 +1,8 @@
 class CharacterWordCloud {
   constructor(_config, _data, _characters) {
     this.config = {
-      parentElement: _config.parentElement
+      parentElement: _config.parentElement,
+      onCharacterChange: _config.onCharacterChange,
     };
     this.data = _data;
     this.characters = _characters;
@@ -22,7 +23,8 @@ class CharacterWordCloud {
     vis.charSelect.property('value', vis.selectedCharacter);
     vis.charSelect.on('change', event => {
       vis.selectedCharacter = d3.select(event.target).property('value');
-      vis.updateVis();
+      vis.config.onCharacterChange(vis.selectedCharacter);
+      //vis.updateVis();
     });
 
     // Type dropdown: words or n-grams
@@ -48,11 +50,12 @@ class CharacterWordCloud {
     });
 
     // Initial draw
-    vis.updateVis();
+    vis.updateVis(vis.selectedCharacter);
   }
 
-  updateVis() {
+  updateVis(selectedCharacter) {
     let vis = this;
+    vis.selectedCharacter = selectedCharacter;
     // Filter row
     const row = vis.data.find(d => d.name === vis.selectedCharacter);
     if (!row) return;
