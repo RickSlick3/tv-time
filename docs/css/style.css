@@ -3,6 +3,36 @@ body {
   background-color: #f7f7f7;
   margin: 20px;
   color: #333;
+  /* overflow: hidden; */
+}
+#info-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#info-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#info-screen {
+  width: 70%;
+  height: 400px;
 }
 
 .chart-container {
