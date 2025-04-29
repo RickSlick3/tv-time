@@ -5,7 +5,7 @@ class CharacterLines {
       //containerWidth: 700,
       containerHeight: 400,
       // contextHeight: 30,
-      margin: {top: 25, right: 20, bottom: 50, left: 50},
+      margin: {top: 25, right: 50, bottom: 50, left: 50},
       // contextMargin: {top: 300, right: 20, bottom: 20, left: 50},
       tooltipPadding: 15
     }
