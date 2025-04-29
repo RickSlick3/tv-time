@@ -12,6 +12,8 @@
 
 [**Rick and Morty**](https://en.wikipedia.org/wiki/Rick_and_Morty) is an animated sci-fi comedy series that follows the misadventures of an eccentric, alcoholic scientist, Rick Sanchez, and his good-hearted but easily influenced grandson, Morty Smith. Traveling across dimensions and encountering bizarre alien worlds, the duo’s chaotic adventures blend dark humor, philosophical themes, and sharp satire.
 
+![rick and morty image](/documentation-files/rick-and-morty.jpg)
+
 This application was created to visualize text analysis on transcripts from seasons 1, 2 and 3 of **Rick and Morty**. This will allow users to see visual representations of answers to the questions: Who appears in the show? How often do characters speak? How much do they say? What do they tend to talk about? How often do they share a scene with other characters? And More.
 
 ### The Data
@@ -34,33 +36,35 @@ This applications provides several visualizations to provide insights of differe
 
 #### Bar Chart: Character Lines and Words
 
-TODO - PICTURE OF BAR CHART
+![bar chart](/documentation-files/bar-chart.png)
 
 This bar chart shows an ordering of characters by how many lines they speak. Using the dropdowns above, this chart can be filtered by either season or ondividual episode. The user can also change the metric from lines to individual words per character. Hvering over each individual bar will show a tooltip with exact numbers of lines, words, and episode appearances per character. This can allow a user to understand how often a character appears, how much they speak in each episode or season, and ultimately how central the character is to the overall show. 
 
 #### Stacked Bar Chart: Main Characters Presence in Episodes
 
-TODO - PICTURE OF STACKED BAR CHART
+![stacked bar chart](/documentation-files/stacked-bar-chart.png)
 
 The stacked bar chart focuses on the main charactersand their proportions of lines and words in each season or episode. The user can filter the chart by either lines or words using the dropdown, as well as by individual episode or season. The user can hover over the different portions of the bars to see the characters total words or lines in the specific season or episode. This allows the user to visualize the proportions of how much or often each main character speaks relative to each other in a specific episode.
 
 #### Episode Chart and Word Cloud: Characters Most Used Words and Phrases
 
-TODO - PICTURE OF EPISODE CHART AND WORD CLOUD
+![character info](/documentation-files/character-info.png)
 
 These two visualizations are linked; the episode chart shows how many episodes a character appears in throughout the show, and the word cloud shows their most used words and phrases along with relatively how often they say them. The user can interact with these visuals using the dropdown to select a character of interest to change the visuals. Thy can also use the dropdown tochange he word cloud from single words to 3, 4, and 5 wrd phrases. The user can also hover over the episode chart to see a tooltip for how many lines a character says in that episode. This allows the user to see how often characters appear over the course of the show, how much they speak in each episode, and their most common words and phrases. 
 
 #### Arc Diagram: Character Interactions Per Episode or Season
 
-TODO - PICTURE OF ARC DIAGRAM
+![arc diagram](/documentation-files/arc-diagram.png)
 
 The arc diagram shows each character interactions represented by arcs. These arcs are undirected, and show if two characters appear in the same scene within a season or episode. Using the dropdown, the user can filter the diagram by season episode, or all seasons. This allows the user to understand which characters may interact with the most other characters, or how central they are to the individual epiosde or season. 
 
 #### Network Graph: What Charaters Say To Each Other
 
-TODO - PICTURE OF NETWORK GRAPH
+![network graph](/documentation-files/network.png)
 
 In this diagram, each character is represented by a node. The links represent characters speaking with one another in the same scene. As opposed to the arc diagram, these links are directed and show specifically what one character says to the other. When hovering over a node, a tooltip will appear to display who the character is, and the most common phrases they say to others. This can allow the user to understand what attitude that character hs toward another or the type of relationship they have.
+
+![network graph with tooltip](/documentation-files/network-tooltip.png)
 
 ### Design Choices and Process
 
