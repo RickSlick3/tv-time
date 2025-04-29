@@ -8,7 +8,7 @@ Promise.all([
 ]).then(data => {
   const lineData = data[0].filter(x => +x.all_lines > 9)
   .sort((a, b) => +b.all_lines - +a.all_lines);
-  console.log(data[1]);
+  console.log(data[0]);
 
   const prominentCharacters = data[0].filter(x => +x.all_lines > 9)
   .sort((a, b) => +b.all_lines - +a.all_lines).map(x => x.name);
@@ -68,3 +68,13 @@ Promise.all([
   //episodeChart.updateVis();
 
 }).catch(error => console.error(error));
+
+let infoButton = document.getElementById("info-button");
+let infoModal = document.getElementById("info-container");
+infoButton.addEventListener("click", function () {
+  infoModal.style = "display: flex;";
+});
+
+infoModal.addEventListener("click", function () {
+  infoModal.style = "display: none;";
+});
