@@ -55,11 +55,17 @@ def get_episode_links(season_links):
 
 
 # using a list of episode links, get the transcript of each episode
-def write_episode_transcript(season, episode_url):
+def write_episode_transcript(season, episode_url, episode_dict):
     episode_name = episode_url.split("/")[-2].replace("%27", "'").replace("%26", "and").replace(":", "")
     if "(episode)" in episode_name:
         episode_name = re.sub(r'\([^)]*\)', '', episode_name)
         episode_name = episode_name[:-1]
+
+    episode_num = episode_dict.get(episode_name.replace("_", " ").lower(), None)
+    if episode_num != None:
+        if episode_num < 10:
+            episode_num = f"0{episode_num}"
+        episode_name = f"{episode_num}_{episode_name}"
     
     output_path = f'./transcripts/{season}/{episode_name}.txt'
 
@@ -142,13 +148,12 @@ def write_episode_transcript(season, episode_url):
 
 
 # loop through dictionary of all links and call write_episode_transcript for each episode
-def loop_through_episodes(all_episode_links):
+def loop_through_episodes(all_episode_links, episode_dict):
     for szn, eps in all_episode_links.items():
         for ep in eps:
-            write_episode_transcript(szn, ep)
+            write_episode_transcript(szn, ep, episode_dict)
 
-
-def run_all_transcript_to_text_files():
+def run_all_transcript_to_text_files(episode_dict):
     season_links = get_season_links()
     # print(season_links)
 
@@ -236,9 +241,55 @@ def run_all_transcript_to_text_files():
     #         'https://rickandmorty.fandom.com/wiki/Wet_Kuat_Amortican_Summer/Transcript']
     # }
 
-    loop_through_episodes(all_episode_links)
+    loop_through_episodes(all_episode_links, episode_dict)
 
 
 if __name__ == "__main__":
+
+    season1 = [
+        "Pilot",
+        "Lawnmower Dog",
+        "Anatomy Park",
+        "M. Night Shaym-Aliens!",
+        "Meeseeks and Destroy",
+        "Rick Potion No. 9",
+        "Raising Gazorpazorp",
+        "Rixty Minutes",
+        "Something Ricked This Way Comes",
+        "Close Rick-counters of the Rick Kind",
+        "Ricksy Business"
+    ]
+    season2 = [
+        "A Rickle in Time",
+        "Mortynight Run",
+        "Auto Erotic Assimilation",
+        "Total Rickall",
+        "Get Schwifty",
+        "The Ricks Must Be Crazy",
+        "Big Trouble in Little Sanchez",
+        "Interdimensional Cable 2 Tempting Fate",
+        "Look Who's Purging Now",
+        "The Wedding Squanchers"
+    ]
+    season3 = [
+        "The Rickshank Rickdemption",
+        "Rickmancing the Stone",
+        "Pickle Rick",
+        "Vindicators 3 The Return of Worldender",
+        "The Whirly Dirly Conspiracy",
+        "Rest and Ricklaxation",
+        "The Ricklantis Mixup",
+        "Morty's Mind Blowers",
+        "The ABC's of Beth",
+        "The Rickchurian Mortydate"
+    ]
+
+    # Build the cumulative-index dict
+    episode_dict = {}
+    counter = 1
+    for title in season1 + season2 + season3:
+        episode_dict[title.lower()] = counter
+        counter += 1
+
     # gather script links and write transcripts to text files
-    run_all_transcript_to_text_files()
+    run_all_transcript_to_text_files(episode_dict)
