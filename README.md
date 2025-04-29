@@ -28,13 +28,39 @@ Then, we used a separate python script to read the transcripts and create easy-t
 [Click here](https://github.com/RickSlick3/tv-time/blob/main/preprocessing.py) to view our transcript processing script <br/>
 [Click here](https://github.com/RickSlick3/tv-time/tree/main/transcripts) to view all our transcripts.
 
-### Visualization Components TODO
+### Visualization Components and Discoveries
 
-Explain each view of the data, the GUI, etc.  Explain how you can interact with your application, and how the views update in response to these interactions. 
+This applications provides several visualizations to provide insights of different data:
 
-### Application Discoveries TODO
+#### Bar Chart: Character Lines and Words
 
-what your application enables you to discover: Present some findings you arrive at with your application.  Include screen shots to illustrate.
+TODO - PICTURE OF BAR CHART
+
+This bar chart shows an ordering of characters by how many lines they speak. Using the dropdowns above, this chart can be filtered by either season or ondividual episode. The user can also change the metric from lines to individual words per character. Hvering over each individual bar will show a tooltip with exact numbers of lines, words, and episode appearances per character. This can allow a user to understand how often a character appears, how much they speak in each episode or season, and ultimately how central the character is to the overall show. 
+
+#### Stacked Bar Chart: Main Characters Presence in Episodes
+
+TODO - PICTURE OF STACKED BAR CHART
+
+The stacked bar chart focuses on the main charactersand their proportions of lines and words in each season or episode. The user can filter the chart by either lines or words using the dropdown, as well as by individual episode or season. The user can hover over the different portions of the bars to see the characters total words or lines in the specific season or episode. This allows the user to visualize the proportions of how much or often each main character speaks relative to each other in a specific episode.
+
+#### Episode Chart and Word Cloud: Characters Most Used Words and Phrases
+
+TODO - PICTURE OF EPISODE CHART AND WORD CLOUD
+
+These two visualizations are linked; the episode chart shows how many episodes a character appears in throughout the show, and the word cloud shows their most used words and phrases along with relatively how often they say them. The user can interact with these visuals using the dropdown to select a character of interest to change the visuals. Thy can also use the dropdown tochange he word cloud from single words to 3, 4, and 5 wrd phrases. The user can also hover over the episode chart to see a tooltip for how many lines a character says in that episode. This allows the user to see how often characters appear over the course of the show, how much they speak in each episode, and their most common words and phrases. 
+
+#### Arc Diagram: Character Interactions Per Episode or Season
+
+TODO - PICTURE OF ARC DIAGRAM
+
+The arc diagram shows each character interactions represented by arcs. These arcs are undirected, and show if two characters appear in the same scene within a season or episode. Using the dropdown, the user can filter the diagram by season episode, or all seasons. This allows the user to understand which characters may interact with the most other characters, or how central they are to the individual epiosde or season. 
+
+#### Network Graph: What Charaters Say To Each Other
+
+TODO - PICTURE OF NETWORK GRAPH
+
+In this diagram, each character is represented by a node. The links represent characters speaking with one another in the same scene. As opposed to the arc diagram, these links are directed and show specifically what one character says to the other. When hovering over a node, a tooltip will appear to display who the character is, and the most common phrases they say to others. This can allow the user to understand what attitude that character hs toward another or the type of relationship they have.
 
 ### Design Choices and Process
 
