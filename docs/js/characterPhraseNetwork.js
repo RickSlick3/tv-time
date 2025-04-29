@@ -112,7 +112,9 @@ class CharacterPhraseNetwork {
       .style('fill', 'black')
 			// Tooltip events
       .on('mouseover', (event, d) => {
-        const fromHtml = `<div class="tooltip-from">From ${d.name}:</div>`;
+        const fromHtml = `<div class="tooltip-from">From ${d.name.split(' ')
+          .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+          .join(' ')}:</div>`;
         let connectionsHtml = ``;
         if (d.connections.length == 0) {
           connectionsHtml = `<div class="tooltip-group"><div class="tooltip-label">No connections</div></div>`;
@@ -120,7 +122,9 @@ class CharacterPhraseNetwork {
         else {
           connectionsHtml = d.connections.map(c => `
             <div class="network-tooltip-group">
-              <div class="tooltip-label">To ${c.listener}:</div>
+              <div class="tooltip-label">To ${c.listener.split(' ')
+                .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+                .join(' ')}:</div>
               ${c.phrases.map(p => `
                 <div class="tooltip-phrase">
                   <div class="tooltip-label">3-gram (${p.gram3_count}): ${p.gram3}</div>

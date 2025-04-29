@@ -30,6 +30,7 @@ class MainCharacters {
         .paddingInner(0.2);
 
     vis.xAxis = d3.axisBottom(vis.xScale)
+        .tickFormat(d => d.startsWith("s") ? d.toUpperCase() : "S" + d.slice(0, 1) + " E" + d.slice(2, 4))
         .tickSizeOuter(0);
 
     vis.yAxis = d3.axisLeft(vis.yScale)
@@ -159,8 +160,12 @@ class MainCharacters {
             .style('opacity', 1)
             // Format number with million and thousand separator
             .html(`<div class="tooltip-label">Season: </div>${vis.selectedSeason == "0" ? "All" : vis.selectedSeason}
-            <div class="tooltip-label">Episode: </div>${d.data.episode}
-            <div class="tooltip-label">Character: </div>${event.target.parentElement.__data__.key.slice(0, -6)}
+            <div class="tooltip-label">Episode: </div>${d.data.episode.split(' ')
+              .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+              .join(' ')}
+            <div class="tooltip-label">Character: </div>${event.target.parentElement.__data__.key.slice(0, -6).split(' ')
+              .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+              .join(' ')}
             <div class="tooltip-label">Number of ${vis.selectedDenomination}: </div>${d3.format(',')(+d[1] - +d[0]) + " " + vis.selectedDenomination}
           `)
         })

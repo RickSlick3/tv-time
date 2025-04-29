@@ -32,6 +32,9 @@ class CharacterLines {
         .paddingInner(0.2);
 
     vis.xAxis = d3.axisBottom(vis.xScale)
+        .tickFormat(d => d.split(' ')
+          .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+          .join(' '))
         .tickSizeOuter(0);
 
     vis.yAxis = d3.axisLeft(vis.yScale)
@@ -74,7 +77,8 @@ class CharacterLines {
     // Append empty x-axis group and move it to the bottom of the chart
     vis.xAxisG = vis.chart.append('g')
         .attr('class', 'axis x-axis')
-        .attr('transform', `translate(0,${vis.height})`);
+        .attr('transform', `translate(0,${vis.height})`)
+        .attr('style', 'font-size: 16px;');
     
     // Append y-axis group 
     vis.yAxisG = vis.chart.append('g')
@@ -148,7 +152,7 @@ class CharacterLines {
       .attr('xlink:href', d => "./data/img/" + (vis.images.find(x => x.startsWith(d.name)) ?? "placeholder.png")) // path to your image for each character
       .attr('width', vis.xScale.bandwidth() - 10)
       .attr('height', (vis.xScale.bandwidth() - 10)*1.5)
-      .attr('y', 10) // on top
+      .attr('y', 15) // on top
       .attr('x', -vis.xScale.bandwidth()/2) // center image around tick
       .attr('preserveAspectRatio', 'xMidYMid meet');
 
@@ -197,7 +201,9 @@ class CharacterLines {
             // Format number with million and thousand separator
             .html(`<div class="tooltip-label">Season: </div>${vis.selectedSeason == "0" ? "All" : vis.selectedSeason}
             <div class="tooltip-label">Episode: </div>${vis.selectedEpisode}
-            <div class="tooltip-label">Character: </div>${d.name}
+            <div class="tooltip-label">Character: </div>${d.name.split(' ')
+              .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+              .join(' ')}
             <div class="tooltip-label">Number of Lines: </div>${d3.format(',')(vis.selectedEpisode == "All Episodes" ? 
               (vis.selectedSeason == "0" ? d.all_lines : d["s" + vis.selectedSeason + "_lines"]) : d[vis.selectedEpisode + "_lines"])}
             <div class="tooltip-label">Number of Words: </div>${d3.format(',')(vis.selectedEpisode == "All Episodes" ? 

@@ -19,10 +19,14 @@ class CharacterWordCloud {
     vis.charSelect.selectAll('option')
       .data(vis.characters)
       .enter().append('option')
-      .text(d => d);
-    vis.charSelect.property('value', vis.selectedCharacter);
+      .text(d => d.split(' ')
+      .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+      .join(' '));
+    vis.charSelect.property('value', vis.selectedCharacter.split(' ')
+    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(' '));
     vis.charSelect.on('change', event => {
-      vis.selectedCharacter = d3.select(event.target).property('value');
+      vis.selectedCharacter = d3.select(event.target).property('value').toLowerCase();
       vis.config.onCharacterChange(vis.selectedCharacter);
       //vis.updateVis();
     });

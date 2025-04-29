@@ -147,7 +147,9 @@ class CharacterInteractions {
       .attr("transform", "rotate(90)")
       .attr("dy", 5)
       .attr("dx", 10)
-      .text(d => d)
+      .text(d => d.split(' ')
+          .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+          .join(' '))
       .style("pointer-events", "none");
 
     nodes
