@@ -3,8 +3,8 @@ class EpisodeChart {
     this.config = {
       parentElement: _config.parentElement,
       //onCharacterChange: _config.onCharacterChange,
-      containerWidth: 600,
-      containerHeight: 400,
+      containerWidth: 450,
+      containerHeight: 200,
       // contextHeight: 30,
       margin: {top: 50, right: 20, bottom: 50, left: 50},
       // contextMargin: {top: 300, right: 20, bottom: 20, left: 50},
@@ -100,7 +100,7 @@ class EpisodeChart {
     .data([vis.imgPath]) // bind a single element array
     .join('img')
       .attr('src', d => d)
-      .attr('width', 300);
+      .attr('width', 400);
       //.attr('height', vis.height + vis.config.margin.top + vis.config.margin.bottom)
 
     vis.svg.append('g')

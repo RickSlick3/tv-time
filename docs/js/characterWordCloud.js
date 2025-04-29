@@ -39,8 +39,7 @@ class CharacterWordCloud {
       { key: '5gram', label: '5-grams', max: 10 }
     ];
     vis.selectedType = vis.typeOptions[0].key;
-    vis.typeSelect = vis.container.insert('select', '.focus-content')
-      .attr('id', 'cloud-type-select');
+    vis.typeSelect = vis.container.select('#cloud-type-select');
 
     vis.typeSelect.selectAll('option')
       .data(vis.typeOptions)
@@ -97,8 +96,8 @@ class CharacterWordCloud {
 
     // Dimensions
     const margin = { top: 10, right: 10, bottom: 10, left: 10 };
-    const width = 600 - margin.left - margin.right;
-    const height = 600 - margin.top - margin.bottom;
+    const width = 500 - margin.left - margin.right;
+    const height = 500 - margin.top - margin.bottom;
 
     // Create SVG
     const svg = d3.select('#cloud').append('svg')

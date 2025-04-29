@@ -72,14 +72,25 @@
       </div>
 
       <div id="cloud-character-focus" class="chart-container">
-        <h2>Character Word Clouds</h2>
+        <h2>Character Information</h2>
+        <label for="cloud-character-select">Character:</label>
         <select id="cloud-character-select"></select>
-        <div class="focus-content">
+        <div class="focus-content" style="margin-top: 20px;">
           <div>
             <div id="character-image"></div>
-            <div id="episode-chart"></div>
           </div> 
-          <div id="cloud"></div>
+          <div class="character-charts">
+            <h3>General Info</h3>
+            <div id="general-info"></div>
+            <h3>Episode Appearances</h3>
+            <div id="episode-chart"></div>
+          </div>
+          <div class="character-charts">
+            <h3>Most Spoken Words</h3>
+            <select id="cloud-type-select"></select>
+            <div id="cloud"></div>
+          </div>
+          </div>
         </div>
       </div>
 
