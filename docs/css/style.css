@@ -28,6 +28,7 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
+  z-index: 100;
 }
 
 #info-screen {
