@@ -640,18 +640,18 @@ def lexical_richness_analysis():
 
 if __name__ == "__main__":
     # Level 1 goals 
-    # all_character_stats_combined()
+    all_character_stats_combined()
     get_all_characters_stats()
-    # main_character_stats_per_episode()
+    main_character_stats_per_episode()
 
     # Level 2/3 goals
-    # count_character_cooccurrences()
-    # count_interactions_by_markers()
+    count_character_cooccurrences()
+    count_interactions_by_markers()
     
     # Level 4 goals
-    # count_pair_phrases()
+    count_pair_phrases()
 
-    # lexical_richness_analysis()
+    lexical_richness_analysis()
     # Total tokens – the total number of words they speak
     # Vocabulary size – how many unique word types
     # Type–token ratio – vocab size ÷ total tokens
