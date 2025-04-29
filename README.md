@@ -8,6 +8,8 @@
 ## Documentation
 
 **Link to Application:** [rickslick3.github.io/tv-time/](https://rickslick3.github.io/tv-time/) <br/>
+- **Note:** If some sections of the application are missing initially, refresh the page and everything will load in.
+
 **Link to Demonstration:** [Application Demo Video](https://drive.google.com/file/d/1Iyc8WMvAVaFoPHnTsARVE-fr-R6FMwwc/view?usp=sharing)
 
 [**Rick and Morty**](https://en.wikipedia.org/wiki/Rick_and_Morty) is an animated sci-fi comedy series that follows the misadventures of an eccentric, alcoholic scientist, Rick Sanchez, and his good-hearted but easily influenced grandson, Morty Smith. Traveling across dimensions and encountering bizarre alien worlds, the duo’s chaotic adventures blend dark humor, philosophical themes, and sharp satire.
@@ -50,7 +52,7 @@ The stacked bar chart focuses on the main charactersand their proportions of lin
 
 ![character info](/documentation-files/character-info.png)
 
-These two visualizations are linked; the episode chart shows how many episodes a character appears in throughout the show, and the word cloud shows their most used words and phrases along with relatively how often they say them. The user can interact with these visuals using the dropdown to select a character of interest to change the visuals. Thy can also use the dropdown tochange he word cloud from single words to 3, 4, and 5 wrd phrases. The user can also hover over the episode chart to see a tooltip for how many lines a character says in that episode. This allows the user to see how often characters appear over the course of the show, how much they speak in each episode, and their most common words and phrases. 
+These two visualizations are linked; the episode chart shows how many episodes a character appears in throughout the show, and the word cloud shows their most used words and phrases along with relatively how often they say them. The user can interact with these visuals using the dropdown to select a character of interest to change the visuals. Thy can also use the dropdown to change the word cloud from single words to 3, 4, and 5 word phrases. The user can also hover over the episode chart to see a tooltip for how many lines a character says in that episode. This allows the user to see how often characters appear over the course of the show, how much they speak in each episode, and their most common words and phrases. 
 
 #### Arc Diagram: Character Interactions Per Episode or Season
 
@@ -72,7 +74,7 @@ In this diagram, each character is represented by a node. The links represent ch
 
 Here is a link to our digital sketches: [Design Plan Charts](/documentation-files/tv-time-visual-sketches.pdf)
 
-Our ideas were chosen based on the project requirements. Basic analytics such as lines or words per character can shown through a line or bar graph. Our sketches highlight our ideas to show potentially directed links between characters throughout the show, such as what one character says to another. This type of data cannot be show witha normal two-axis graph. These network graph sketches can allow either directed or non-directed connections. We used the arc diagram to show interactiosn between characters since those are non-directed, and the network graph to show what one character says to another so that each connection has a direction.  
+Our ideas were chosen based on the project requirements. Basic analytics such as lines or words per character can shown through a line or bar graph. Our sketches highlight our ideas to show potentially directed links between characters throughout the show, such as what one character says to another. This type of data cannot be show witha normal two-axis graph. These network graph sketches can allow either directed or non-directed connections. We used the arc diagram to show interactions between characters since those are non-directed, and the network graph to show what one character says to another so that each connection has a direction.  
 
 #### Structure and Libraries
 
