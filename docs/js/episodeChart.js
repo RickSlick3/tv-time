@@ -39,6 +39,8 @@ class EpisodeChart {
 
     vis.image = d3.select('#character-image');
 
+    vis.generalInfo = d3.select("#general-info");
+
     vis.svg = d3.select('#episode-chart')
       .append('svg')
       .attr('width', vis.width + vis.config.margin.left + vis.config.margin.right)
@@ -89,12 +91,25 @@ class EpisodeChart {
 
   renderVis() {
     let vis = this;
+    vis.characterInfo = vis.data.find(x => x.name == vis.selectedCharacter);
+    console.log(vis.data);
+
+    const featuredEpisodes = Object.entries(vis.characterInfo)
+    .filter(([key, value]) => (key.startsWith("1") || key.startsWith("2") || key.startsWith("3")) &&
+    key.endsWith("_lines") && +value > 0)
+    .map(([key, _]) => "S" + key.slice(0, 1) + " E" + key.slice(2, 4) + ": " + key.slice(5, -6));
 
     // Assume maximum number of episodes in any season:
     const maxEpisodes = d3.max(vis.groupedBySeason, ([season, episodes]) => episodes.length);
 
     // Create an array [0, 1, 2, ..., maxEpisodes-1]
     const episodeIndices = d3.range(maxEpisodes);
+
+    vis.generalInfo.html(`
+      <p><b>Number of Episodes:</b> ${vis.characterInfo.all_eps}</p>
+      <p><b>Featured Episodes:</b> ${featuredEpisodes.length > 10 ? "None" : featuredEpisodes.join(', ')}</p>
+      <p><b>Average Num. Lines Per Episode Appearance:</b> ${(+vis.characterInfo.all_lines/+vis.characterInfo.all_eps).toFixed(0)}</p>
+      <p><b>Average Num. Words Per Episode Appearance:</b> ${(+vis.characterInfo.all_words/+vis.characterInfo.all_eps).toFixed(0)}</p>`);
 
     vis.image.selectAll('img')
     .data([vis.imgPath]) // bind a single element array
