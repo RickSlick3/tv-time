@@ -15,11 +15,21 @@ Promise.all([
 
   const wordCloudCharacters = data[1].map(x => x.name);
 
+  const images = ["abradolph lincoler.jpg", "agency director.jpeg", "alan.jpg", "alien doctor.jpg", "annie.webp", 
+    "army general.webp", "arthricia.jpeg", "beta-7.jpg", "beth.webp", "birdperson.jpg", "blim blam.webp", "brad.jpg",
+    "cornvelious daniel.jpg", "doofus rick.webp", "dr. bloom.jpg", "dr. wong.webp", "ethan.webp", "eyehole man.jpg",
+    "fart.webp", "flippy nips.webp", "gearhead.webp", "mr. goldenfold.webp", "ice-t.jpg", "jacob.webp", "jaguar.jpg", "jerry.webp",
+    "jessica.webp", "kyle.webp", "leonard.jpeg", "lucy.webp", "meeseeks.webp", "million ants.jpeg", "morty.webp", 
+    "mr poopybutthole.jpg", "nathan.webp", "needful.webp", "pencilvester.jpg", "pickle rick.webp", "president.webp",
+    "prince nebulon.webp", "principal vagina.webp", "rick.webp", "scary terry.webp", "scroopy noopers.webp", "snuffles.webp",
+    "squanchy.webp", "stacy.webp", "summer.webp", "supernova.webp", "tammy.webp", "toxic morty.webp", "toxic rick.jpg",
+    "unity.webp", "vance.webp", "zeep.jpeg", "placeholder.png"];
+
   let episodeSet = new Set(data[3].map(x => x.episode));
   const episodes = [...episodeSet];
   console.log(episodes);
 
-  let characterLinesChart = new CharacterLines({parentElement: "#bar-chart"}, lineData, episodes);
+  let characterLinesChart = new CharacterLines({parentElement: "#bar-chart"}, lineData, episodes, images);
   characterLinesChart.updateVis();
 
   let mainCharactersChart = new MainCharacters({parentElement: "#presence-chart"}, data[4]);
@@ -31,7 +41,7 @@ Promise.all([
   let characterInteractions = new CharacterInteractions({parentElement: "#interaction-arc"}, data[2]);
   characterInteractions.updateVis();
 
-  let episodeChart = new EpisodeChart({parentElement: "#cloud-character-focus"}, data[0], wordCloudCharacters);
+  let episodeChart = new EpisodeChart({parentElement: "#cloud-character-focus"}, data[0], wordCloudCharacters, images);
   
   let characterWordCloud = new CharacterWordCloud({parentElement: "#cloud-character-focus",
     onCharacterChange: selectedCharacter => {

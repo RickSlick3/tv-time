@@ -1,5 +1,5 @@
 class EpisodeChart {
-  constructor(_config, _data, _characters) {
+  constructor(_config, _data, _characters, _images) {
     this.config = {
       parentElement: _config.parentElement,
       //onCharacterChange: _config.onCharacterChange,
@@ -12,6 +12,7 @@ class EpisodeChart {
     }
     this.data = _data;
     this.characters = _characters;
+    this.images = _images;
     this.initVis();
   }
 
@@ -36,6 +37,8 @@ class EpisodeChart {
     //   //vis.updateVis();
     // });
 
+    vis.image = d3.select('#character-image');
+
     vis.svg = d3.select('#episode-chart')
       .append('svg')
       .attr('width', vis.width + vis.config.margin.left + vis.config.margin.right)
@@ -59,6 +62,8 @@ class EpisodeChart {
   updateVis(selectedCharacter) {
     let vis = this;
     vis.selectedCharacter = selectedCharacter;
+    console.log(vis.images);
+    vis.imgPath = "./data/img/" + (vis.images.find(x => x.startsWith(vis.selectedCharacter)) ?? "placeholder.png");
     let episodeNames = Object.keys(vis.data[0]).filter(d => d !== "name" && !d.startsWith("s") && 
     !d.startsWith("all") && !d.endsWith("words"));
     episodeNames = episodeNames.map(x => x.slice(0, -6));
@@ -90,6 +95,13 @@ class EpisodeChart {
 
     // Create an array [0, 1, 2, ..., maxEpisodes-1]
     const episodeIndices = d3.range(maxEpisodes);
+
+    vis.image.selectAll('img')
+    .data([vis.imgPath]) // bind a single element array
+    .join('img')
+      .attr('src', d => d)
+      .attr('width', 300);
+      //.attr('height', vis.height + vis.config.margin.top + vis.config.margin.bottom)
 
     vis.svg.append('g')
       .attr('class', 'episode-labels')

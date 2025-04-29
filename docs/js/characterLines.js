@@ -1,5 +1,5 @@
 class CharacterLines {
-  constructor(_config, _data, _episodes) {
+  constructor(_config, _data, _episodes, _images) {
     this.config = {
       parentElement: _config.parentElement,
       //containerWidth: 700,
@@ -11,6 +11,7 @@ class CharacterLines {
     }
     this.data = _data;
     this.episodes =  ["All Episodes", ..._episodes];
+    this.images = _images;
     this.selectedSeason = "0"; // Default to all seasons
     this.initVis();
   }
@@ -122,6 +123,51 @@ class CharacterLines {
     // Set the scale input domains
     vis.xScale.domain(vis.filteredData.map(vis.xValue));
     vis.yScale.domain([0, d3.max(vis.filteredData, vis.yValue)]);
+
+    // 1. Hide the normal x-axis tick labels
+    //vis.xAxisG.selectAll('text').remove();
+
+    // 2. Add custom groups at each x value
+    const ticks = vis.xAxisG.selectAll('.custom-tick')
+      .data(vis.filteredData, d => d);
+      // .join('g')
+      //   .attr('class', 'custom-tick')
+      //   .attr('transform', d => `translate(${vis.xScale(d.name) + vis.xScale.bandwidth() / 2}, 10)`); // adjust Y as needed
+
+    const ticksEnter = ticks.enter()
+      .append('g')
+        .attr('class', 'custom-tick')
+        .attr('transform', d => `translate(${vis.xScale(d.name) + vis.xScale.bandwidth()/2}, 10)`);
+
+    ticksEnter.merge(ticks)
+      .transition().duration(500)
+        .attr('transform', d => `translate(${vis.xScale(d.name) + vis.xScale.bandwidth()/2}, 10)`);
+
+    // 3. Add image inside each tick group
+    ticksEnter.append('image')
+      .attr('xlink:href', d => "./data/img/" + (vis.images.find(x => x.startsWith(d.name)) ?? "placeholder.png")) // path to your image for each character
+      .attr('width', vis.xScale.bandwidth() - 10)
+      .attr('height', (vis.xScale.bandwidth() - 10)*1.5)
+      .attr('y', 10) // on top
+      .attr('x', -vis.xScale.bandwidth()/2) // center image around tick
+      .attr('preserveAspectRatio', 'xMidYMid meet');
+
+    ticks.select('image')
+      .transition().duration(500)
+        .attr('xlink:href', d => "./data/img/" + (vis.images.find(x => x.startsWith(d.name)) ?? "placeholder.png"));
+
+    // 4. Add text under each image
+    ticksEnter.append('text')
+      .text(d => d.name)
+      .attr('y', 40) // a little below the image
+      .attr('text-anchor', 'middle')
+      .style('font-size', '10px');
+
+    ticks.select('text')
+      .transition().duration(500)
+        .text(d => d.name);
+
+    ticks.exit().remove();
 
     vis.renderVis();
   }

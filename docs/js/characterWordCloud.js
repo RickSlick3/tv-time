@@ -46,7 +46,7 @@ class CharacterWordCloud {
     vis.typeSelect.property('value', vis.selectedType);
     vis.typeSelect.on('change', event => {
       vis.selectedType = d3.select(event.target).property('value');
-      vis.updateVis();
+      vis.updateVis(vis.selectedCharacter);
     });
 
     // Initial draw
