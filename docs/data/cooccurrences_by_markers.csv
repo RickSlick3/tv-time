@@ -543,3 +543,18 @@ episode,char1,char2,count
 3_30_The_ABC's_of_Beth,jerry,kiara,3
 3_30_The_ABC's_of_Beth,kiara,morty,2
 3_30_The_ABC's_of_Beth,kiara,summer,2
+3_31_The_Rickchurian_Mortydate,morty,rick,10
+3_31_The_Rickchurian_Mortydate,morty,mr president,4
+3_31_The_Rickchurian_Mortydate,morty,president,7
+3_31_The_Rickchurian_Mortydate,mr president,president,4
+3_31_The_Rickchurian_Mortydate,mr president,rick,4
+3_31_The_Rickchurian_Mortydate,president,rick,10
+3_31_The_Rickchurian_Mortydate,beth,summer,3
+3_31_The_Rickchurian_Mortydate,beth,rick,3
+3_31_The_Rickchurian_Mortydate,beth,jerry,5
+3_31_The_Rickchurian_Mortydate,beth,morty,2
+3_31_The_Rickchurian_Mortydate,jerry,morty,2
+3_31_The_Rickchurian_Mortydate,jerry,rick,2
+3_31_The_Rickchurian_Mortydate,jerry,summer,2
+3_31_The_Rickchurian_Mortydate,morty,summer,2
+3_31_The_Rickchurian_Mortydate,rick,summer,2

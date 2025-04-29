@@ -1,545 +1,1123 @@
 episode,char1,char2,count
-1_01_Pilot,morty,rick,9
-1_01_Pilot,morty,robot voice,2
-1_01_Pilot,rick,robot voice,2
-1_01_Pilot,beth,jerry,5
-1_01_Pilot,beth,morty,2
-1_01_Pilot,beth,rick,2
-1_01_Pilot,beth,summer,3
-1_01_Pilot,jerry,morty,2
-1_01_Pilot,jerry,rick,2
-1_01_Pilot,jerry,summer,3
-1_01_Pilot,morty,summer,3
-1_01_Pilot,rick,summer,3
-1_01_Pilot,jessica,morty,2
+1_01_Pilot,morty,rick,12
+1_01_Pilot,beth,jerry,8
+1_01_Pilot,beth,morty,9
+1_01_Pilot,beth,rick,9
+1_01_Pilot,beth,summer,5
+1_01_Pilot,jerry,morty,8
+1_01_Pilot,jerry,rick,8
+1_01_Pilot,jerry,summer,5
+1_01_Pilot,morty,summer,5
+1_01_Pilot,rick,summer,5
+1_01_Pilot,beth,jessica,2
+1_01_Pilot,jerry,jessica,2
+1_01_Pilot,jessica,morty,3
+1_01_Pilot,jessica,mr. goldenfold,2
+1_01_Pilot,jessica,rick,3
+1_01_Pilot,morty,mr. goldenfold,2
+1_01_Pilot,mr. goldenfold,rick,2
 1_01_Pilot,beth,davin,2
+1_01_Pilot,beth,tom,2
 1_01_Pilot,davin,jerry,2
+1_01_Pilot,davin,morty,2
+1_01_Pilot,davin,rick,2
+1_01_Pilot,morty,tom,2
+1_01_Pilot,rick,tom,2
 1_01_Pilot,beth,principal vagina,2
 1_01_Pilot,jerry,principal vagina,2
+1_01_Pilot,morty,principal vagina,2
+1_01_Pilot,principal vagina,rick,2
+1_02_Lawnmower_Dog,jerry,morty,10
+1_02_Lawnmower_Dog,jerry,rick,10
 1_02_Lawnmower_Dog,jerry,summer,8
-1_02_Lawnmower_Dog,jerry,morty,5
-1_02_Lawnmower_Dog,jerry,rick,5
-1_02_Lawnmower_Dog,morty,rick,23
-1_02_Lawnmower_Dog,morty,summer,4
-1_02_Lawnmower_Dog,rick,summer,4
-1_02_Lawnmower_Dog,mr. goldenfold,mrs. pancakes,3
+1_02_Lawnmower_Dog,jerry,tv,2
+1_02_Lawnmower_Dog,morty,rick,15
+1_02_Lawnmower_Dog,morty,summer,9
+1_02_Lawnmower_Dog,morty,tv,2
+1_02_Lawnmower_Dog,rick,summer,9
+1_02_Lawnmower_Dog,rick,tv,2
+1_02_Lawnmower_Dog,summer,tv,2
+1_02_Lawnmower_Dog,morty,mrs. pancakes,3
 1_02_Lawnmower_Dog,mrs. pancakes,rick,3
+1_02_Lawnmower_Dog,morty,mr. goldenfold,4
+1_02_Lawnmower_Dog,morty,mr.goldenfold,2
+1_02_Lawnmower_Dog,mr. goldenfold,mr.goldenfold,2
+1_02_Lawnmower_Dog,mr. goldenfold,mrs. pancakes,2
 1_02_Lawnmower_Dog,mr. goldenfold,rick,4
+1_02_Lawnmower_Dog,mr.goldenfold,mrs. pancakes,2
 1_02_Lawnmower_Dog,mr.goldenfold,rick,2
 1_02_Lawnmower_Dog,beth,jerry,4
-1_02_Lawnmower_Dog,jerry,snuffles,5
-1_02_Lawnmower_Dog,snuffles,summer,6
-1_02_Lawnmower_Dog,plane passengers,rick,2
-1_02_Lawnmower_Dog,morty,sexualized s&m monster,2
+1_02_Lawnmower_Dog,beth,morty,5
+1_02_Lawnmower_Dog,beth,mr. goldenfold,2
+1_02_Lawnmower_Dog,beth,rick,5
+1_02_Lawnmower_Dog,beth,snuffles,3
+1_02_Lawnmower_Dog,beth,summer,3
+1_02_Lawnmower_Dog,jerry,mr. goldenfold,2
+1_02_Lawnmower_Dog,jerry,snuffles,7
+1_02_Lawnmower_Dog,morty,snuffles,8
+1_02_Lawnmower_Dog,mr. goldenfold,snuffles,2
+1_02_Lawnmower_Dog,mr. goldenfold,summer,2
+1_02_Lawnmower_Dog,rick,snuffles,8
+1_02_Lawnmower_Dog,snuffles,summer,5
+1_02_Lawnmower_Dog,jerry,scary terry,5
 1_02_Lawnmower_Dog,morty,scary terry,6
-1_02_Lawnmower_Dog,rick,scary terry,7
+1_02_Lawnmower_Dog,rick,scary terry,6
+1_02_Lawnmower_Dog,scary terry,snuffles,4
+1_02_Lawnmower_Dog,scary terry,summer,5
+1_02_Lawnmower_Dog,jerry,little girl,2
 1_02_Lawnmower_Dog,little girl,morty,2
 1_02_Lawnmower_Dog,little girl,rick,2
 1_02_Lawnmower_Dog,little girl,scary terry,2
-1_02_Lawnmower_Dog,beth,summer,2
+1_02_Lawnmower_Dog,little girl,summer,2
+1_02_Lawnmower_Dog,beth,scary terry,2
+1_02_Lawnmower_Dog,jerry,scary melissa,2
+1_02_Lawnmower_Dog,morty,scary melissa,3
+1_02_Lawnmower_Dog,rick,scary melissa,3
 1_02_Lawnmower_Dog,scary melissa,scary terry,3
-1_02_Lawnmower_Dog,monster teacher,scary terry,2
-1_02_Lawnmower_Dog,beth,morty,2
-1_02_Lawnmower_Dog,beth,rick,2
-1_02_Lawnmower_Dog,morty,snuffles,2
-1_03_Anatomy_Park,beth,jacob,5
-1_03_Anatomy_Park,beth,jerry,4
-1_03_Anatomy_Park,beth,joyce,2
-1_03_Anatomy_Park,beth,leonard,3
-1_03_Anatomy_Park,beth,morty,2
-1_03_Anatomy_Park,beth,rick,2
+1_02_Lawnmower_Dog,scary melissa,summer,2
+1_03_Anatomy_Park,beth,jerry,5
+1_03_Anatomy_Park,beth,morty,6
+1_03_Anatomy_Park,beth,rick,5
+1_03_Anatomy_Park,beth,ruben,2
 1_03_Anatomy_Park,beth,summer,5
+1_03_Anatomy_Park,jerry,morty,7
+1_03_Anatomy_Park,jerry,rick,6
+1_03_Anatomy_Park,jerry,ruben,2
+1_03_Anatomy_Park,jerry,summer,5
+1_03_Anatomy_Park,morty,rick,10
+1_03_Anatomy_Park,morty,summer,7
+1_03_Anatomy_Park,rick,ruben,2
+1_03_Anatomy_Park,rick,summer,3
+1_03_Anatomy_Park,beth,jacob,5
+1_03_Anatomy_Park,beth,leonard,3
 1_03_Anatomy_Park,jacob,jerry,5
-1_03_Anatomy_Park,jacob,joyce,3
-1_03_Anatomy_Park,jacob,leonard,3
-1_03_Anatomy_Park,jacob,summer,6
+1_03_Anatomy_Park,jacob,joyce,2
+1_03_Anatomy_Park,jacob,leonard,2
+1_03_Anatomy_Park,jacob,rick,5
 1_03_Anatomy_Park,jerry,joyce,3
 1_03_Anatomy_Park,jerry,leonard,3
-1_03_Anatomy_Park,jerry,rick,2
-1_03_Anatomy_Park,jerry,summer,5
-1_03_Anatomy_Park,joyce,leonard,2
-1_03_Anatomy_Park,joyce,summer,3
-1_03_Anatomy_Park,leonard,summer,3
-1_03_Anatomy_Park,morty,rick,11
-1_03_Anatomy_Park,dr. bloom,morty,8
-1_03_Anatomy_Park,dr. bloom,poncho,6
-1_03_Anatomy_Park,dr. bloom,rick,4
-1_03_Anatomy_Park,morty,poncho,6
+1_03_Anatomy_Park,joyce,rick,3
+1_03_Anatomy_Park,jacob,morty,7
+1_03_Anatomy_Park,dr. bloom,morty,9
+1_03_Anatomy_Park,dr. bloom,poncho,7
+1_03_Anatomy_Park,dr. bloom,rick,5
+1_03_Anatomy_Park,morty,poncho,8
 1_03_Anatomy_Park,poncho,rick,3
-1_03_Anatomy_Park,dr. bloom,roger,5
+1_03_Anatomy_Park,dr. bloom,jacob,3
+1_03_Anatomy_Park,dr. bloom,jerry,5
+1_03_Anatomy_Park,dr. bloom,roger,4
+1_03_Anatomy_Park,jacob,poncho,4
+1_03_Anatomy_Park,jacob,roger,4
+1_03_Anatomy_Park,jerry,poncho,4
+1_03_Anatomy_Park,jerry,roger,3
 1_03_Anatomy_Park,morty,roger,5
 1_03_Anatomy_Park,poncho,roger,5
 1_03_Anatomy_Park,rick,roger,2
+1_03_Anatomy_Park,alexander,dr. bloom,2
 1_03_Anatomy_Park,alexander,morty,2
-1_03_Anatomy_Park,annie,dr. bloom,6
+1_03_Anatomy_Park,beth,dr. bloom,2
+1_03_Anatomy_Park,beth,poncho,2
+1_03_Anatomy_Park,dr. bloom,leonard,2
+1_03_Anatomy_Park,dr. bloom,summer,3
+1_03_Anatomy_Park,jacob,summer,5
+1_03_Anatomy_Park,leonard,morty,2
+1_03_Anatomy_Park,leonard,poncho,2
+1_03_Anatomy_Park,leonard,summer,2
+1_03_Anatomy_Park,poncho,summer,4
+1_03_Anatomy_Park,roger,summer,3
+1_03_Anatomy_Park,annie,dr. bloom,4
 1_03_Anatomy_Park,annie,morty,8
 1_03_Anatomy_Park,annie,poncho,4
-1_03_Anatomy_Park,annie,roger,4
-1_03_Anatomy_Park,annie,rick,6
-1_03_Anatomy_Park,ethan,jacob,2
+1_03_Anatomy_Park,annie,rick,7
+1_03_Anatomy_Park,annie,roger,2
+1_03_Anatomy_Park,annie,beth,3
+1_03_Anatomy_Park,annie,ethan,3
+1_03_Anatomy_Park,annie,jerry,4
+1_03_Anatomy_Park,annie,summer,4
+1_03_Anatomy_Park,dr. bloom,ethan,2
 1_03_Anatomy_Park,ethan,jerry,2
-1_03_Anatomy_Park,ethan,summer,2
-1_04_M._Night_Shaym-Aliens!,morty,rick,10
+1_03_Anatomy_Park,ethan,morty,3
+1_03_Anatomy_Park,ethan,poncho,3
+1_03_Anatomy_Park,ethan,summer,3
+1_03_Anatomy_Park,ethan,jacob,2
+1_03_Anatomy_Park,ethan,roger,2
+1_03_Anatomy_Park,annie,jacob,3
+1_03_Anatomy_Park,annie,reporter,2
+1_03_Anatomy_Park,morty,reporter,2
+1_03_Anatomy_Park,reporter,rick,2
+1_04_M._Night_Shaym-Aliens!,jessica,morty,2
+1_04_M._Night_Shaym-Aliens!,jessica,mr. goldenfold,2
+1_04_M._Night_Shaym-Aliens!,jessica,rick,2
+1_04_M._Night_Shaym-Aliens!,morty,mr. goldenfold,2
+1_04_M._Night_Shaym-Aliens!,morty,rick,11
+1_04_M._Night_Shaym-Aliens!,mr. goldenfold,rick,2
 1_04_M._Night_Shaym-Aliens!,jerry,kevin,2
-1_04_M._Night_Shaym-Aliens!,jerry,prince nebulon,2
+1_04_M._Night_Shaym-Aliens!,jerry,morty,8
+1_04_M._Night_Shaym-Aliens!,jerry,prince nebulon,6
+1_04_M._Night_Shaym-Aliens!,jerry,rick,9
+1_04_M._Night_Shaym-Aliens!,jerry,stu,2
 1_04_M._Night_Shaym-Aliens!,jerry,zigerion 1,2
+1_04_M._Night_Shaym-Aliens!,kevin,morty,2
 1_04_M._Night_Shaym-Aliens!,kevin,prince nebulon,2
+1_04_M._Night_Shaym-Aliens!,kevin,rick,2
 1_04_M._Night_Shaym-Aliens!,kevin,zigerion 1,2
+1_04_M._Night_Shaym-Aliens!,morty,prince nebulon,5
+1_04_M._Night_Shaym-Aliens!,morty,stu,2
+1_04_M._Night_Shaym-Aliens!,morty,zigerion 1,2
+1_04_M._Night_Shaym-Aliens!,prince nebulon,rick,6
+1_04_M._Night_Shaym-Aliens!,prince nebulon,stu,2
 1_04_M._Night_Shaym-Aliens!,prince nebulon,zigerion 1,2
+1_04_M._Night_Shaym-Aliens!,rick,stu,2
+1_04_M._Night_Shaym-Aliens!,rick,zigerion 1,2
+1_04_M._Night_Shaym-Aliens!,jerry,mailman,3
 1_04_M._Night_Shaym-Aliens!,jerry,mr. marklevitz,3
-1_04_M._Night_Shaym-Aliens!,jerry,mailman,2
-1_04_M._Night_Shaym-Aliens!,cynthia,morty,2
+1_04_M._Night_Shaym-Aliens!,jerry,old man,2
+1_04_M._Night_Shaym-Aliens!,jerry,woman,2
+1_04_M._Night_Shaym-Aliens!,mailman,morty,3
+1_04_M._Night_Shaym-Aliens!,mailman,old man,2
+1_04_M._Night_Shaym-Aliens!,mailman,rick,3
+1_04_M._Night_Shaym-Aliens!,mailman,woman,2
+1_04_M._Night_Shaym-Aliens!,morty,mr. marklevitz,2
+1_04_M._Night_Shaym-Aliens!,morty,old man,2
+1_04_M._Night_Shaym-Aliens!,morty,woman,2
+1_04_M._Night_Shaym-Aliens!,mr. marklevitz,rick,3
+1_04_M._Night_Shaym-Aliens!,old man,rick,2
+1_04_M._Night_Shaym-Aliens!,old man,woman,2
+1_04_M._Night_Shaym-Aliens!,rick,woman,2
+1_04_M._Night_Shaym-Aliens!,cynthia,jerry,2
 1_04_M._Night_Shaym-Aliens!,cynthia,prince nebulon,2
 1_04_M._Night_Shaym-Aliens!,cynthia,rick,2
-1_04_M._Night_Shaym-Aliens!,morty,prince nebulon,2
-1_04_M._Night_Shaym-Aliens!,prince nebulon,rick,2
-1_04_M._Night_Shaym-Aliens!,jerry,rick,3
-1_05_Meeseeks_and_Destroy,beth,morty,2
-1_05_Meeseeks_and_Destroy,beth,rick,2
-1_05_Meeseeks_and_Destroy,morty,rick,2
-1_06_Rick_Potion_No._9,brad,jessica,2
-1_06_Rick_Potion_No._9,brad,morty,2
+1_05_Meeseeks_and_Destroy,beth,morty,9
+1_05_Meeseeks_and_Destroy,beth,rick,9
+1_05_Meeseeks_and_Destroy,morty,rick,13
+1_05_Meeseeks_and_Destroy,beth,jerry,8
+1_05_Meeseeks_and_Destroy,beth,meeseeks,6
+1_05_Meeseeks_and_Destroy,beth,summer,3
+1_05_Meeseeks_and_Destroy,jerry,meeseeks,7
+1_05_Meeseeks_and_Destroy,jerry,morty,10
+1_05_Meeseeks_and_Destroy,jerry,rick,10
+1_05_Meeseeks_and_Destroy,jerry,summer,4
+1_05_Meeseeks_and_Destroy,meeseeks,morty,9
+1_05_Meeseeks_and_Destroy,meeseeks,rick,9
+1_05_Meeseeks_and_Destroy,meeseeks,summer,4
+1_05_Meeseeks_and_Destroy,morty,summer,4
+1_05_Meeseeks_and_Destroy,rick,summer,4
+1_05_Meeseeks_and_Destroy,beth,meeseeks 2,2
+1_05_Meeseeks_and_Destroy,beth,meeseeks 3,2
+1_05_Meeseeks_and_Destroy,jerry,meeseeks 2,2
+1_05_Meeseeks_and_Destroy,jerry,meeseeks 3,3
+1_05_Meeseeks_and_Destroy,meeseeks,meeseeks 3,2
+1_05_Meeseeks_and_Destroy,meeseeks 2,meeseeks 3,2
+1_05_Meeseeks_and_Destroy,meeseeks 2,morty,2
+1_05_Meeseeks_and_Destroy,meeseeks 2,rick,2
+1_05_Meeseeks_and_Destroy,meeseeks 3,morty,4
+1_05_Meeseeks_and_Destroy,meeseeks 3,rick,4
+1_05_Meeseeks_and_Destroy,giant,jerry,2
+1_05_Meeseeks_and_Destroy,giant,morty,2
+1_05_Meeseeks_and_Destroy,giant,rick,2
+1_05_Meeseeks_and_Destroy,meeseeks,meeseeks *,3
+1_05_Meeseeks_and_Destroy,meeseeks,waitress,2
+1_05_Meeseeks_and_Destroy,meeseeks *,morty,3
+1_05_Meeseeks_and_Destroy,meeseeks *,rick,3
+1_05_Meeseeks_and_Destroy,meeseeks *,waitress,2
+1_05_Meeseeks_and_Destroy,morty,waitress,2
+1_05_Meeseeks_and_Destroy,rick,waitress,2
+1_05_Meeseeks_and_Destroy,meeseeks,mr. jelly bean,2
+1_05_Meeseeks_and_Destroy,meeseeks,slippery,2
+1_05_Meeseeks_and_Destroy,meeseeks *,mr. jelly bean,2
+1_05_Meeseeks_and_Destroy,morty,mr. jelly bean,2
+1_05_Meeseeks_and_Destroy,morty,slippery,2
+1_05_Meeseeks_and_Destroy,mr. jelly bean,rick,2
+1_05_Meeseeks_and_Destroy,rick,slippery,2
+1_05_Meeseeks_and_Destroy,beth,the first villager,2
+1_05_Meeseeks_and_Destroy,jerry,the first villager,2
+1_05_Meeseeks_and_Destroy,morty,the first villager,2
+1_05_Meeseeks_and_Destroy,rick,the first villager,2
+1_06_Rick_Potion_No._9,brad,jerry,2
+1_06_Rick_Potion_No._9,brad,jessica,3
+1_06_Rick_Potion_No._9,brad,morty,3
 1_06_Rick_Potion_No._9,brad,principal vagina,2
-1_06_Rick_Potion_No._9,jessica,morty,2
+1_06_Rick_Potion_No._9,brad,rick,2
+1_06_Rick_Potion_No._9,jerry,jessica,2
+1_06_Rick_Potion_No._9,jerry,morty,8
+1_06_Rick_Potion_No._9,jerry,rick,8
+1_06_Rick_Potion_No._9,jessica,morty,3
 1_06_Rick_Potion_No._9,jessica,principal vagina,2
+1_06_Rick_Potion_No._9,jessica,rick,2
 1_06_Rick_Potion_No._9,morty,principal vagina,2
-1_06_Rick_Potion_No._9,jerry,morty,3
-1_06_Rick_Potion_No._9,jerry,rick,6
-1_06_Rick_Potion_No._9,morty,rick,8
-1_06_Rick_Potion_No._9,beth,jerry,6
+1_06_Rick_Potion_No._9,morty,rick,9
+1_06_Rick_Potion_No._9,beth,jerry,5
+1_06_Rick_Potion_No._9,beth,morty,5
+1_06_Rick_Potion_No._9,beth,rick,5
 1_06_Rick_Potion_No._9,jerry,summer,4
-1_06_Rick_Potion_No._9,rick,summer,4
-1_06_Rick_Potion_No._9,beth,morty,2
-1_06_Rick_Potion_No._9,beth,rick,3
-1_06_Rick_Potion_No._9,beth,summer,2
-1_06_Rick_Potion_No._9,morty,summer,2
-1_07_Raising_Gazorpazorp,jerry,morty,8
-1_07_Raising_Gazorpazorp,jerry,rick,6
-1_07_Raising_Gazorpazorp,jerry,summer,5
-1_07_Raising_Gazorpazorp,morty,rick,8
-1_07_Raising_Gazorpazorp,morty,summer,5
-1_07_Raising_Gazorpazorp,rick,summer,9
+1_06_Rick_Potion_No._9,morty,summer,5
+1_06_Rick_Potion_No._9,rick,summer,5
+1_06_Rick_Potion_No._9,beth,summer,3
 1_07_Raising_Gazorpazorp,beth,jerry,6
-1_07_Raising_Gazorpazorp,beth,morty,5
-1_07_Raising_Gazorpazorp,beth,summer,3
-1_07_Raising_Gazorpazorp,beth,rick,3
-1_07_Raising_Gazorpazorp,gazorpian,rick,2
-1_07_Raising_Gazorpazorp,gazorpian,summer,2
-1_07_Raising_Gazorpazorp,jerry,morty jr,3
-1_07_Raising_Gazorpazorp,morty,morty jr,7
-1_07_Raising_Gazorpazorp,morty jr,rick,4
-1_07_Raising_Gazorpazorp,morty jr,summer,2
+1_07_Raising_Gazorpazorp,beth,morty,7
+1_07_Raising_Gazorpazorp,beth,rick,7
+1_07_Raising_Gazorpazorp,beth,summer,6
+1_07_Raising_Gazorpazorp,jerry,morty,8
+1_07_Raising_Gazorpazorp,jerry,rick,8
+1_07_Raising_Gazorpazorp,jerry,summer,7
+1_07_Raising_Gazorpazorp,morty,rick,10
+1_07_Raising_Gazorpazorp,morty,summer,8
+1_07_Raising_Gazorpazorp,rick,summer,9
+1_07_Raising_Gazorpazorp,jerry,morty jr,4
+1_07_Raising_Gazorpazorp,morty,morty jr,6
+1_07_Raising_Gazorpazorp,morty jr,rick,7
+1_07_Raising_Gazorpazorp,morty jr,summer,5
+1_07_Raising_Gazorpazorp,beth,morty jr,3
+1_07_Raising_Gazorpazorp,gazorpian #2,morty,2
+1_07_Raising_Gazorpazorp,gazorpian #2,morty jr,2
 1_07_Raising_Gazorpazorp,gazorpian #2,rick,2
+1_07_Raising_Gazorpazorp,gazorpian #2,summer,2
 1_08_Rixty_Minutes,beth,jerry,7
+1_08_Rixty_Minutes,beth,morty,6
 1_08_Rixty_Minutes,beth,rick,7
 1_08_Rixty_Minutes,beth,summer,5
+1_08_Rixty_Minutes,jerry,morty,8
 1_08_Rixty_Minutes,jerry,rick,9
-1_08_Rixty_Minutes,jerry,summer,7
-1_08_Rixty_Minutes,rick,summer,7
-1_08_Rixty_Minutes,beth,morty,4
-1_08_Rixty_Minutes,jerry,morty,6
-1_08_Rixty_Minutes,morty,rick,7
+1_08_Rixty_Minutes,jerry,summer,6
+1_08_Rixty_Minutes,morty,rick,9
 1_08_Rixty_Minutes,morty,summer,5
-1_08_Rixty_Minutes,announcer,beth,2
-1_08_Rixty_Minutes,announcer,jerry,3
-1_08_Rixty_Minutes,announcer,rick,4
-1_08_Rixty_Minutes,announcer,summer,3
-1_08_Rixty_Minutes,host in trenchcoat,judge,2
-1_08_Rixty_Minutes,host in trenchcoat,rick,2
-1_08_Rixty_Minutes,announcer,morty,3
-1_08_Rixty_Minutes,jerry,mr. tophat jones,2
-1_08_Rixty_Minutes,morty,mr. tophat jones,2
-1_08_Rixty_Minutes,mr. tophat jones,rick,2
-1_09_Something_Ricked_This_Way_Comes,jerry,morty,10
-1_09_Something_Ricked_This_Way_Comes,jerry,rick,3
-1_09_Something_Ricked_This_Way_Comes,morty,rick,4
-1_09_Something_Ricked_This_Way_Comes,butter robot,jerry,2
-1_09_Something_Ricked_This_Way_Comes,butter robot,morty,2
-1_09_Something_Ricked_This_Way_Comes,butter robot,rick,2
+1_08_Rixty_Minutes,rick,summer,6
+1_08_Rixty_Minutes,announcer,beth,4
+1_08_Rixty_Minutes,announcer,jerry,6
+1_08_Rixty_Minutes,announcer,rick,6
+1_08_Rixty_Minutes,announcer,summer,4
+1_08_Rixty_Minutes,announcer,morty,5
+1_08_Rixty_Minutes,fake doors salesman,morty,2
+1_08_Rixty_Minutes,fake doors salesman,rick,2
+1_09_Something_Ricked_This_Way_Comes,butter robot,jerry,3
+1_09_Something_Ricked_This_Way_Comes,butter robot,morty,3
+1_09_Something_Ricked_This_Way_Comes,butter robot,rick,4
+1_09_Something_Ricked_This_Way_Comes,butter robot,summer,3
+1_09_Something_Ricked_This_Way_Comes,jerry,morty,9
+1_09_Something_Ricked_This_Way_Comes,jerry,rick,8
+1_09_Something_Ricked_This_Way_Comes,jerry,summer,7
+1_09_Something_Ricked_This_Way_Comes,morty,rick,8
+1_09_Something_Ricked_This_Way_Comes,morty,summer,7
 1_09_Something_Ricked_This_Way_Comes,rick,summer,9
 1_09_Something_Ricked_This_Way_Comes,goldenfold,needful,3
 1_09_Something_Ricked_This_Way_Comes,goldenfold,rick,3
 1_09_Something_Ricked_This_Way_Comes,goldenfold,summer,2
-1_09_Something_Ricked_This_Way_Comes,needful,rick,5
-1_09_Something_Ricked_This_Way_Comes,needful,summer,6
-1_09_Something_Ricked_This_Way_Comes,flippynips,jerry,2
-1_09_Something_Ricked_This_Way_Comes,jerry,scroopy noopers,2
-1_09_Something_Ricked_This_Way_Comes,morty,scroopy noopers,2
-1_10_Close_Rick-Counters_of_the_Rick_Kind,beth,rick,3
+1_09_Something_Ricked_This_Way_Comes,needful,rick,8
+1_09_Something_Ricked_This_Way_Comes,needful,summer,9
+1_09_Something_Ricked_This_Way_Comes,jerry,needful,6
+1_09_Something_Ricked_This_Way_Comes,morty,needful,6
+1_09_Something_Ricked_This_Way_Comes,flippynips,jerry,4
+1_09_Something_Ricked_This_Way_Comes,flippynips,morty,3
+1_09_Something_Ricked_This_Way_Comes,flippynips,needful,3
+1_09_Something_Ricked_This_Way_Comes,flippynips,rick,2
+1_09_Something_Ricked_This_Way_Comes,flippynips,summer,3
+1_09_Something_Ricked_This_Way_Comes,jerry,tate,2
+1_09_Something_Ricked_This_Way_Comes,morty,tate,2
+1_09_Something_Ricked_This_Way_Comes,needful,tate,2
+1_09_Something_Ricked_This_Way_Comes,jerry,scroopy noopers,3
+1_09_Something_Ricked_This_Way_Comes,morty,scroopy noopers,3
+1_09_Something_Ricked_This_Way_Comes,needful,scroopy noopers,3
+1_09_Something_Ricked_This_Way_Comes,rick,scroopy noopers,2
+1_09_Something_Ricked_This_Way_Comes,scroopy noopers,summer,2
+1_09_Something_Ricked_This_Way_Comes,flippynips,scroopy noopers,2
 1_10_Close_Rick-Counters_of_the_Rick_Kind,beth,jerry,3
-1_10_Close_Rick-Counters_of_the_Rick_Kind,beth,rick 1,3
-1_10_Close_Rick-Counters_of_the_Rick_Kind,jerry,rick,3
-1_10_Close_Rick-Counters_of_the_Rick_Kind,jerry,rick 1,4
+1_10_Close_Rick-Counters_of_the_Rick_Kind,beth,morty,4
+1_10_Close_Rick-Counters_of_the_Rick_Kind,beth,rick,4
+1_10_Close_Rick-Counters_of_the_Rick_Kind,beth,rick 1,4
+1_10_Close_Rick-Counters_of_the_Rick_Kind,jerry,morty,7
+1_10_Close_Rick-Counters_of_the_Rick_Kind,jerry,rick,7
+1_10_Close_Rick-Counters_of_the_Rick_Kind,jerry,rick 1,7
 1_10_Close_Rick-Counters_of_the_Rick_Kind,morty,rick,9
-1_10_Close_Rick-Counters_of_the_Rick_Kind,morty,rick 1,3
-1_10_Close_Rick-Counters_of_the_Rick_Kind,rick,rick 1,5
+1_10_Close_Rick-Counters_of_the_Rick_Kind,morty,rick 1,8
+1_10_Close_Rick-Counters_of_the_Rick_Kind,rick,rick 1,9
 1_10_Close_Rick-Counters_of_the_Rick_Kind,all ricks,beth,2
-1_10_Close_Rick-Counters_of_the_Rick_Kind,all ricks,jerry,2
-1_10_Close_Rick-Counters_of_the_Rick_Kind,all ricks,rick 1,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,all ricks,morty,3
+1_10_Close_Rick-Counters_of_the_Rick_Kind,all ricks,rick,3
+1_10_Close_Rick-Counters_of_the_Rick_Kind,all ricks,rick 1,3
 1_10_Close_Rick-Counters_of_the_Rick_Kind,all ricks,rick 2,2
-1_10_Close_Rick-Counters_of_the_Rick_Kind,beth,rick 2,2
-1_10_Close_Rick-Counters_of_the_Rick_Kind,jerry,rick 2,2
-1_10_Close_Rick-Counters_of_the_Rick_Kind,rick,rick 2,2
-1_10_Close_Rick-Counters_of_the_Rick_Kind,rick 1,rick 2,4
-1_10_Close_Rick-Counters_of_the_Rick_Kind,doofus rick,jerry,3
-1_10_Close_Rick-Counters_of_the_Rick_Kind,doofus rick,rick 1,3
+1_10_Close_Rick-Counters_of_the_Rick_Kind,morty,rick 2,4
+1_10_Close_Rick-Counters_of_the_Rick_Kind,rick,rick 2,4
+1_10_Close_Rick-Counters_of_the_Rick_Kind,rick 1,rick 2,5
+1_10_Close_Rick-Counters_of_the_Rick_Kind,all ricks,chair waiter,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,all ricks,jerry,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,chair waiter,jerry,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,chair waiter,morty,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,chair waiter,rick,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,chair waiter,rick 1,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,jerry,rick 2,3
+1_10_Close_Rick-Counters_of_the_Rick_Kind,doofus rick,jerry,6
+1_10_Close_Rick-Counters_of_the_Rick_Kind,doofus rick,morty,4
+1_10_Close_Rick-Counters_of_the_Rick_Kind,doofus rick,rick,4
+1_10_Close_Rick-Counters_of_the_Rick_Kind,doofus rick,rick 1,4
 1_10_Close_Rick-Counters_of_the_Rick_Kind,doofus rick,rick 2,2
-1_10_Close_Rick-Counters_of_the_Rick_Kind,evil rick,morty,3
-1_10_Close_Rick-Counters_of_the_Rick_Kind,evil rick,rick,4
-1_11_Ricksy_Business,beth,jerry,7
-1_11_Ricksy_Business,jerry,rick,2
-1_11_Ricksy_Business,morty,rick,21
-1_11_Ricksy_Business,morty,summer,9
-1_11_Ricksy_Business,rick,summer,12
-1_11_Ricksy_Business,beth,lucy,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,evil morty,evil rick,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,evil morty,rick,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,evil rick,morty,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,evil rick,rick,3
+1_10_Close_Rick-Counters_of_the_Rick_Kind,doofus rick,evil rick,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,doofus rick,lobster alien,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,evil rick,jerry,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,jerry,lobster alien,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,all mortys,doofus rick,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,all mortys,jerry,2
+1_10_Close_Rick-Counters_of_the_Rick_Kind,all mortys,morty,2
+1_11_Ricksy_Business,beth,jerry,4
+1_11_Ricksy_Business,beth,morty,2
+1_11_Ricksy_Business,beth,rick,2
+1_11_Ricksy_Business,beth,summer,4
+1_11_Ricksy_Business,jerry,morty,5
+1_11_Ricksy_Business,jerry,rick,4
+1_11_Ricksy_Business,jerry,summer,4
+1_11_Ricksy_Business,morty,rick,13
+1_11_Ricksy_Business,morty,summer,8
+1_11_Ricksy_Business,rick,summer,9
+1_11_Ricksy_Business,summer,tour guide,2
+1_11_Ricksy_Business,beth,lucy,3
+1_11_Ricksy_Business,brad,summer,3
+1_11_Ricksy_Business,brad,tammy,2
 1_11_Ricksy_Business,jerry,lucy,7
-1_11_Ricksy_Business,birdperson,summer,2
-1_11_Ricksy_Business,gearhead,rick,2
-1_11_Ricksy_Business,morty,squanchy,2
-1_11_Ricksy_Business,rick,squanchy,2
-1_11_Ricksy_Business,captain #1,captain #2,2
-1_11_Ricksy_Business,nancy,summer,3
-1_11_Ricksy_Business,abradolph lincoler,rick,2
-1_11_Ricksy_Business,jessica,morty,4
-1_11_Ricksy_Business,abradolph lincoler,morty,2
-1_11_Ricksy_Business,abradolph lincoler,nancy,2
+1_11_Ricksy_Business,jerry,tammy,2
+1_11_Ricksy_Business,lucy,summer,3
+1_11_Ricksy_Business,lucy,tammy,2
+1_11_Ricksy_Business,summer,tammy,2
+1_11_Ricksy_Business,birdperson,brad,2
 1_11_Ricksy_Business,birdperson,morty,3
+1_11_Ricksy_Business,birdperson,rick,4
+1_11_Ricksy_Business,birdperson,summer,4
+1_11_Ricksy_Business,brad,morty,2
+1_11_Ricksy_Business,brad,rick,3
+1_11_Ricksy_Business,gearhead,morty,3
+1_11_Ricksy_Business,gearhead,rick,3
+1_11_Ricksy_Business,jerry,squanchy,3
+1_11_Ricksy_Business,lucy,morty,4
+1_11_Ricksy_Business,lucy,rick,3
+1_11_Ricksy_Business,lucy,squanchy,3
+1_11_Ricksy_Business,morty,squanchy,3
+1_11_Ricksy_Business,rick,squanchy,3
+1_11_Ricksy_Business,captain #2,jerry,2
+1_11_Ricksy_Business,captain #2,lucy,2
+1_11_Ricksy_Business,abradolph lincoler,brad,2
+1_11_Ricksy_Business,abradolph lincoler,nancy,3
+1_11_Ricksy_Business,abradolph lincoler,rick,4
+1_11_Ricksy_Business,abradolph lincoler,summer,2
+1_11_Ricksy_Business,birdperson,nancy,2
+1_11_Ricksy_Business,nancy,rick,3
+1_11_Ricksy_Business,nancy,summer,3
+1_11_Ricksy_Business,rick,tammy,2
+1_11_Ricksy_Business,abradolph lincoler,morty,3
+1_11_Ricksy_Business,jessica,morty,2
+1_11_Ricksy_Business,jessica,rick,2
+1_11_Ricksy_Business,squanchy,summer,2
+1_11_Ricksy_Business,abradolph lincoler,jerry,2
+1_11_Ricksy_Business,abradolph lincoler,lucy,2
+1_11_Ricksy_Business,jerry,nancy,2
+1_11_Ricksy_Business,lucy,nancy,2
+1_11_Ricksy_Business,morty,nancy,3
+2_12_A_Rickle_in_Time,jerry,morty,4
+2_12_A_Rickle_in_Time,jerry,rick,4
+2_12_A_Rickle_in_Time,jerry,summer,4
+2_12_A_Rickle_in_Time,morty,rick,6
+2_12_A_Rickle_in_Time,morty,summer,6
+2_12_A_Rickle_in_Time,rick,summer,6
 2_12_A_Rickle_in_Time,beth,jerry,7
-2_12_A_Rickle_in_Time,beth,morty,2
-2_12_A_Rickle_in_Time,beth,rick,2
-2_12_A_Rickle_in_Time,beth,summer,2
-2_12_A_Rickle_in_Time,jerry,morty,2
-2_12_A_Rickle_in_Time,jerry,rick,2
-2_12_A_Rickle_in_Time,jerry,summer,2
-2_12_A_Rickle_in_Time,morty,rick,5
-2_12_A_Rickle_in_Time,morty,summer,4
-2_12_A_Rickle_in_Time,rick,summer,5
+2_12_A_Rickle_in_Time,beth,morty,3
+2_12_A_Rickle_in_Time,beth,rick,3
+2_12_A_Rickle_in_Time,beth,summer,3
 2_12_A_Rickle_in_Time,both ricks,bothall mortys,2
-2_12_A_Rickle_in_Time,both ricks,bothall ricks,2
 2_12_A_Rickle_in_Time,both ricks,bothall summers,2
-2_12_A_Rickle_in_Time,both ricks,morty 1,3
-2_12_A_Rickle_in_Time,both ricks,morty 2,3
+2_12_A_Rickle_in_Time,both ricks,morty 1,4
+2_12_A_Rickle_in_Time,both ricks,morty 2,4
 2_12_A_Rickle_in_Time,both ricks,summer 1,3
 2_12_A_Rickle_in_Time,both ricks,summer 2,3
-2_12_A_Rickle_in_Time,bothall mortys,bothall ricks,2
 2_12_A_Rickle_in_Time,bothall mortys,bothall summers,2
 2_12_A_Rickle_in_Time,bothall mortys,morty 1,2
 2_12_A_Rickle_in_Time,bothall mortys,morty 2,2
 2_12_A_Rickle_in_Time,bothall mortys,summer 1,2
 2_12_A_Rickle_in_Time,bothall mortys,summer 2,2
-2_12_A_Rickle_in_Time,bothall ricks,bothall summers,2
-2_12_A_Rickle_in_Time,bothall ricks,morty 1,2
-2_12_A_Rickle_in_Time,bothall ricks,morty 2,2
-2_12_A_Rickle_in_Time,bothall ricks,summer 1,2
-2_12_A_Rickle_in_Time,bothall ricks,summer 2,2
 2_12_A_Rickle_in_Time,bothall summers,morty 1,2
 2_12_A_Rickle_in_Time,bothall summers,morty 2,2
 2_12_A_Rickle_in_Time,bothall summers,summer 1,2
 2_12_A_Rickle_in_Time,bothall summers,summer 2,2
-2_12_A_Rickle_in_Time,morty,morty 1,2
-2_12_A_Rickle_in_Time,morty,morty 2,2
-2_12_A_Rickle_in_Time,morty,summer 1,2
-2_12_A_Rickle_in_Time,morty 1,morty 2,4
-2_12_A_Rickle_in_Time,morty 1,rick,2
-2_12_A_Rickle_in_Time,morty 1,summer,2
+2_12_A_Rickle_in_Time,morty 1,morty 2,5
 2_12_A_Rickle_in_Time,morty 1,summer 1,4
 2_12_A_Rickle_in_Time,morty 1,summer 2,3
-2_12_A_Rickle_in_Time,morty 2,rick,2
-2_12_A_Rickle_in_Time,morty 2,summer,2
-2_12_A_Rickle_in_Time,morty 2,summer 1,5
-2_12_A_Rickle_in_Time,morty 2,summer 2,4
-2_12_A_Rickle_in_Time,rick,summer 1,2
-2_12_A_Rickle_in_Time,summer,summer 1,2
+2_12_A_Rickle_in_Time,morty 2,summer 1,4
+2_12_A_Rickle_in_Time,morty 2,summer 2,3
 2_12_A_Rickle_in_Time,summer 1,summer 2,4
-2_12_A_Rickle_in_Time,all mortys,all ricks,5
+2_12_A_Rickle_in_Time,both ricks,jerry,2
+2_12_A_Rickle_in_Time,jerry,morty 1,2
+2_12_A_Rickle_in_Time,jerry,morty 2,3
+2_12_A_Rickle_in_Time,beth,both ricks,2
+2_12_A_Rickle_in_Time,beth,morty 1,2
+2_12_A_Rickle_in_Time,beth,morty 2,3
+2_12_A_Rickle_in_Time,all mortys,all ricks,6
+2_12_A_Rickle_in_Time,all mortys,beth,2
 2_12_A_Rickle_in_Time,all mortys,morty 1,2
-2_12_A_Rickle_in_Time,all mortys,morty 2,3
+2_12_A_Rickle_in_Time,all mortys,morty 2,2
 2_12_A_Rickle_in_Time,all mortys,summer 1,3
 2_12_A_Rickle_in_Time,all mortys,summer 2,2
+2_12_A_Rickle_in_Time,all ricks,beth,4
 2_12_A_Rickle_in_Time,all ricks,morty 1,2
 2_12_A_Rickle_in_Time,all ricks,morty 2,3
 2_12_A_Rickle_in_Time,all ricks,summer 1,3
 2_12_A_Rickle_in_Time,all ricks,summer 2,2
+2_12_A_Rickle_in_Time,all ricks,hunter,2
+2_12_A_Rickle_in_Time,all ricks,jerry,3
+2_12_A_Rickle_in_Time,all ricks,rick 1,3
+2_12_A_Rickle_in_Time,all ricks,rick 2,3
+2_12_A_Rickle_in_Time,all ricks,vet,2
 2_12_A_Rickle_in_Time,beth,hunter,2
 2_12_A_Rickle_in_Time,beth,vet,3
 2_12_A_Rickle_in_Time,hunter,jerry,2
 2_12_A_Rickle_in_Time,hunter,vet,2
 2_12_A_Rickle_in_Time,jerry,vet,3
-2_12_A_Rickle_in_Time,all mortys,all summers,4
+2_12_A_Rickle_in_Time,rick 1,rick 2,3
+2_12_A_Rickle_in_Time,all mortys,all summers,5
 2_12_A_Rickle_in_Time,all mortys,rick 1,2
 2_12_A_Rickle_in_Time,all mortys,rick 2,2
-2_12_A_Rickle_in_Time,all ricks,all summers,4
-2_12_A_Rickle_in_Time,all ricks,rick 1,2
-2_12_A_Rickle_in_Time,all ricks,rick 2,2
-2_12_A_Rickle_in_Time,all summers,morty 2,2
+2_12_A_Rickle_in_Time,all ricks,all summers,5
 2_12_A_Rickle_in_Time,all summers,rick 1,2
 2_12_A_Rickle_in_Time,all summers,rick 2,2
 2_12_A_Rickle_in_Time,all summers,summer 1,2
-2_12_A_Rickle_in_Time,rick 1,rick 2,2
 2_12_A_Rickle_in_Time,beth,lawyer,2
 2_12_A_Rickle_in_Time,jerry,lawyer,2
 2_12_A_Rickle_in_Time,lawyer,vet,2
-2_12_A_Rickle_in_Time,all mortys,morty,2
+2_12_A_Rickle_in_Time,all mortys,testicle monster a,3
+2_12_A_Rickle_in_Time,all ricks,testicle monster a,4
+2_12_A_Rickle_in_Time,all summers,testicle monster a,3
 2_12_A_Rickle_in_Time,all mortys,rick,2
-2_12_A_Rickle_in_Time,all mortys,testicle monster a,2
-2_12_A_Rickle_in_Time,all ricks,morty,2
 2_12_A_Rickle_in_Time,all ricks,rick,2
-2_12_A_Rickle_in_Time,all ricks,testicle monster a,2
-2_12_A_Rickle_in_Time,all summers,morty,2
 2_12_A_Rickle_in_Time,all summers,rick,2
-2_12_A_Rickle_in_Time,all summers,testicle monster a,2
 2_12_A_Rickle_in_Time,morty,testicle monster a,2
-2_12_A_Rickle_in_Time,rick,testicle monster a,2
-2_12_A_Rickle_in_Time,testicle monster a,testicle monster b,2
-2_13_Mortynight_Run,jerry,morty,2
-2_13_Mortynight_Run,jerry,rick,2
-2_13_Mortynight_Run,morty,rick,13
+2_12_A_Rickle_in_Time,rick,testicle monster a,3
+2_12_A_Rickle_in_Time,summer,testicle monster a,2
+2_12_A_Rickle_in_Time,beth,testicle monster a,2
+2_12_A_Rickle_in_Time,jerry,testicle monster a,2
+2_12_A_Rickle_in_Time,all ricks,morty 23,2
+2_12_A_Rickle_in_Time,morty 23,testicle monster a,2
 2_13_Mortynight_Run,jerry,jerry-sitter,3
-2_13_Mortynight_Run,krombopulos michael,morty,2
+2_13_Mortynight_Run,jerry,morty,9
+2_13_Mortynight_Run,jerry,rick,8
+2_13_Mortynight_Run,jerry-sitter,morty,3
+2_13_Mortynight_Run,jerry-sitter,rick,3
+2_13_Mortynight_Run,morty,rick,12
+2_13_Mortynight_Run,jerry,krombopulos michael,2
+2_13_Mortynight_Run,krombopulos michael,morty,3
 2_13_Mortynight_Run,krombopulos michael,rick,2
-2_13_Mortynight_Run,jerry,jerrys,2
 2_13_Mortynight_Run,jerry,other jerry,3
-2_13_Mortynight_Run,fart,morty,4
-2_13_Mortynight_Run,fart,rick,5
-2_13_Mortynight_Run,fart,gearhead,2
+2_13_Mortynight_Run,jerry,pink-shirt jerry,2
+2_13_Mortynight_Run,morty,other jerry,3
+2_13_Mortynight_Run,morty,pink-shirt jerry,2
+2_13_Mortynight_Run,other jerry,pink-shirt jerry,2
+2_13_Mortynight_Run,other jerry,rick,2
+2_13_Mortynight_Run,gromflomite,morty,3
+2_13_Mortynight_Run,jerry,jerrys,2
+2_13_Mortynight_Run,jerrys,morty,2
+2_13_Mortynight_Run,fart,gromflomite,2
+2_13_Mortynight_Run,fart,morty,6
+2_13_Mortynight_Run,fart,rick,6
+2_13_Mortynight_Run,gromflomite,rick,2
+2_13_Mortynight_Run,gearhead,morty,2
 2_13_Mortynight_Run,gearhead,rick,2
+2_13_Mortynight_Run,fart,jerry,3
+2_13_Mortynight_Run,bearded jerry,jerry,2
+2_13_Mortynight_Run,bearded jerry,morty,2
+2_13_Mortynight_Run,bearded jerry,rick,2
 2_13_Mortynight_Run,jerry,tank-top jerry,2
 2_13_Mortynight_Run,garblovian,jerry,2
-2_14_Auto_Erotic_Assimilation,morty,rick,5
-2_14_Auto_Erotic_Assimilation,morty,summer,6
-2_14_Auto_Erotic_Assimilation,rick,summer,4
-2_14_Auto_Erotic_Assimilation,morty,unity,5
-2_14_Auto_Erotic_Assimilation,rick,unity,8
-2_14_Auto_Erotic_Assimilation,summer,unity,5
-2_14_Auto_Erotic_Assimilation,beth,jerry,5
-2_14_Auto_Erotic_Assimilation,beta-7,rick,2
+2_14_Auto_Erotic_Assimilation,morty,morty and summer,2
+2_14_Auto_Erotic_Assimilation,morty,rick,8
+2_14_Auto_Erotic_Assimilation,morty,summer,8
+2_14_Auto_Erotic_Assimilation,morty and summer,rick,2
+2_14_Auto_Erotic_Assimilation,morty and summer,summer,2
+2_14_Auto_Erotic_Assimilation,rick,summer,10
+2_14_Auto_Erotic_Assimilation,morty,unity,8
+2_14_Auto_Erotic_Assimilation,rick,unity,12
+2_14_Auto_Erotic_Assimilation,summer,unity,10
+2_14_Auto_Erotic_Assimilation,beth,jerry,7
+2_14_Auto_Erotic_Assimilation,beth,rick,7
+2_14_Auto_Erotic_Assimilation,beth,summer,6
+2_14_Auto_Erotic_Assimilation,beth,unity,8
+2_14_Auto_Erotic_Assimilation,jerry,rick,6
+2_14_Auto_Erotic_Assimilation,jerry,summer,5
+2_14_Auto_Erotic_Assimilation,jerry,unity,7
+2_14_Auto_Erotic_Assimilation,beta-7,beth,2
+2_14_Auto_Erotic_Assimilation,beta-7,jerry,2
+2_14_Auto_Erotic_Assimilation,beta-7,rick,3
+2_14_Auto_Erotic_Assimilation,beta-7,unity,3
 2_14_Auto_Erotic_Assimilation,beth,blim blam,3
 2_14_Auto_Erotic_Assimilation,blim blam,jerry,3
-2_15_Total_Rickall,beth,rick,2
-2_16_Get_Schwifty,giant head,morty,2
+2_14_Auto_Erotic_Assimilation,blim blam,rick,3
+2_14_Auto_Erotic_Assimilation,blim blam,summer,2
+2_14_Auto_Erotic_Assimilation,blim blam,unity,3
+2_14_Auto_Erotic_Assimilation,beth,morty,3
+2_14_Auto_Erotic_Assimilation,jerry,morty,3
+2_15_Total_Rickall,beth,jerry,7
+2_15_Total_Rickall,beth,morty,9
+2_15_Total_Rickall,beth,rick,10
+2_15_Total_Rickall,beth,summer,8
+2_15_Total_Rickall,jerry,morty,5
+2_15_Total_Rickall,jerry,rick,8
+2_15_Total_Rickall,jerry,summer,7
+2_15_Total_Rickall,morty,rick,8
+2_15_Total_Rickall,morty,summer,6
+2_15_Total_Rickall,rick,summer,8
+2_15_Total_Rickall,all,beth,3
+2_15_Total_Rickall,all,jerry,2
+2_15_Total_Rickall,all,morty,3
+2_15_Total_Rickall,all,nicky,2
+2_15_Total_Rickall,all,rick,4
+2_15_Total_Rickall,all,summer,3
+2_15_Total_Rickall,beth,mr. poopybutthole,4
+2_15_Total_Rickall,beth,nicky,2
+2_15_Total_Rickall,jerry,mr. poopybutthole,3
+2_15_Total_Rickall,jerry,nicky,2
+2_15_Total_Rickall,morty,mr. poopybutthole,2
+2_15_Total_Rickall,morty,nicky,2
+2_15_Total_Rickall,mr. poopybutthole,rick,4
+2_15_Total_Rickall,mr. poopybutthole,summer,3
+2_15_Total_Rickall,nicky,rick,2
+2_15_Total_Rickall,nicky,summer,2
+2_15_Total_Rickall,beth,mr. beauregard,3
+2_15_Total_Rickall,jerry,mr. beauregard,3
+2_15_Total_Rickall,morty,mr. beauregard,3
+2_15_Total_Rickall,mr. beauregard,rick,3
+2_15_Total_Rickall,mr. beauregard,summer,3
+2_15_Total_Rickall,beth,frankenstein,3
+2_15_Total_Rickall,beth,sleepy gary,2
+2_15_Total_Rickall,frankenstein,jerry,3
+2_15_Total_Rickall,frankenstein,morty,2
+2_15_Total_Rickall,frankenstein,rick,4
+2_15_Total_Rickall,frankenstein,sleepy gary,2
+2_15_Total_Rickall,frankenstein,summer,2
+2_15_Total_Rickall,jerry,sleepy gary,3
+2_15_Total_Rickall,morty,sleepy gary,2
+2_15_Total_Rickall,mr. beauregard,sleepy gary,2
+2_15_Total_Rickall,rick,sleepy gary,4
+2_15_Total_Rickall,sleepy gary,summer,3
+2_15_Total_Rickall,beth,pencilvester,2
+2_15_Total_Rickall,beth,tinkles,2
+2_15_Total_Rickall,frankenstein,gary,2
+2_15_Total_Rickall,frankenstein,pencilvester,2
+2_15_Total_Rickall,gary,jerry,2
+2_15_Total_Rickall,gary,pencilvester,3
+2_15_Total_Rickall,gary,rick,3
+2_15_Total_Rickall,gary,summer,2
+2_15_Total_Rickall,jerry,pencilvester,3
+2_15_Total_Rickall,jerry,tinkles,2
+2_15_Total_Rickall,pencilvester,rick,4
+2_15_Total_Rickall,pencilvester,summer,3
+2_15_Total_Rickall,pencilvester,tinkles,2
+2_15_Total_Rickall,rick,tinkles,2
+2_15_Total_Rickall,summer,tinkles,2
+2_15_Total_Rickall,all,hamurai,2
+2_15_Total_Rickall,gary,sleepy gary,2
+2_15_Total_Rickall,hamurai,rick,2
+2_15_Total_Rickall,pencilvester,sleepy gary,3
+2_15_Total_Rickall,beth,ghost in a jar,2
+2_15_Total_Rickall,beth,mrs. refrigerator,2
+2_15_Total_Rickall,ghost in a jar,morty,2
+2_15_Total_Rickall,ghost in a jar,rick,2
+2_15_Total_Rickall,morty,mrs. refrigerator,2
+2_15_Total_Rickall,mrs. refrigerator,rick,2
+2_16_Get_Schwifty,beth,giant head,2
+2_16_Get_Schwifty,beth,jerry,8
+2_16_Get_Schwifty,beth,morty,8
+2_16_Get_Schwifty,beth,rick,8
+2_16_Get_Schwifty,beth,summer,7
 2_16_Get_Schwifty,giant head,rick,2
-2_16_Get_Schwifty,morty,rick,2
-2_17_The_Ricks_Must_Be_Crazy,morty,rick,15
-2_17_The_Ricks_Must_Be_Crazy,morty,ship,2
-2_17_The_Ricks_Must_Be_Crazy,morty,summer,4
-2_17_The_Ricks_Must_Be_Crazy,rick,ship,3
-2_17_The_Ricks_Must_Be_Crazy,rick,summer,5
-2_17_The_Ricks_Must_Be_Crazy,ship,summer,4
-2_17_The_Ricks_Must_Be_Crazy,morty,zeep,7
+2_16_Get_Schwifty,giant head,summer,2
+2_16_Get_Schwifty,jerry,morty,8
+2_16_Get_Schwifty,jerry,rick,6
+2_16_Get_Schwifty,jerry,summer,5
+2_16_Get_Schwifty,morty,rick,9
+2_16_Get_Schwifty,morty,summer,6
+2_16_Get_Schwifty,rick,summer,7
+2_16_Get_Schwifty,beth,mr. goldenfold,2
+2_16_Get_Schwifty,beth,nathan,3
+2_16_Get_Schwifty,beth,president,7
+2_16_Get_Schwifty,beth,simon,2
+2_16_Get_Schwifty,jerry,mr. goldenfold,2
+2_16_Get_Schwifty,jerry,nathan,3
+2_16_Get_Schwifty,jerry,president,6
+2_16_Get_Schwifty,morty,mr. goldenfold,4
+2_16_Get_Schwifty,morty,nathan,6
+2_16_Get_Schwifty,morty,president,10
+2_16_Get_Schwifty,mr. goldenfold,nathan,4
+2_16_Get_Schwifty,mr. goldenfold,president,5
+2_16_Get_Schwifty,mr. goldenfold,rick,4
+2_16_Get_Schwifty,mr. goldenfold,simon,2
+2_16_Get_Schwifty,nathan,president,7
+2_16_Get_Schwifty,nathan,rick,5
+2_16_Get_Schwifty,nathan,simon,2
+2_16_Get_Schwifty,president,rick,10
+2_16_Get_Schwifty,president,simon,3
+2_16_Get_Schwifty,rick,simon,3
+2_16_Get_Schwifty,aide,president,2
+2_16_Get_Schwifty,aide,principal vagina,2
+2_16_Get_Schwifty,aide,rick,2
+2_16_Get_Schwifty,aide,simon,2
+2_16_Get_Schwifty,mr. goldenfold,principal vagina,4
+2_16_Get_Schwifty,nathan,principal vagina,5
+2_16_Get_Schwifty,pastor bob,principal vagina,2
+2_16_Get_Schwifty,pastor bob,rick,2
+2_16_Get_Schwifty,president,principal vagina,9
+2_16_Get_Schwifty,principal vagina,rick,9
+2_16_Get_Schwifty,principal vagina,simon,2
+2_16_Get_Schwifty,morty,principal vagina,8
+2_16_Get_Schwifty,beth,principal vagina,7
+2_16_Get_Schwifty,principal vagina,summer,6
+2_16_Get_Schwifty,beth,cromulon,2
+2_16_Get_Schwifty,cromulon,president,5
+2_16_Get_Schwifty,cromulon,principal vagina,4
+2_16_Get_Schwifty,cromulon,rick,3
+2_16_Get_Schwifty,cromulon,summer,2
+2_16_Get_Schwifty,president,summer,5
+2_16_Get_Schwifty,all,beth,2
+2_16_Get_Schwifty,all,jerry,2
+2_16_Get_Schwifty,all,morty,3
+2_16_Get_Schwifty,all,nathan,3
+2_16_Get_Schwifty,all,president,3
+2_16_Get_Schwifty,all,principal vagina,3
+2_16_Get_Schwifty,all,rick,2
+2_16_Get_Schwifty,jerry,principal vagina,5
+2_16_Get_Schwifty,beth,ice-t,2
+2_16_Get_Schwifty,ethan,morty,2
+2_16_Get_Schwifty,ethan,principal vagina,2
+2_16_Get_Schwifty,ethan,rick,2
+2_16_Get_Schwifty,ethan,summer,2
+2_16_Get_Schwifty,ice-t,jerry,2
+2_16_Get_Schwifty,ice-t,morty,3
+2_16_Get_Schwifty,ice-t,principal vagina,2
+2_16_Get_Schwifty,ice-t,rick,4
+2_16_Get_Schwifty,ice-t,summer,2
+2_16_Get_Schwifty,birdperson,morty,2
+2_16_Get_Schwifty,birdperson,president,2
+2_16_Get_Schwifty,ice-t,president,3
+2_16_Get_Schwifty,cromulon,morty,4
+2_16_Get_Schwifty,cromulon,nathan,3
+2_16_Get_Schwifty,cromulon,mr. goldenfold,3
+2_16_Get_Schwifty,all,cromulon,2
+2_16_Get_Schwifty,all,mr. goldenfold,2
+2_17_The_Ricks_Must_Be_Crazy,morty,rick,12
+2_17_The_Ricks_Must_Be_Crazy,morty,ship,5
+2_17_The_Ricks_Must_Be_Crazy,morty,summer,7
+2_17_The_Ricks_Must_Be_Crazy,morty,thinner man,2
+2_17_The_Ricks_Must_Be_Crazy,rick,ship,6
+2_17_The_Ricks_Must_Be_Crazy,rick,summer,8
+2_17_The_Ricks_Must_Be_Crazy,rick,thinner man,2
+2_17_The_Ricks_Must_Be_Crazy,ship,summer,6
+2_17_The_Ricks_Must_Be_Crazy,ship,thinner man,2
+2_17_The_Ricks_Must_Be_Crazy,summer,thinner man,2
+2_17_The_Ricks_Must_Be_Crazy,morty,mr.president,2
+2_17_The_Ricks_Must_Be_Crazy,morty,zeep,10
+2_17_The_Ricks_Must_Be_Crazy,mr.president,rick,2
+2_17_The_Ricks_Must_Be_Crazy,mr.president,zeep,2
 2_17_The_Ricks_Must_Be_Crazy,rick,zeep,10
+2_17_The_Ricks_Must_Be_Crazy,rick,swat officer 1,2
+2_17_The_Ricks_Must_Be_Crazy,ship,swat officer 1,2
+2_17_The_Ricks_Must_Be_Crazy,summer,swat officer 1,2
+2_17_The_Ricks_Must_Be_Crazy,kyle,morty,2
+2_17_The_Ricks_Must_Be_Crazy,kyle,rick,2
+2_17_The_Ricks_Must_Be_Crazy,kyle,zeep,2
 2_17_The_Ricks_Must_Be_Crazy,ship,zeep,3
-2_17_The_Ricks_Must_Be_Crazy,summer,zeep,4
+2_17_The_Ricks_Must_Be_Crazy,summer,zeep,5
+2_17_The_Ricks_Must_Be_Crazy,army general,morty,5
 2_17_The_Ricks_Must_Be_Crazy,army general,rick,5
 2_17_The_Ricks_Must_Be_Crazy,army general,ship,2
-2_17_The_Ricks_Must_Be_Crazy,army general,summer,2
+2_17_The_Ricks_Must_Be_Crazy,army general,summer,3
 2_17_The_Ricks_Must_Be_Crazy,army general,zeep,5
-2_17_The_Ricks_Must_Be_Crazy,army general,morty,2
-2_17_The_Ricks_Must_Be_Crazy,army general,soldier,3
+2_17_The_Ricks_Must_Be_Crazy,army general,human president,2
+2_17_The_Ricks_Must_Be_Crazy,army general,soldier,2
+2_17_The_Ricks_Must_Be_Crazy,human president,morty,2
+2_17_The_Ricks_Must_Be_Crazy,human president,rick,2
+2_17_The_Ricks_Must_Be_Crazy,human president,soldier,2
+2_17_The_Ricks_Must_Be_Crazy,human president,summer,2
+2_17_The_Ricks_Must_Be_Crazy,human president,zeep,2
+2_17_The_Ricks_Must_Be_Crazy,morty,soldier,2
+2_17_The_Ricks_Must_Be_Crazy,rick,soldier,2
+2_17_The_Ricks_Must_Be_Crazy,soldier,summer,2
 2_17_The_Ricks_Must_Be_Crazy,soldier,zeep,2
-2_18_Big_Trouble_in_Little_Sanchez,beth,jerry,5
+2_18_Big_Trouble_in_Little_Sanchez,beth,jerry,3
+2_18_Big_Trouble_in_Little_Sanchez,beth,morty,3
 2_18_Big_Trouble_in_Little_Sanchez,beth,rick,3
-2_18_Big_Trouble_in_Little_Sanchez,jerry,rick,3
-2_18_Big_Trouble_in_Little_Sanchez,morty,rick,2
+2_18_Big_Trouble_in_Little_Sanchez,beth,summer,3
+2_18_Big_Trouble_in_Little_Sanchez,jerry,morty,3
+2_18_Big_Trouble_in_Little_Sanchez,jerry,rick,4
+2_18_Big_Trouble_in_Little_Sanchez,jerry,summer,4
+2_18_Big_Trouble_in_Little_Sanchez,morty,rick,3
 2_18_Big_Trouble_in_Little_Sanchez,morty,summer,3
-2_18_Big_Trouble_in_Little_Sanchez,rick,summer,3
-2_19_Interdimensional_Cable_2_Tempting_Fate,alien nurse,beth,2
-2_19_Interdimensional_Cable_2_Tempting_Fate,alien nurse,rick,2
-2_19_Interdimensional_Cable_2_Tempting_Fate,beth,morty,3
-2_19_Interdimensional_Cable_2_Tempting_Fate,beth,rick,5
+2_18_Big_Trouble_in_Little_Sanchez,rick,summer,4
+2_18_Big_Trouble_in_Little_Sanchez,beth,mr. slimslom,2
+2_18_Big_Trouble_in_Little_Sanchez,jerry,mr. slimslom,2
+2_18_Big_Trouble_in_Little_Sanchez,morty,mr. slimslom,2
+2_18_Big_Trouble_in_Little_Sanchez,mr. slimslom,rick,2
+2_18_Big_Trouble_in_Little_Sanchez,mr. slimslom,summer,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,beth,morty,4
+2_19_Interdimensional_Cable_2_Tempting_Fate,beth,randy dicknose,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,beth,rick,7
 2_19_Interdimensional_Cable_2_Tempting_Fate,beth,summer,6
-2_19_Interdimensional_Cable_2_Tempting_Fate,morty,rick,8
-2_19_Interdimensional_Cable_2_Tempting_Fate,morty,summer,3
+2_19_Interdimensional_Cable_2_Tempting_Fate,morty,rick,6
+2_19_Interdimensional_Cable_2_Tempting_Fate,morty,summer,4
+2_19_Interdimensional_Cable_2_Tempting_Fate,randy dicknose,rick,2
 2_19_Interdimensional_Cable_2_Tempting_Fate,rick,summer,5
-2_19_Interdimensional_Cable_2_Tempting_Fate,announcer,beth,3
-2_19_Interdimensional_Cable_2_Tempting_Fate,announcer,rick,4
-2_19_Interdimensional_Cable_2_Tempting_Fate,eyehole man,rick,2
-2_19_Interdimensional_Cable_2_Tempting_Fate,alien 1,jerry,2
-2_19_Interdimensional_Cable_2_Tempting_Fate,alien doctor,jerry,5
-2_19_Interdimensional_Cable_2_Tempting_Fate,morty,tv host,2
-2_19_Interdimensional_Cable_2_Tempting_Fate,rick,tv host,2
-2_19_Interdimensional_Cable_2_Tempting_Fate,announcer,morty,3
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien 1,alien 2,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien 1,announcer,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien 1,beth,3
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien 1,jerry,3
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien 1,rick,3
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien 2,announcer,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien 2,beth,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien 2,jerry,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien 2,rick,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien doctor,announcer,3
 2_19_Interdimensional_Cable_2_Tempting_Fate,alien doctor,beth,3
-2_19_Interdimensional_Cable_2_Tempting_Fate,beth,jerry,8
-2_19_Interdimensional_Cable_2_Tempting_Fate,michael thompson,morty,2
-2_19_Interdimensional_Cable_2_Tempting_Fate,michael thompson,rick,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien doctor,jerry,5
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien doctor,rick,3
+2_19_Interdimensional_Cable_2_Tempting_Fate,announcer,beth,4
+2_19_Interdimensional_Cable_2_Tempting_Fate,announcer,jerry,6
+2_19_Interdimensional_Cable_2_Tempting_Fate,announcer,rick,6
+2_19_Interdimensional_Cable_2_Tempting_Fate,beth,eyehole man,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,beth,jerry,9
+2_19_Interdimensional_Cable_2_Tempting_Fate,eyehole man,jerry,3
+2_19_Interdimensional_Cable_2_Tempting_Fate,eyehole man,rick,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,jerry,rick,8
+2_19_Interdimensional_Cable_2_Tempting_Fate,announcer,morty,4
+2_19_Interdimensional_Cable_2_Tempting_Fate,jerry,morty,7
+2_19_Interdimensional_Cable_2_Tempting_Fate,alien doctor,morty,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,jerry,michael thompson,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,jerry,pichael thompson,2
 2_19_Interdimensional_Cable_2_Tempting_Fate,michael thompson,pichael thompson,2
-2_19_Interdimensional_Cable_2_Tempting_Fate,pichael thomson,rick,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,michael thompson,rick,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,pichael thompson,rick,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,beth,phillip jacobs,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,jerry,phillip jacobs,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,jerry,summer,6
+2_19_Interdimensional_Cable_2_Tempting_Fate,phillip jacobs,rick,2
 2_19_Interdimensional_Cable_2_Tempting_Fate,phillip jacobs,summer,2
-2_19_Interdimensional_Cable_2_Tempting_Fate,jerry,summer,5
-2_19_Interdimensional_Cable_2_Tempting_Fate,jerry,morty,2
-2_19_Interdimensional_Cable_2_Tempting_Fate,eyehole man,jerry,2
-2_20_Look_Who's_Purging_Now,morty,rick,18
-2_20_Look_Who's_Purging_Now,morty,old guy,2
-2_20_Look_Who's_Purging_Now,old guy,rick,2
-2_20_Look_Who's_Purging_Now,arthricia,morty,7
-2_20_Look_Who's_Purging_Now,arthricia,rick,8
+2_19_Interdimensional_Cable_2_Tempting_Fate,announcer,summer,2
+2_19_Interdimensional_Cable_2_Tempting_Fate,eyehole man,morty,2
+2_20_Look_Who's_Purging_Now,morty,old guy,3
+2_20_Look_Who's_Purging_Now,morty,rick,15
+2_20_Look_Who's_Purging_Now,old guy,rick,3
 2_20_Look_Who's_Purging_Now,arthricia,man,2
-2_20_Look_Who's_Purging_Now,man,morty,2
-2_20_Look_Who's_Purging_Now,man,rick,2
-2_20_Look_Who's_Purging_Now,jerry,summer,6
-2_20_Look_Who's_Purging_Now,jerry,rick,4
-2_20_Look_Who's_Purging_Now,rick,summer,3
-2_20_Look_Who's_Purging_Now,jerry,morty,3
-2_20_Look_Who's_Purging_Now,morty,summer,2
+2_20_Look_Who's_Purging_Now,arthricia,morty,7
+2_20_Look_Who's_Purging_Now,arthricia,rick,7
+2_20_Look_Who's_Purging_Now,man,morty,3
+2_20_Look_Who's_Purging_Now,man,rick,3
+2_20_Look_Who's_Purging_Now,arthricia,jerry,4
+2_20_Look_Who's_Purging_Now,arthricia,summer,4
+2_20_Look_Who's_Purging_Now,jerry,morty,8
+2_20_Look_Who's_Purging_Now,jerry,rick,8
+2_20_Look_Who's_Purging_Now,jerry,summer,8
+2_20_Look_Who's_Purging_Now,morty,summer,8
+2_20_Look_Who's_Purging_Now,rick,summer,8
+2_20_Look_Who's_Purging_Now,jerry,lighthouse keeper,3
 2_20_Look_Who's_Purging_Now,lighthouse keeper,morty,4
-2_20_Look_Who's_Purging_Now,lighthouse keeper,rick,3
+2_20_Look_Who's_Purging_Now,lighthouse keeper,rick,4
+2_20_Look_Who's_Purging_Now,lighthouse keeper,summer,3
+2_20_Look_Who's_Purging_Now,device,jerry,2
+2_20_Look_Who's_Purging_Now,device,lighthouse keeper,2
 2_20_Look_Who's_Purging_Now,device,morty,2
 2_20_Look_Who's_Purging_Now,device,rick,2
+2_20_Look_Who's_Purging_Now,device,summer,2
 2_20_Look_Who's_Purging_Now,large man,man,2
+2_20_Look_Who's_Purging_Now,large man,man with glasses,2
+2_20_Look_Who's_Purging_Now,large man,morty,2
+2_20_Look_Who's_Purging_Now,large man,rick,2
+2_20_Look_Who's_Purging_Now,man,man with glasses,2
 2_20_Look_Who's_Purging_Now,man with glasses,morty,2
 2_20_Look_Who's_Purging_Now,man with glasses,rick,2
-2_21_The_Wedding_Squanchers,beth,jerry,3
-2_21_The_Wedding_Squanchers,beth,morty,3
-2_21_The_Wedding_Squanchers,beth,rick,3
-2_21_The_Wedding_Squanchers,beth,summer,2
-2_21_The_Wedding_Squanchers,beth,summer and morty,2
-2_21_The_Wedding_Squanchers,jerry,morty,3
-2_21_The_Wedding_Squanchers,jerry,rick,3
-2_21_The_Wedding_Squanchers,jerry,summer,2
-2_21_The_Wedding_Squanchers,jerry,summer and morty,2
-2_21_The_Wedding_Squanchers,morty,rick,3
-2_21_The_Wedding_Squanchers,morty,summer,2
-2_21_The_Wedding_Squanchers,morty,summer and morty,2
-2_21_The_Wedding_Squanchers,rick,summer,2
-2_21_The_Wedding_Squanchers,rick,summer and morty,2
-2_21_The_Wedding_Squanchers,summer,summer and morty,2
-3_22_The_Rickshank_Rickdemption,beth,cornvelious daniel,3
+2_21_The_Wedding_Squanchers,beth,courier flap,2
+2_21_The_Wedding_Squanchers,beth,jerry,5
+2_21_The_Wedding_Squanchers,beth,morty,5
+2_21_The_Wedding_Squanchers,beth,rick,5
+2_21_The_Wedding_Squanchers,beth,summer,3
+2_21_The_Wedding_Squanchers,courier flap,jerry,2
+2_21_The_Wedding_Squanchers,courier flap,morty,2
+2_21_The_Wedding_Squanchers,courier flap,rick,2
+2_21_The_Wedding_Squanchers,jerry,morty,5
+2_21_The_Wedding_Squanchers,jerry,rick,6
+2_21_The_Wedding_Squanchers,jerry,summer,3
+2_21_The_Wedding_Squanchers,morty,rick,5
+2_21_The_Wedding_Squanchers,morty,summer,3
+2_21_The_Wedding_Squanchers,rick,summer,3
+2_21_The_Wedding_Squanchers,beth,squanchy,3
+2_21_The_Wedding_Squanchers,jerry,squanchy,3
+2_21_The_Wedding_Squanchers,morty,squanchy,3
+2_21_The_Wedding_Squanchers,rick,squanchy,3
+2_21_The_Wedding_Squanchers,squanchy,summer,2
+2_21_The_Wedding_Squanchers,beth,female voice,2
+2_21_The_Wedding_Squanchers,female voice,jerry,2
+2_21_The_Wedding_Squanchers,female voice,morty,2
+2_21_The_Wedding_Squanchers,female voice,rick,2
+3_22_The_Rickshank_Rickdemption,beth,cornvelious daniel,2
+3_22_The_Rickshank_Rickdemption,beth,gromflomite captain,2
 3_22_The_Rickshank_Rickdemption,beth,jerry,4
 3_22_The_Rickshank_Rickdemption,beth,morty,3
-3_22_The_Rickshank_Rickdemption,beth,rick,6
-3_22_The_Rickshank_Rickdemption,cornvelious daniel,jerry,3
-3_22_The_Rickshank_Rickdemption,cornvelious daniel,morty,3
-3_22_The_Rickshank_Rickdemption,cornvelious daniel,rick,9
-3_22_The_Rickshank_Rickdemption,jerry,morty,2
+3_22_The_Rickshank_Rickdemption,beth,rick,4
+3_22_The_Rickshank_Rickdemption,cornvelious daniel,gromflomite captain,3
+3_22_The_Rickshank_Rickdemption,cornvelious daniel,jerry,2
+3_22_The_Rickshank_Rickdemption,cornvelious daniel,morty,5
+3_22_The_Rickshank_Rickdemption,cornvelious daniel,rick,6
+3_22_The_Rickshank_Rickdemption,gromflomite captain,jerry,2
+3_22_The_Rickshank_Rickdemption,gromflomite captain,morty,2
+3_22_The_Rickshank_Rickdemption,gromflomite captain,rick,3
+3_22_The_Rickshank_Rickdemption,jerry,morty,3
 3_22_The_Rickshank_Rickdemption,jerry,rick,4
-3_22_The_Rickshank_Rickdemption,morty,rick,6
-3_22_The_Rickshank_Rickdemption,beth,gromflomite worker,2
-3_22_The_Rickshank_Rickdemption,beth,summer,4
-3_22_The_Rickshank_Rickdemption,cornvelious daniel,gromflomite captain,2
-3_22_The_Rickshank_Rickdemption,cornvelious daniel,gromflomite worker,2
-3_22_The_Rickshank_Rickdemption,cornvelious daniel,summer,3
+3_22_The_Rickshank_Rickdemption,morty,rick,10
+3_22_The_Rickshank_Rickdemption,beth,summer,3
+3_22_The_Rickshank_Rickdemption,conroy,cornvelious daniel,2
+3_22_The_Rickshank_Rickdemption,conroy,morty,2
+3_22_The_Rickshank_Rickdemption,conroy,rick,2
+3_22_The_Rickshank_Rickdemption,conroy,summer,2
+3_22_The_Rickshank_Rickdemption,convelious daniel,cornvelious daniel,2
+3_22_The_Rickshank_Rickdemption,convelious daniel,morty,2
+3_22_The_Rickshank_Rickdemption,convelious daniel,rick,2
+3_22_The_Rickshank_Rickdemption,convelious daniel,summer,2
+3_22_The_Rickshank_Rickdemption,cornvelious daniel,gromflomite worker,3
+3_22_The_Rickshank_Rickdemption,cornvelious daniel,summer,4
 3_22_The_Rickshank_Rickdemption,gromflomite captain,gromflomite worker,2
-3_22_The_Rickshank_Rickdemption,gromflomite captain,rick,2
-3_22_The_Rickshank_Rickdemption,gromflomite worker,rick,3
+3_22_The_Rickshank_Rickdemption,gromflomite worker,morty,3
+3_22_The_Rickshank_Rickdemption,gromflomite worker,rick,4
 3_22_The_Rickshank_Rickdemption,gromflomite worker,summer,2
 3_22_The_Rickshank_Rickdemption,jerry,summer,3
-3_22_The_Rickshank_Rickdemption,rick,summer,7
-3_22_The_Rickshank_Rickdemption,conroy,morty,3
-3_22_The_Rickshank_Rickdemption,conroy,summer,3
-3_22_The_Rickshank_Rickdemption,convelious daniel,cornvelious daniel,2
-3_22_The_Rickshank_Rickdemption,convelious daniel,rick,2
 3_22_The_Rickshank_Rickdemption,morty,summer,10
-3_22_The_Rickshank_Rickdemption,cornvelious daniel,young rick,3
+3_22_The_Rickshank_Rickdemption,rick,summer,9
+3_22_The_Rickshank_Rickdemption,cornvelious daniel,young rick,2
+3_22_The_Rickshank_Rickdemption,morty,rick prime,2
+3_22_The_Rickshank_Rickdemption,morty,young rick,3
+3_22_The_Rickshank_Rickdemption,rick,young rick,2
+3_22_The_Rickshank_Rickdemption,rick prime,summer,2
 3_22_The_Rickshank_Rickdemption,rick prime,young rick,2
+3_22_The_Rickshank_Rickdemption,summer,young rick,3
 3_22_The_Rickshank_Rickdemption,guard rick,morty,2
 3_22_The_Rickshank_Rickdemption,guard rick,summer,2
+3_22_The_Rickshank_Rickdemption,rick/rick,speaker system,2
+3_22_The_Rickshank_Rickdemption,commander in chief rick/rick,lawyer morty,2
+3_22_The_Rickshank_Rickdemption,commander in chief rick/rick,morty,2
+3_22_The_Rickshank_Rickdemption,commander in chief rick/rick,riq iv,2
+3_22_The_Rickshank_Rickdemption,commander in chief rick/rick,summer,2
 3_22_The_Rickshank_Rickdemption,lawyer morty,morty,2
 3_22_The_Rickshank_Rickdemption,lawyer morty,riq iv,2
 3_22_The_Rickshank_Rickdemption,lawyer morty,summer,2
-3_22_The_Rickshank_Rickdemption,morty,riq iv,3
-3_22_The_Rickshank_Rickdemption,riq iv,summer,3
-3_22_The_Rickshank_Rickdemption,rick,riq iv,2
-3_22_The_Rickshank_Rickdemption,federation worker 1,galactic federation president,3
-3_22_The_Rickshank_Rickdemption,federation worker 1,federation worker 3,2
-3_22_The_Rickshank_Rickdemption,federation worker 3,galactic federation president,2
-3_23_Rickmancing_the_Stone,morty,summer,8
-3_23_Rickmancing_the_Stone,morty,rick,17
+3_22_The_Rickshank_Rickdemption,morty,riq iv,4
+3_22_The_Rickshank_Rickdemption,riq iv,summer,4
+3_22_The_Rickshank_Rickdemption,rick,riq iv,3
+3_22_The_Rickshank_Rickdemption,federation worker 1,galactic federation president,2
+3_22_The_Rickshank_Rickdemption,federation worker 1,rick,2
+3_22_The_Rickshank_Rickdemption,federation worker 1,summer,2
+3_22_The_Rickshank_Rickdemption,galactic federation president,rick,2
+3_22_The_Rickshank_Rickdemption,galactic federation president,summer,2
+3_22_The_Rickshank_Rickdemption,gromflomite worker,tammy,2
+3_23_Rickmancing_the_Stone,jerry,morty,3
+3_23_Rickmancing_the_Stone,jerry,rick,3
+3_23_Rickmancing_the_Stone,jerry,summer,4
+3_23_Rickmancing_the_Stone,morty,rick,13
+3_23_Rickmancing_the_Stone,morty,summer,11
 3_23_Rickmancing_the_Stone,rick,summer,11
-3_23_Rickmancing_the_Stone,hemorrhage,morty,5
-3_23_Rickmancing_the_Stone,hemorrhage,rick,5
-3_23_Rickmancing_the_Stone,hemorrhage,summer,10
+3_23_Rickmancing_the_Stone,beth,jerry,2
+3_23_Rickmancing_the_Stone,beth,morty,4
+3_23_Rickmancing_the_Stone,beth,rick,5
+3_23_Rickmancing_the_Stone,beth,summer,3
+3_23_Rickmancing_the_Stone,jerry,wind,2
+3_23_Rickmancing_the_Stone,summer,wind,2
+3_23_Rickmancing_the_Stone,hemorrhage,morty,8
+3_23_Rickmancing_the_Stone,hemorrhage,rick,8
+3_23_Rickmancing_the_Stone,hemorrhage,summer,9
+3_23_Rickmancing_the_Stone,eli,hemorrhage,3
 3_23_Rickmancing_the_Stone,eli,morty,3
-3_23_Rickmancing_the_Stone,beth,rick,4
-3_23_Rickmancing_the_Stone,mechanical morty,mechanical summer,4
-3_23_Rickmancing_the_Stone,mechanical morty,rick,4
-3_23_Rickmancing_the_Stone,mechanical summer,rick,4
+3_23_Rickmancing_the_Stone,eli,rick,3
+3_23_Rickmancing_the_Stone,eli,summer,3
+3_23_Rickmancing_the_Stone,morty,soldier,2
+3_23_Rickmancing_the_Stone,hemorrhage,mechanical morty,2
+3_23_Rickmancing_the_Stone,hemorrhage,mechanical summer,2
+3_23_Rickmancing_the_Stone,mechanical morty,mechanical summer,3
+3_23_Rickmancing_the_Stone,mechanical morty,rick,5
+3_23_Rickmancing_the_Stone,mechanical morty,summer,3
+3_23_Rickmancing_the_Stone,mechanical summer,rick,3
+3_23_Rickmancing_the_Stone,mechanical summer,summer,2
 3_23_Rickmancing_the_Stone,beth,mechanical morty,3
-3_23_Rickmancing_the_Stone,beth,mechanical summer,3
+3_23_Rickmancing_the_Stone,beth,mechanical summer,2
+3_23_Rickmancing_the_Stone,mechanical morty,morty,3
 3_23_Rickmancing_the_Stone,eli,elis girlfriend,2
-3_23_Rickmancing_the_Stone,eli,summer,2
+3_23_Rickmancing_the_Stone,elis girlfriend,hemorrhage,2
+3_23_Rickmancing_the_Stone,elis girlfriend,morty,2
+3_23_Rickmancing_the_Stone,elis girlfriend,rick,2
+3_23_Rickmancing_the_Stone,elis girlfriend,summer,2
 3_23_Rickmancing_the_Stone,beth,mechanical rick,2
-3_23_Rickmancing_the_Stone,jerry,summer,2
-3_24_Pickle_Rick,morty,pickle rick,6
-3_24_Pickle_Rick,beth,morty,7
-3_24_Pickle_Rick,beth,pickle rick,5
+3_23_Rickmancing_the_Stone,mechanical morty,mechanical rick,2
+3_23_Rickmancing_the_Stone,mechanical rick,morty,2
+3_23_Rickmancing_the_Stone,mechanical rick,rick,2
+3_23_Rickmancing_the_Stone,mechanical rick,summer,2
+3_24_Pickle_Rick,morty,pickle rick,7
+3_24_Pickle_Rick,beth,morty,6
+3_24_Pickle_Rick,beth,pickle rick,8
 3_24_Pickle_Rick,beth,summer,6
-3_24_Pickle_Rick,morty,summer,4
-3_24_Pickle_Rick,pickle rick,summer,2
-3_24_Pickle_Rick,beth,dr. wong,7
-3_24_Pickle_Rick,dr. wong,morty,2
-3_24_Pickle_Rick,dr. wong,summer,2
-3_24_Pickle_Rick,agency director,agent #1,3
-3_24_Pickle_Rick,agency director,agent #2,5
+3_24_Pickle_Rick,morty,summer,5
+3_24_Pickle_Rick,pickle rick,summer,6
+3_24_Pickle_Rick,beth,dr. wong,6
+3_24_Pickle_Rick,dr. wong,morty,5
+3_24_Pickle_Rick,dr. wong,pickle rick,6
+3_24_Pickle_Rick,dr. wong,summer,5
+3_24_Pickle_Rick,agency director,agent #1,2
+3_24_Pickle_Rick,agency director,agent #2,3
+3_24_Pickle_Rick,agency director,pickle rick,3
 3_24_Pickle_Rick,agent #1,agent #2,2
-3_24_Pickle_Rick,agency director,pickle rick,4
-3_24_Pickle_Rick,agent #2,pickle rick,2
+3_24_Pickle_Rick,agent #1,pickle rick,2
+3_24_Pickle_Rick,agent #2,pickle rick,3
 3_24_Pickle_Rick,agency director,jaguar,2
-3_24_Pickle_Rick,jaguar,pickle rick,2
-3_24_Pickle_Rick,dr. wong,pickle rick,2
-3_24_Pickle_Rick,beth,rick,2
-3_24_Pickle_Rick,morty,rick,3
-3_24_Pickle_Rick,concerto,rick,2
-3_25_Vindicators_3_The_Return_of_Worldender,morty,rick,22
-3_25_Vindicators_3_The_Return_of_Worldender,alan,crocubot,2
-3_25_Vindicators_3_The_Return_of_Worldender,alan,morty,5
+3_24_Pickle_Rick,agent #2,jaguar,2
+3_24_Pickle_Rick,jaguar,pickle rick,4
+3_24_Pickle_Rick,beth,jaguar,2
+3_24_Pickle_Rick,dr. wong,jaguar,2
+3_24_Pickle_Rick,jaguar,morty,2
+3_24_Pickle_Rick,jaguar,summer,2
+3_24_Pickle_Rick,morty,rick,2
+3_25_Vindicators_3_The_Return_of_Worldender,morty,rick,15
+3_25_Vindicators_3_The_Return_of_Worldender,morty,supernova,14
+3_25_Vindicators_3_The_Return_of_Worldender,rick,supernova,14
+3_25_Vindicators_3_The_Return_of_Worldender,alan,crocubot,3
+3_25_Vindicators_3_The_Return_of_Worldender,alan,morty,7
 3_25_Vindicators_3_The_Return_of_Worldender,alan,rick,7
-3_25_Vindicators_3_The_Return_of_Worldender,alan,supernova,6
-3_25_Vindicators_3_The_Return_of_Worldender,crocubot,rick,2
-3_25_Vindicators_3_The_Return_of_Worldender,crocubot,supernova,2
+3_25_Vindicators_3_The_Return_of_Worldender,alan,supernova,7
+3_25_Vindicators_3_The_Return_of_Worldender,alan,vance,3
+3_25_Vindicators_3_The_Return_of_Worldender,crocubot,morty,3
+3_25_Vindicators_3_The_Return_of_Worldender,crocubot,rick,3
+3_25_Vindicators_3_The_Return_of_Worldender,crocubot,supernova,3
+3_25_Vindicators_3_The_Return_of_Worldender,crocubot,vance,3
 3_25_Vindicators_3_The_Return_of_Worldender,morty,noob-noob,2
-3_25_Vindicators_3_The_Return_of_Worldender,morty,supernova,10
+3_25_Vindicators_3_The_Return_of_Worldender,morty,vance,6
+3_25_Vindicators_3_The_Return_of_Worldender,noob-noob,rick,2
 3_25_Vindicators_3_The_Return_of_Worldender,noob-noob,supernova,2
-3_25_Vindicators_3_The_Return_of_Worldender,rick,supernova,12
-3_25_Vindicators_3_The_Return_of_Worldender,morty,vance,4
-3_25_Vindicators_3_The_Return_of_Worldender,rick,vance,5
-3_25_Vindicators_3_The_Return_of_Worldender,million ants,morty,6
-3_25_Vindicators_3_The_Return_of_Worldender,million ants,supernova,11
+3_25_Vindicators_3_The_Return_of_Worldender,noob-noob,vance,2
+3_25_Vindicators_3_The_Return_of_Worldender,rick,vance,6
+3_25_Vindicators_3_The_Return_of_Worldender,supernova,vance,6
+3_25_Vindicators_3_The_Return_of_Worldender,million ants,morty,9
+3_25_Vindicators_3_The_Return_of_Worldender,million ants,rick,9
+3_25_Vindicators_3_The_Return_of_Worldender,million ants,supernova,9
 3_25_Vindicators_3_The_Return_of_Worldender,million ants,vance,2
-3_25_Vindicators_3_The_Return_of_Worldender,supernova,vance,4
-3_25_Vindicators_3_The_Return_of_Worldender,million ants,rick,6
-3_25_Vindicators_3_The_Return_of_Worldender,drunk rick,rick,6
-3_25_Vindicators_3_The_Return_of_Worldender,drunk rick,supernova,5
-3_25_Vindicators_3_The_Return_of_Worldender,drunk rick,morty,7
+3_25_Vindicators_3_The_Return_of_Worldender,alan,million ants,5
 3_25_Vindicators_3_The_Return_of_Worldender,alan,drunk rick,5
-3_25_Vindicators_3_The_Return_of_Worldender,alan,million ants,3
-3_25_Vindicators_3_The_Return_of_Worldender,drunk rick,million ants,4
+3_25_Vindicators_3_The_Return_of_Worldender,crocubot,drunk rick,2
+3_25_Vindicators_3_The_Return_of_Worldender,drunk rick,million ants,6
+3_25_Vindicators_3_The_Return_of_Worldender,drunk rick,morty,8
+3_25_Vindicators_3_The_Return_of_Worldender,drunk rick,rick,8
+3_25_Vindicators_3_The_Return_of_Worldender,drunk rick,supernova,8
+3_25_Vindicators_3_The_Return_of_Worldender,drunk rick,vance,3
+3_25_Vindicators_3_The_Return_of_Worldender,logic,morty,2
 3_25_Vindicators_3_The_Return_of_Worldender,logic,rick,2
-3_25_Vindicators_3_The_Return_of_Worldender,gear girl #1,gear head,2
-3_26_The_Whirly_Dirly_Conspiracy,jerry,rick,13
+3_26_The_Whirly_Dirly_Conspiracy,jerry,rick,6
+3_26_The_Whirly_Dirly_Conspiracy,beth,jerry,2
+3_26_The_Whirly_Dirly_Conspiracy,jerry,morty,2
+3_26_The_Whirly_Dirly_Conspiracy,jerry,risotto,2
+3_26_The_Whirly_Dirly_Conspiracy,morty,risotto,2
+3_26_The_Whirly_Dirly_Conspiracy,jerry,man #1,2
+3_26_The_Whirly_Dirly_Conspiracy,man #1,rick,2
 3_27_Rest_and_Ricklaxation,holly,jessica,2
 3_27_Rest_and_Ricklaxation,holly,morty,2
+3_27_Rest_and_Ricklaxation,holly,rick,2
 3_27_Rest_and_Ricklaxation,holly,tricia,2
-3_27_Rest_and_Ricklaxation,jessica,morty,2
+3_27_Rest_and_Ricklaxation,jessica,morty,5
+3_27_Rest_and_Ricklaxation,jessica,rick,5
 3_27_Rest_and_Ricklaxation,jessica,tricia,2
+3_27_Rest_and_Ricklaxation,morty,rick,15
 3_27_Rest_and_Ricklaxation,morty,tricia,2
-3_27_Rest_and_Ricklaxation,morty,rick,4
+3_27_Rest_and_Ricklaxation,rick,tricia,2
+3_27_Rest_and_Ricklaxation,alien,morty,2
+3_27_Rest_and_Ricklaxation,alien,rick,2
+3_27_Rest_and_Ricklaxation,morty,toxic morty,11
+3_27_Rest_and_Ricklaxation,morty,toxic rick,11
+3_27_Rest_and_Ricklaxation,rick,toxic morty,10
+3_27_Rest_and_Ricklaxation,rick,toxic rick,11
+3_27_Rest_and_Ricklaxation,toxic morty,toxic rick,11
+3_27_Rest_and_Ricklaxation,female student,morty,2
+3_27_Rest_and_Ricklaxation,female student,toxic morty,2
+3_27_Rest_and_Ricklaxation,female student,toxic rick,2
+3_27_Rest_and_Ricklaxation,morty,stacy,3
+3_27_Rest_and_Ricklaxation,rick,stacy,3
+3_27_Rest_and_Ricklaxation,stacy,toxic morty,3
+3_27_Rest_and_Ricklaxation,stacy,toxic rick,3
+3_27_Rest_and_Ricklaxation,groin system 6000,rick,2
+3_27_Rest_and_Ricklaxation,groin system 6000,toxic rick,2
+3_27_Rest_and_Ricklaxation,morty,priest,2
+3_27_Rest_and_Ricklaxation,priest,rick,2
+3_27_Rest_and_Ricklaxation,priest,toxic morty,2
+3_27_Rest_and_Ricklaxation,priest,toxic rick,2
+3_27_Rest_and_Ricklaxation,jacquelyn,jessica,2
+3_27_Rest_and_Ricklaxation,jacquelyn,morty,2
+3_27_Rest_and_Ricklaxation,jacquelyn,rick,2
 3_28_The_Ricklantis_Mixup,morty,rick,2
 3_28_The_Ricklantis_Mixup,rick d716,rick d716-b,3
 3_28_The_Ricklantis_Mixup,campaign manager morty,candidate morty,5
-3_28_The_Ricklantis_Mixup,cop morty,cop rick,4
-3_28_The_Ricklantis_Mixup,students,teacher rick,2
-3_28_The_Ricklantis_Mixup,fat morty,glasses morty,3
-3_28_The_Ricklantis_Mixup,fat morty,lizard morty,3
+3_28_The_Ricklantis_Mixup,campaign manager morty,cop morty,2
+3_28_The_Ricklantis_Mixup,campaign manager morty,cop rick,4
+3_28_The_Ricklantis_Mixup,candidate morty,cop morty,2
+3_28_The_Ricklantis_Mixup,candidate morty,cop rick,3
+3_28_The_Ricklantis_Mixup,cop morty,cop rick,7
+3_28_The_Ricklantis_Mixup,cop morty,fat morty,2
+3_28_The_Ricklantis_Mixup,cop morty,glasses morty,2
+3_28_The_Ricklantis_Mixup,cop morty,lizard morty,2
+3_28_The_Ricklantis_Mixup,cop morty,slick,2
+3_28_The_Ricklantis_Mixup,cop rick,fat morty,2
+3_28_The_Ricklantis_Mixup,cop rick,glasses morty,3
+3_28_The_Ricklantis_Mixup,cop rick,lizard morty,3
+3_28_The_Ricklantis_Mixup,cop rick,slick,2
+3_28_The_Ricklantis_Mixup,cop rick,teacher rick,2
+3_28_The_Ricklantis_Mixup,fat morty,glasses morty,4
+3_28_The_Ricklantis_Mixup,fat morty,lizard morty,4
 3_28_The_Ricklantis_Mixup,fat morty,slick,4
-3_28_The_Ricklantis_Mixup,glasses morty,lizard morty,4
-3_28_The_Ricklantis_Mixup,glasses morty,slick,3
+3_28_The_Ricklantis_Mixup,glasses morty,lizard morty,5
+3_28_The_Ricklantis_Mixup,glasses morty,slick,4
 3_28_The_Ricklantis_Mixup,glasses morty,teacher rick,2
-3_28_The_Ricklantis_Mixup,lizard morty,slick,3
+3_28_The_Ricklantis_Mixup,lizard morty,slick,4
 3_28_The_Ricklantis_Mixup,lizard morty,teacher rick,2
 3_28_The_Ricklantis_Mixup,juggling rick,moderator rick,2
 3_28_The_Ricklantis_Mixup,juggling rick,retired general rick,2
 3_28_The_Ricklantis_Mixup,moderator rick,retired general rick,2
 3_28_The_Ricklantis_Mixup,campaign manager morty,juggling rick,2
+3_28_The_Ricklantis_Mixup,campaign manager morty,rick j-22,2
 3_28_The_Ricklantis_Mixup,candidate morty,juggling rick,2
+3_28_The_Ricklantis_Mixup,candidate morty,rick j-22,2
+3_28_The_Ricklantis_Mixup,juggling rick,rick j-22,2
+3_28_The_Ricklantis_Mixup,rick j-22,rick worker,2
 3_28_The_Ricklantis_Mixup,negotiator rick,rick j-22,2
 3_28_The_Ricklantis_Mixup,negotiator rick,simple rick,2
 3_28_The_Ricklantis_Mixup,rick j-22,simple rick,2
-3_29_Morty's_Mind_Blowers,morty,rick,6
+3_28_The_Ricklantis_Mixup,cop rick,mortytown loco,2
+3_28_The_Ricklantis_Mixup,big morty,cop morty,2
+3_28_The_Ricklantis_Mixup,big morty,cop rick,2
+3_28_The_Ricklantis_Mixup,bodyguard rick 1,campaign manager morty,2
+3_28_The_Ricklantis_Mixup,bodyguard rick 1,glasses morty,2
+3_28_The_Ricklantis_Mixup,bodyguard rick 1,lizard morty,2
+3_28_The_Ricklantis_Mixup,campaign manager morty,glasses morty,2
+3_28_The_Ricklantis_Mixup,campaign manager morty,lizard morty,2
+3_29_Morty's_Mind_Blowers,morty,rick,2
 3_29_Morty's_Mind_Blowers,morty,principal vagina,2
-3_30_The_ABC's_of_Beth,beth,rick,7
-3_30_The_ABC's_of_Beth,morty,summer,5
-3_30_The_ABC's_of_Beth,jerry,morty,5
-3_30_The_ABC's_of_Beth,jerry,summer,5
+3_30_The_ABC's_of_Beth,beth,rick,3
+3_30_The_ABC's_of_Beth,beth,summer,2
+3_30_The_ABC's_of_Beth,morty,summer,3
+3_30_The_ABC's_of_Beth,rick,summer,2
 3_30_The_ABC's_of_Beth,jerry,kiara,3
+3_30_The_ABC's_of_Beth,jerry,morty,2
+3_30_The_ABC's_of_Beth,jerry,summer,3
 3_30_The_ABC's_of_Beth,kiara,morty,2
-3_30_The_ABC's_of_Beth,kiara,summer,2
+3_30_The_ABC's_of_Beth,kiara,summer,3
+3_31_The_Rickchurian_Mortydate,morty,mr president,5
+3_31_The_Rickchurian_Mortydate,morty,president,10
+3_31_The_Rickchurian_Mortydate,morty,rick,10
+3_31_The_Rickchurian_Mortydate,mr president,president,5
+3_31_The_Rickchurian_Mortydate,mr president,rick,5
+3_31_The_Rickchurian_Mortydate,president,rick,10
+3_31_The_Rickchurian_Mortydate,beth,morty,5
+3_31_The_Rickchurian_Mortydate,beth,mr president,2
+3_31_The_Rickchurian_Mortydate,beth,president,5
+3_31_The_Rickchurian_Mortydate,beth,rick,6
+3_31_The_Rickchurian_Mortydate,beth,summer,3
+3_31_The_Rickchurian_Mortydate,morty,summer,2
+3_31_The_Rickchurian_Mortydate,president,summer,2
+3_31_The_Rickchurian_Mortydate,rick,summer,3
+3_31_The_Rickchurian_Mortydate,beth,jerry,2
+3_31_The_Rickchurian_Mortydate,jerry,morty,2
+3_31_The_Rickchurian_Mortydate,jerry,president,2
+3_31_The_Rickchurian_Mortydate,jerry,rick,2

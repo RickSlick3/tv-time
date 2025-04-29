@@ -283,14 +283,17 @@ def get_all_characters_stats(
             writer.writerow(row)
 
 
-def count_character_cooccurrences(transcripts_dir=TRANSCRIPTS_DIR,
-                                  seasons=SEASONS_TO_PROCESS,
-                                  proximity=25,
-                                  output_csv="./docs/data/cooccurrences_by_lines.csv"):
+def count_character_cooccurrences_by_lines(
+    transcripts_dir=TRANSCRIPTS_DIR,
+    seasons=SEASONS_TO_PROCESS,
+    proximity=25,
+    output_csv="./docs/data/cooccurrences_by_lines.csv"
+):
     """
-    For each episode, chunk its dialogue into blocks of `proximity` lines,
-    then count how many blocks each unordered pair of characters shares.
-    Writes a CSV: episode, char1, char2, count.
+    For each episode, split its dialogue into non-overlapping
+    blocks of `proximity` lines, then count how many blocks each
+    unordered pair of characters shares. Writes a CSV:
+    episode, char1, char2, count.
     """
     episode_counters = {}
 
@@ -303,55 +306,44 @@ def count_character_cooccurrences(transcripts_dir=TRANSCRIPTS_DIR,
             if not fname.endswith(".txt"):
                 continue
 
-            # strip ".txt" and prefix with season
             ep_name    = os.path.splitext(fname)[0]      # e.g. "Pilot"
             episode_id = f"{season}_{ep_name}"           # e.g. "1_Pilot"
+            fpath      = os.path.join(season_dir, fname)
 
-            fpath = os.path.join(season_dir, fname)
-            if not os.path.isfile(fpath):
-                continue
-
-            # read all lines once
+            # Read all lines once
             with open(fpath, encoding="utf-8") as f:
-                lines = f.readlines()
+                lines = [l.strip() for l in f if l.strip()]
 
-            # choose marker
-            marker = "[" if any(l.lstrip().startswith("[") for l in lines) else "("
+            # Break into non-overlapping blocks of `proximity` lines
+            blocks = [
+                lines[i:i+proximity]
+                for i in range(0, len(lines), proximity)
+            ]
 
-            # split into scenes
-            scenes = []
-            buf = []
-            for line in lines:
-                if line.lstrip().startswith(marker) and buf:
-                    scenes.append(buf)
-                    buf = []
-                buf.append(line)
-            if buf:
-                scenes.append(buf)
-
-            # count co-occurrences in each scene
             cooccur = Counter()
-            for scene in scenes:
+            for block in blocks:
                 speakers = set()
-                for line in scene:
+                for line in block:
                     if ":" not in line:
                         continue
-                    raw = line.split(":", 1)[0].strip().lower()
+                    raw = line.split(":", 1)[0].lower()
+                    # remove parenthetical or bracketed notes
                     name = re.sub(r'\([^)]*\)|\[[^\]]*\]|["\']+', "", raw).strip()
                     if name:
                         speakers.add(name)
+                # count each pair once per block
                 for a, b in combinations(sorted(speakers), 2):
                     cooccur[(a, b)] += 1
 
             episode_counters[episode_id] = cooccur
 
-    # write CSV using episode_id
+    # Write out only pairs with count > 1
     with open(output_csv, "w", newline="", encoding="utf-8") as out:
         writer = csv.writer(out)
         writer.writerow(["episode", "char1", "char2", "count"])
         for episode_id, counter in episode_counters.items():
             for (a, b), cnt in counter.items():
-                if cnt > 1:  # only write pairs with more than 1 co-occurrence
+                if cnt > 1:
                     writer.writerow([episode_id, a, b, cnt])
 
 
@@ -640,18 +632,18 @@ def lexical_richness_analysis():
 
 if __name__ == "__main__":
     # Level 1 goals 
-    all_character_stats_combined()
-    get_all_characters_stats()
-    main_character_stats_per_episode()
+    # all_character_stats_combined()
+    # get_all_characters_stats()
+    # main_character_stats_per_episode()
 
     # Level 2/3 goals
-    count_character_cooccurrences()
+    # count_character_cooccurrences_by_lines()
     count_interactions_by_markers()
     
     # Level 4 goals
-    count_pair_phrases()
+    # count_pair_phrases()
 
-    lexical_richness_analysis()
+    # lexical_richness_analysis()
     # Total tokens – the total number of words they speak
     # Vocabulary size – how many unique word types
     # Type–token ratio – vocab size ÷ total tokens
