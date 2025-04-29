@@ -15,7 +15,6 @@ Promise.all([
   console.log(prominentCharacters);
 
   const wordCloudCharacters = data[1].map(x => x.name);
-  console.log("CLOUD NAMES: " + wordCloudCharacters);
 
   let episodeSet = new Set(data[3].map(x => x.episode));
   const episodes = [...episodeSet];
@@ -33,7 +32,18 @@ Promise.all([
   let characterInteractions = new CharacterInteractions({parentElement: "#interaction-arc"}, data[2]);
   characterInteractions.updateVis();
 
-  let characterWordCloud = new CharacterWordCloud({parentElement: "#cloud-character-focus"}, data[1], wordCloudCharacters);
-
   let characterPhraseNetwork = new CharacterPhraseNetwork({parentElement: "#pair-phrase-character-focus"}, data[5], prominentCharacters);
+
+  let episodeChart = new EpisodeChart({parentElement: "#cloud-character-focus"}, data[0], wordCloudCharacters);
+  
+  let characterWordCloud = new CharacterWordCloud({parentElement: "#cloud-character-focus",
+    onCharacterChange: selectedCharacter => {
+      // Update the map data when bin selection changes.
+      characterWordCloud.updateVis(selectedCharacter);
+      episodeChart.updateVis(selectedCharacter);
+    }
+  }, data[1], wordCloudCharacters);
+  console.log(characterWordCloud.selectedCharacter);
+  //episodeChart.updateVis();
+
 }).catch(error => console.error(error));

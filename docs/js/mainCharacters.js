@@ -58,7 +58,7 @@ class MainCharacters {
       });
       return obj;
     });
-    //console.log(vis.filteredData);
+    //console.log(vis.newData);
 
     vis.seasonSelect = d3.select('#season-selector');
     vis.selectedSeason = "0";
@@ -140,17 +140,38 @@ class MainCharacters {
   renderVis() {
     let vis = this;
 
-    vis.chart.selectAll('.category')
+    vis.category = vis.chart.selectAll('.category')
         .data(vis.stackedData)
       .join('g')
-        .attr('class', d => `category cat-${d.key}`)
-      .selectAll('rect')
+        .attr('class', d => `category cat-${d.key}`);
+    vis.section = vis.category.selectAll('rect')
         .data(d => d)
       .join('rect')
         .attr('x', d => vis.xScale(d.data.episode))
         .attr('y', d => vis.yScale(+d[1]))
         .attr('height', d => vis.yScale(+d[0]) - vis.yScale(+d[1]))
         .attr('width', vis.xScale.bandwidth());
+
+    // Tooltip event listeners
+    vis.section
+        .on('mouseover', (event,d) => {
+          d3.select('#tooltip')
+            .style('opacity', 1)
+            // Format number with million and thousand separator
+            .html(`<div class="tooltip-label">Season: </div>${vis.selectedSeason == "0" ? "All" : vis.selectedSeason}
+            <div class="tooltip-label">Episode: </div>${d.data.episode}
+            <div class="tooltip-label">Character: </div>${event.target.parentElement.__data__.key.slice(0, -6)}
+            <div class="tooltip-label">Number of ${vis.selectedDenomination}: </div>${d3.format(',')(+d[1] - +d[0]) + " " + vis.selectedDenomination}
+          `)
+        })
+        .on('mousemove', (event) => {
+          d3.select('#tooltip')
+            .style('left', (event.pageX + vis.config.tooltipPadding) + 'px')   
+            .style('top', (event.pageY + vis.config.tooltipPadding) + 'px')
+        })
+        .on('mouseleave', () => {
+          d3.select('#tooltip').style('opacity', 0);
+        });
 
     // Update axes
     vis.xAxisG

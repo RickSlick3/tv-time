@@ -21,7 +21,7 @@ svg {
   height: 600px;
 }
 #cloud-character-focus svg {
-  width: 1000px;
+  width: 600px;
   height: 600px;
 }
 #pair-phrase-character-focus svg {
@@ -123,19 +123,39 @@ rect {
   text-align: left;
 }
 
+
 .cat-rick_lines rect, .cat-rick_words rect {
   fill: #135ed7;
 }
+
 .cat-morty_lines rect, .cat-morty_words rect {
   fill: #d72713;
 }
 
 .cat-jerry_lines, .cat-jerry_words rect {
-  fill: #0d8411;
+  fill: #10ac16;
 }
 .cat-beth_lines rect, .cat-beth_words rect {
   fill: #d4c32d;
 }
 .cat-summer_lines rect, .cat-summer_words rect {
   fill: #b319dd;
+}
+
+.cat-rick_lines rect:hover, .cat-rick_words rect:hover {
+  fill: #144ba3;
+}
+
+.cat-morty_lines rect:hover, .cat-morty_words rect:hover {
+  fill: #ac2011;
+}
+
+.cat-jerry_lines rect:hover, .cat-jerry_words rect:hover {
+  fill: #197b1c;
+}
+.cat-beth_lines rect:hover, .cat-beth_words rect:hover {
+  fill: #a99b26;
+}
+.cat-summer_lines rect:hover, .cat-summer_words rect:hover {
+  fill: #8718a6;
 }
