@@ -15,6 +15,17 @@ Promise.all([
   console.log(prominentCharacters);
 
   const wordCloudCharacters = data[1].map(x => x.name);
+  
+  const rank = new Map(prominentCharacters.map((name, i) => [name, i]));
+
+  const sortedWordCloudCharacters = wordCloudCharacters
+    .slice()    // clone if you don’t want to mutate the original
+    .sort((a, b) => {
+      const ra = rank.get(a) ?? Infinity;
+      const rb = rank.get(b) ?? Infinity;
+      return ra - rb;
+  });
+
 
   const images = ["abradolph lincoler.jpg", "agency director.jpeg", "alan.jpg", "alien doctor.jpg", "annie.webp", 
     "army general.webp", "arthricia.jpeg", "beta-7.jpg", "beth.webp", "birdperson.jpg", "blim blam.webp", "brad.jpg",
@@ -44,7 +55,7 @@ Promise.all([
 
   let characterPhraseNetwork = new CharacterPhraseNetwork({parentElement: "#pair-phrase-character-focus"}, data[5], prominentCharacters);
 
-  let episodeChart = new EpisodeChart({parentElement: "#cloud-character-focus"}, data[0], wordCloudCharacters, images);
+  let episodeChart = new EpisodeChart({parentElement: "#cloud-character-focus"}, data[0], sortedWordCloudCharacters, images);
   
   let characterWordCloud = new CharacterWordCloud({parentElement: "#cloud-character-focus",
     onCharacterChange: selectedCharacter => {
@@ -52,7 +63,7 @@ Promise.all([
       characterWordCloud.updateVis(selectedCharacter);
       episodeChart.updateVis(selectedCharacter);
     }
-  }, data[1], wordCloudCharacters);
+  }, data[1], sortedWordCloudCharacters);
   console.log(characterWordCloud.selectedCharacter);
   //episodeChart.updateVis();
 
