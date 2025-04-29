@@ -28,6 +28,7 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
+  z-index: 100;
 }
 
 #info-screen {
@@ -107,7 +108,17 @@ svg {
   color: #888;
 }
 
+#pair-phrase-character-focus {
+  position: relative;
+  margin-bottom: 450px;
+}
+
 #network-tooltip {
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  z-index: 1000;
+
   position: absolute;
   opacity: 0;
   background: #fff;
@@ -116,11 +127,9 @@ svg {
   font-size: 12px;
   font-weight: 600;
   padding: 2px 8px;
-
-  column-count: 5;       /* split into two columns */
-  column-gap: 1em;       /* space between columns */
-
-  max-height: 600px;     /* limit vertical size */
+  column-count: 8;
+  column-gap: 1em;
+  max-height: 600px;
 }
 .network-tooltip-group {
   break-inside: avoid;

@@ -141,6 +141,8 @@ def write_episode_transcript(season, episode_url, episode_dict):
             if ln.startswith("Transcript[]"):
                 ln = ln.replace("Transcript[]", "").strip()
                 ln = f'[{ln}]'
+            if ln.startswith("[Come on"):
+                ln = ln.replace("[", "(")
             if ln.startswith("(") or ln.startswith("["):
                 ln = ln.replace(":", " -")
 
