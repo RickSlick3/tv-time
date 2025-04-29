@@ -89,7 +89,7 @@ Our app can be launched locally on a port from our [index.html](https://github.c
 
 #### Casey Jackson:
 
-TODO
+Created of the following visualizations: info screen,  bar chart for character lines/words per episode, stacked bar chart for main character lines/words, episode chart and general info in character information section. Added character pictures to charts.
 
 #### Ricky Roberts:
 
