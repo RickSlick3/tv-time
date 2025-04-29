@@ -46,9 +46,36 @@ class CharacterPhraseNetwork {
         target: nodeByName[d.listener],
       }));
 
-    vis.graph = { nodes, links };
+    // Build phraseMap for each speaker → listener → [phrases]
+		const phraseMap = {};
+    vis.data
+      .filter(d => vis.characters.includes(d.speaker) && vis.characters.includes(d.listener))
+      .forEach(d => {
+        if (!phraseMap[d.speaker]) phraseMap[d.speaker] = {};
+        if (!phraseMap[d.speaker][d.listener]) phraseMap[d.speaker][d.listener] = [];
+        // previously: phraseMap[d.speaker][d.listener].push(d.phrase);
+        phraseMap[d.speaker][d.listener].push({
+          gram3:         d['3gram_phrase'],
+          gram3_count:   +d['3gram_count'],
+          gram4:         d['4gram_phrase'],
+          gram4_count:   +d['4gram_count'],
+          gram5:         d['5gram_phrase'],
+          gram5_count:   +d['5gram_count']
+        });
+      });
 
-		console.log("Graph nodes:", vis.graph);
+    const enrichedNodes = nodes.map(node => {
+      const outgoing = phraseMap[node.name] || {};
+      const connections = Object.entries(outgoing).map(([listener, phrases]) => ({
+        listener,
+        phrases
+      }));
+      return { ...node, connections };
+    });
+
+    // vis.graph = { nodes, links };
+    vis.graph = { nodes: enrichedNodes, links };
+    console.log("Graph:", vis.graph);
 
     // 3) Render with force layout
     vis.renderVis();
@@ -85,25 +112,40 @@ class CharacterPhraseNetwork {
       .style('fill', 'black')
 			// Tooltip events
       .on('mouseover', (event, d) => {
-        d3.select('#tooltip')
-          // .html(
-          //   `<div class="tooltip-label">Source:</div>${d.source.name}` +
-          //   `<div class="tooltip-label">Target:</div>${d.target.name}` +
-          //   `<div class="tooltip-label">3-gram (${d.gram3_count}):</div>${d.gram3}` +
-          //   `<div class="tooltip-label">4-gram (${d.gram4_count}):</div>${d.gram4}` +
-          //   `<div class="tooltip-label">5-gram (${d.gram5_count}):</div>${d.gram5}`
-          // )
-          .style('left', (event.pageX + 10) + 'px')
-          .style('top', (event.pageY - 10) + 'px')
-          .style('opacity', 1);
+        const fromHtml = `<div class="tooltip-from">From ${d.name}:</div>`;
+        let connectionsHtml = ``;
+        if (d.connections.length == 0) {
+          connectionsHtml = `<div class="tooltip-group"><div class="tooltip-label">No connections</div></div>`;
+        }
+        else {
+          connectionsHtml = d.connections.map(c => `
+            <div class="network-tooltip-group">
+              <div class="tooltip-label">To ${c.listener}:</div>
+              ${c.phrases.map(p => `
+                <div class="tooltip-phrase">
+                  <div class="tooltip-label">3-gram (${p.gram3_count}): ${p.gram3}</div>
+                  <div class="tooltip-label">4-gram (${p.gram4_count}): ${p.gram4}</div>
+                  <div class="tooltip-label">5-gram (${p.gram5_count}): ${p.gram5}</div>
+                </div>
+              `).join('')}
+            </div>
+          `).join('');
+        }
+
+        d3.select('#network-tooltip')
+          .html(fromHtml + connectionsHtml)
+          .style('left',  (event.pageX + 10) + 'px')
+          .style('top',   (event.pageY - 10) + 'px')
+          .style('opacity', 1)
+          .style('font-size', '14px');
       })
       .on('mousemove', (event) => {
-				d3.select('#tooltip')
+				d3.select('#network-tooltip')
 					.style('left', (event.pageX + vis.config.tooltipPadding) + 'px')   
 					.style('top', (event.pageY + vis.config.tooltipPadding) + 'px')
 			})
 			.on('mouseleave', () => {
-				d3.select('#tooltip').style('opacity', 0);
+				d3.select('#network-tooltip').style('opacity', 0);
 			});
 
     // Force simulation

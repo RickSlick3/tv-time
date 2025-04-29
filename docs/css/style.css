@@ -61,6 +61,26 @@ svg {
   color: #888;
 }
 
+#network-tooltip {
+  position: absolute;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 2px 2px 3px 0px rgb(92 92 92 / 0.5);
+  border: 1px solid #ddd;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+
+  column-count: 5;       /* split into two columns */
+  column-gap: 1em;       /* space between columns */
+
+  max-height: 600px;     /* limit vertical size */
+}
+.network-tooltip-group {
+  break-inside: avoid;
+  margin-bottom: 0.5em;
+}
+
 .bar {
   fill: #f38874;
   shape-rendering: crispEdges;
