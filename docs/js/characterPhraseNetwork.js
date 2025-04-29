@@ -13,6 +13,8 @@ class CharacterPhraseNetwork {
 
   initVis() {
     let vis = this;
+
+    vis.tooltipPinned = false;
     // Set up container
     vis.container = d3.select(vis.config.parentElement);
     // Initial draw
@@ -135,21 +137,21 @@ class CharacterPhraseNetwork {
             </div>
           `).join('');
         }
-
         d3.select('#network-tooltip')
           .html(fromHtml + connectionsHtml)
-          .style('left',  (event.pageX + 10) + 'px')
-          .style('top',   (event.pageY - 10) + 'px')
-          .style('opacity', 1)
-          .style('font-size', '14px');
+          .style('opacity', 1);
       })
-      .on('mousemove', (event) => {
-				d3.select('#network-tooltip')
-					.style('left', (event.pageX + vis.config.tooltipPadding) + 'px')   
-					.style('top', (event.pageY + vis.config.tooltipPadding) + 'px')
-			})
+      .on('click', (event, d) => {
+        // toggle pin state
+        vis.tooltipPinned = !vis.tooltipPinned;
+        if (!vis.tooltipPinned) {
+          vis.tooltip.style('opacity', 0);
+        }
+      })
 			.on('mouseleave', () => {
-				d3.select('#network-tooltip').style('opacity', 0);
+        if (!vis.tooltipPinned) {
+				  d3.select('#network-tooltip').style('opacity', 0);
+        }
 			});
 
     // Force simulation
